@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { Mail } from './Mail';
+import { TestMail } from './TestMail';
 
 @Component({
   selector: 'app-home',
@@ -37,7 +39,24 @@ export class AdminComponent {
 
   //Test sending to single mail address
   onSendTest() {
+    var mail = new TestMail();
 
+    mail.titel = this.emailForm.value.emailTitel;
+    mail.body = this.emailForm.value.emailBody;
+    mail.date = new Date();
+    mail.testAddress = this.emailForm.value.emailTestAddress;
+
+    this._http.post("/api/Mail/SendTestMail", mail, { responseType: 'text' })
+      .subscribe(response => {
+        if (response == "Mail sent") {
+          this.MailSentMessage("Test mail sent", true);
+        }
+      },
+        error => {
+          this.MailSentMessage("Test mail failed to be sent", false),
+          console.log
+        }
+      );
   }
 
   //If the option to send a test mail is toggled we have to validate the email field
@@ -48,6 +67,16 @@ export class AdminComponent {
     } else {
       this.emailForm.controls['emailTestAddress'].disable();
     }
+  }
+
+  //Feedback message on whether the mail was successfully sent or not
+  MailSentMessage(message: string, successful: boolean) {
+    if (successful) {
+
+    } else {
+
+    }
+
   }
 
 
