@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\admin\admin.component.ts" />
+    <None Remove="ClientApp\src\app\admin\Mail.ts" />
   </ItemGroup>
 
   <ItemGroup>

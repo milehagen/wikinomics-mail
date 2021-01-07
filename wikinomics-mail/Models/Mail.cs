@@ -18,5 +18,7 @@ namespace wikinomics_mail.Models
         //Email body
         [MinLength(10), MaxLength(2000)]
         public string Body { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }
