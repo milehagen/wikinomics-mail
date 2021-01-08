@@ -6,6 +6,9 @@
   <p>Here you can send mails to the entire mailing list.<br />
   You can also try sending a test mail to a single email to see what it will look like</p>
 
+  <p id="message">{{feedback}}</p>
+
+
   <form [formGroup]="emailForm">
     <div class="form-group">
       <label for="emailTitel">Email Titel:</label><br />
@@ -34,13 +37,13 @@
         </div>
         <input type="text" class="form-control" formControlName="emailTestAddress" placeholder="Email to send test to...">
       </div>
-      <button type="button" class="btn btn-warning" (click)="onSendTest()" [disabled]="!emailForm.valid || !sendTest">Send Test Mail</button>
+      <button type="button" class="btn btn-warning" (click)="onSendMail()" [disabled]="!emailForm.valid || !sendTest">Send Test Mail</button>
     </div>
 
   </form>
 
   <div class="form-group">
-    <button type="button" class="btn btn-primary" (click)="onSendToList()" [disabled]="!emailForm.valid || sendTest">Send</button>
+    <button type="button" class="btn btn-primary" (click)="onSendMail()" [disabled]="!emailForm.valid || sendTest">Send</button>
   </div>
 
 
@@ -48,7 +51,6 @@
   <h2>Previously sent mails</h2>
   <p>Previously sent mails by date, click to expand</p>
 
-  <!---->
   <table class="table table-sm table-hover">
     <tr>
       <th>Date</th>

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using wikinomics_mail.Models;
+using Microsoft.EntityFrameworkCore;
+using Castle.Core.Internal;
 
 namespace wikinomics_mail.DAL
 {
@@ -16,20 +18,25 @@ namespace wikinomics_mail.DAL
             _db = db;
         }
 
-        
-
-        public async Task<bool> SendMail(Mail mail)
+        public async Task<List<Mail>> GetAll()
         {
-            
-            if (!mail.Addresses.Any())
+            try
             {
-                mail.Addresses.AddRange(_db.MailAddresses);
+                List<Mail> allMails = await _db.Mails.ToListAsync();
+                if (allMails.IsNullOrEmpty())
+                {
+                    return null;
+                }
+                return allMails;
+            }
+            catch
+            {
+                return null;
             }
         }
 
 
-        //Sending test mails to specified address.
-        public async Task<bool> SendTestMail(TestMail mail)
+        public async Task<bool> SendMail(Mail mail)
         {
             using (MailMessage emailMessage = new MailMessage())
             {
@@ -37,23 +44,44 @@ namespace wikinomics_mail.DAL
                 var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
                 var toAddress = new System.Net.Mail.MailAddress("fail@fail.com");
 
-                try
+
+                //If Address is NOT empty, it's a test
+                if (mail.Address != null)
                 {
-                    toAddress = new System.Net.Mail.MailAddress(mail.TestAddress);
+                    try
+                    {
+                        toAddress = new System.Net.Mail.MailAddress(mail.Address);
+                        emailMessage.To.Add(toAddress);
+                    }
+                    catch
+                    {
+                        return false;
+                    }
                 }
-                catch
+                //Adding everyone on the mailing list
+                else
                 {
-                    return false;
+                    foreach (var obj in _db.MailAddresses)
+                    {
+                        try
+                        {
+                            toAddress = new System.Net.Mail.MailAddress(obj.Address);
+                            emailMessage.To.Add(toAddress);
+                        }
+                        catch
+                        {
+                            return false;
+                        }
+                    }
                 }
 
-                emailMessage.To.Add(toAddress);
                 emailMessage.From = fromAddress;
                 emailMessage.Subject = mail.Titel;
                 emailMessage.Body = mail.Body;
                 emailMessage.Priority = MailPriority.Normal;
                 emailMessage.IsBodyHtml = true;
 
-                using(SmtpClient MailClient = new SmtpClient("smtp.gmail.com", 587))
+                using (SmtpClient MailClient = new SmtpClient("smtp.gmail.com", 587))
                 {
                     try
                     {
@@ -73,5 +101,28 @@ namespace wikinomics_mail.DAL
                 }
             }
         }
+
+        public async Task<bool> LogMail(Mail inMail)
+        {
+            try
+            {
+                var newMail = new Mail
+                {
+                    Titel = inMail.Titel,
+                    Body = inMail.Body,
+                    Date = inMail.Date
+                };
+
+                await _db.Mails.AddAsync(newMail);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
     }
 }

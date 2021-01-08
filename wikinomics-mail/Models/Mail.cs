@@ -11,7 +11,7 @@ namespace wikinomics_mail.Models
     {
         public int Id { get; set; }
 
-        virtual public List<MailAddress> Addresses { get; set; }
+        public string Address { get; set; }
 
         //Email titel
         [RegularExpression(@"^.{10,200}$")]
