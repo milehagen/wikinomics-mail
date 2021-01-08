@@ -1,1 +1,67 @@
-<h1>Admin panel</h1>
+<div class="container">
+  <h1>Admin panel</h1>
+
+
+  <h2>Send mails to mailing list</h2>
+  <p>Here you can send mails to the entire mailing list.<br />
+  You can also try sending a test mail to a single email to see what it will look like</p>
+
+  <form [formGroup]="emailForm">
+    <div class="form-group">
+      <label for="emailTitel">Email Titel:</label><br />
+      <input type="text" class="form-control" id="emailTitel" formControlName="emailTitel" /> <br />
+    </div>
+
+
+    <div class="form-group">
+      <label for="emailBody">Email Body:</label><br />
+      <textarea class="form-control" id="emailBody" formControlName="emailBody"></textarea>
+      <small id="emailBodyHelp" class="form-text text-muted">This field accepts HTML</small>
+    </div>
+
+
+    <br />
+
+    <div class="form-group">
+      <p>Wanna send the email to a single address to test what it looks like before sending it to everyone?</p>
+      <label for="emailTestAddress">Email test address:</label><br />
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" aria-label="Email test" [(ngModel)]="sendTest" (change)="sendTestToggle()" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+        <input type="text" class="form-control" formControlName="emailTestAddress" placeholder="Email to send test to...">
+      </div>
+      <button type="button" class="btn btn-warning" (click)="onSendTest()" [disabled]="!emailForm.valid || !sendTest">Send Test Mail</button>
+    </div>
+
+  </form>
+
+  <div class="form-group">
+    <button type="button" class="btn btn-primary" (click)="onSendToList()" [disabled]="!emailForm.valid || sendTest">Send</button>
+  </div>
+
+
+
+  <h2>Previously sent mails</h2>
+  <p>Previously sent mails by date, click to expand</p>
+
+  <!---->
+  <table class="table table-sm table-hover">
+    <tr>
+      <th>Date</th>
+      <th>Email Title</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let mail of allMails">
+      <td>{{mail.date}}</td>
+      <td>{{mail.titel}}</td>
+      <td><button class="btn btn-primary" (click)="expandMail(mail)">View</button></td>
+    </tr>
+
+
+  </table>
+
+</div>
