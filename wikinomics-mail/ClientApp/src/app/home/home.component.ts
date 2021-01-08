@@ -10,11 +10,20 @@ import { MailAddress } from './MailAddress';
 export class HomeComponent {
 
   showHeaderContent: Boolean = false;
-  showNumber: Number = 1;
+  showRegister: Boolean = false;
 
 
   ShowHeaderContent() {
     this.showHeaderContent = this.showHeaderContent ? false : true;
+  }
+
+  ShowRegisterField() {
+    this.showRegister = this.showRegister ? false : true;
+  }
+
+  BackToMain() {
+    this.showHeaderContent = false;
+    this.showRegister = false;
   }
 
   /*showRegistration() {
