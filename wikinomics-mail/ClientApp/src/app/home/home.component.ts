@@ -28,20 +28,6 @@ export class HomeComponent {
     this.showRegister = false;
   }
 
-  /*showRegistration() {
-    let info = document.getElementById("info");
-    let registration = document.getElementById("registration");
-    const btnShowReg = document.getElementById("btnShowReg");
-
-    if (info.className = "d-block") {
-      info.className = "d-none";
-      registration.className = "d-block";
-      btnShowReg.className = "d-none";
-    }
-
-  }
-}*/
-
   //Adds email to database
   addEmailToDb(email) {
 
