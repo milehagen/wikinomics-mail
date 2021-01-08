@@ -9,14 +9,14 @@ import { MailAddress } from './MailAddress';
 })
 export class HomeComponent {
 
-  showHeaderContent: Boolean = false;
+  showInfo: Boolean = false;
   showRegister: Boolean = false;
   public email: String;
 
   constructor(private http: HttpClient) { }
 
-  ShowHeaderContent() {
-    this.showHeaderContent = this.showHeaderContent ? false : true;
+  ShowInfo() {
+    this.showInfo = this.showInfo ? false : true;
   }
 
   ShowRegisterField() {
@@ -24,7 +24,7 @@ export class HomeComponent {
   }
 
   BackToMain() {
-    this.showHeaderContent = false;
+    this.showInfo = false;
     this.showRegister = false;
   }
 
