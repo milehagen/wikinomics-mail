@@ -11,7 +11,9 @@ export class HomeComponent {
 
   showHeaderContent: Boolean = false;
   showRegister: Boolean = false;
+  public email: String;
 
+  constructor(private http: HttpClient) { }
 
   ShowHeaderContent() {
     this.showHeaderContent = this.showHeaderContent ? false : true;
@@ -39,9 +41,6 @@ export class HomeComponent {
 
   }
 }*/
-  public email: String;
-
-  constructor(private http: HttpClient) { }
 
   //Adds email to database
   addEmailToDb(email) {
