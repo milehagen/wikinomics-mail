@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 
 namespace wikinomics_mail.Models
 {
-    //A mail being sent out to the mailing list
-    public class Mail
+    //Object for sending test mails
+    public class TestMail
     {
         public int Id { get; set; }
-
-        virtual public List<MailAddress> Addresses { get; set; }
 
         //Email titel
         [RegularExpression(@"^.{10,200}$")]
@@ -22,5 +20,7 @@ namespace wikinomics_mail.Models
         public string Body { get; set; }
 
         public DateTime Date { get; set; }
+
+        public string TestAddress { get; set; }
     }
 }
