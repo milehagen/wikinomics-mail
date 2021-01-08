@@ -12,7 +12,6 @@ export class HomeComponent {
   showHeaderContent: Boolean = false;
   showNumber: Number = 1;
 
-  constructor(){}
 
   ShowHeaderContent() {
     this.showHeaderContent = this.showHeaderContent ? false : true;
@@ -29,15 +28,15 @@ export class HomeComponent {
       btnShowReg.className = "d-none";
     }
 
-  }*/
-}
+  }
+}*/
   public email: String;
 
   constructor(private http: HttpClient) { }
 
+  //Adds email to database
   addEmailToDb(email) {
-    //TODO Push the data to the db
-    window.alert("Du skrev " + email);
+
     const mailAddress = new MailAddress();
 
     mailAddress.address = email;

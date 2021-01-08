@@ -22,7 +22,7 @@ namespace wikinomics_mail.Controllers
             _db = db;
             _log = log;
         }
-
+        // Sends the mailaddress to the server 
         [HttpPost]
         public async Task<ActionResult> Save(MailAddress email)
         {

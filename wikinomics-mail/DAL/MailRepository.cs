@@ -16,7 +16,7 @@ namespace wikinomics_mail.DAL
             _db = db;
         }
 
-        public Task<>
+        
 
         public async Task<bool> SendMail(Mail mail)
         {

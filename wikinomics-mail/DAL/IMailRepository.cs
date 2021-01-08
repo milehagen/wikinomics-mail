@@ -13,7 +13,7 @@ namespace wikinomics_mail.DAL
         
         public Task<bool> SendTestMail(TestMail mail);
 
-        //Task<bool> LogMail(Mail mail);
+        Task<bool> LogMail(Mail mail);
 
 
 
