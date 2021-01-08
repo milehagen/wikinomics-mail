@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using wikinomics_mail.DAL;
+using wikinomics_mail.Models;
 
 namespace wikinomics_mail.Controllers
 {
@@ -20,6 +21,23 @@ namespace wikinomics_mail.Controllers
         {
             _db = db;
             _log = log;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Save(MailAddress email)
+        {
+            if (ModelState.IsValid)
+            {
+                bool returOK = await _db.Save(email);
+                if (!returOK)
+                {
+                    _log.LogInformation("Email could not be stored!");
+                    return BadRequest();
+                }
+                return Ok();
+            }
+            _log.LogInformation("Validation not successfull");
+            return BadRequest();
         }
     }
 }
