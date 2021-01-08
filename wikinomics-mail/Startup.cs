@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using wikinomics_mail.DAL;
 
 namespace wikinomics_mail
 {
@@ -21,6 +23,10 @@ namespace wikinomics_mail
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<MailDBContext>(options => options.UseSqlite("Data source=MailDB.db"));
+            services.AddScoped<IMailRepository, MailRepository>();
+            services.AddScoped<IMailAddressRepository, MailAddressRepository>();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -68,6 +74,7 @@ namespace wikinomics_mail
                 if (env.IsDevelopment())
                 {
                     spa.UseAngularCliServer(npmScript: "start");
+                    DBInit.Initialize(app);
                 }
             });
         }
