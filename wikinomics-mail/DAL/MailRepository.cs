@@ -16,8 +16,20 @@ namespace wikinomics_mail.DAL
             _db = db;
         }
 
+        public Task<>
+
+        public async Task<bool> SendMail(Mail mail)
+        {
+            
+            if (!mail.Addresses.Any())
+            {
+                mail.Addresses.AddRange(_db.MailAddresses);
+            }
+        }
+
+
         //Sending test mails to specified address.
-        public bool SendTestMail(TestMail mail)
+        public async Task<bool> SendTestMail(TestMail mail)
         {
             using (MailMessage emailMessage = new MailMessage())
             {
@@ -50,7 +62,7 @@ namespace wikinomics_mail.DAL
                         MailClient.UseDefaultCredentials = false;
                         MailClient.Credentials = new System.Net.NetworkCredential(fromAddress.Address, fromPassword);
                         MailClient.Timeout = 20000;
-                        MailClient.Send(emailMessage);
+                        await MailClient.SendMailAsync(emailMessage);
                         return true;
                     }
                     catch (Exception e)
