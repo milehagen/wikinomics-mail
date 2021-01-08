@@ -22,13 +22,23 @@ namespace wikinomics_mail.Controllers
             _log = log;
         }
 
-        [HttpPost("/SendTestMail")]
-        [Route("SendTestMail")]
-        public ActionResult SendTestMail(TestMail mail)
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+            List<Mail> allMails = await _db.GetAll();
+            return Ok(allMails);
+        }
+
+
+
+
+        [HttpPost("/SendMail")]
+        [Route("SendMail")]
+        public async Task<ActionResult> SendMailAsync(Mail mail)
         {
             if (ModelState.IsValid)
             {
-                var resultOK = _db.SendTestMail(mail);
+                var resultOK = await _db.SendMail(mail);
                 if (!resultOK)
                 {
                     return BadRequest("Mail could not be sent");
@@ -38,13 +48,22 @@ namespace wikinomics_mail.Controllers
             return BadRequest("Wrong input validation");
         }
 
+
         [HttpPost("/LogMail")]
         [Route("LogMail")]
-        public Task<ActionResult> LogMail()
+        public async Task<ActionResult> LogMail(Mail mail)
         {
-
+            if (ModelState.IsValid)
+            {
+                var resultOK = await _db.LogMail(mail);
+                if (!resultOK)
+                {
+                    return BadRequest("Mail could not be logged");
+                }
+                return Ok("Mail logged");
+            }
+            return BadRequest("Wrong input validation");
         }
-
 
     }
 }

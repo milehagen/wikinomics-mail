@@ -9,11 +9,11 @@ namespace wikinomics_mail.DAL
     public interface IMailRepository
     {
 
-        public Task<bool> SendMail(Mail mail);
-        
-        public Task<bool> SendTestMail(TestMail mail);
+        public Task<List<Mail>> GetAll();
 
-        //Task<bool> LogMail(Mail mail);
+        public Task<bool> SendMail(Mail mail);
+
+        Task<bool> LogMail(Mail mail);
 
 
 

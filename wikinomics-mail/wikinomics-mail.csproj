@@ -33,7 +33,8 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\admin\admin.component.ts" />
     <None Remove="ClientApp\src\app\admin\Mail.ts" />
-    <None Remove="ClientApp\src\app\admin\TestMail.ts" />
+    <None Remove="ClientApp\src\app\admin\modal\mailModal.ts" />
+    <None Remove="ClientApp\src\app\home\MailAddress.ts" />
   </ItemGroup>
 
   <ItemGroup>
