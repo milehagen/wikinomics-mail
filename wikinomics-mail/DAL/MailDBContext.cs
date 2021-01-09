@@ -9,6 +9,17 @@ using wikinomics_mail.Models;
 namespace wikinomics_mail.DAL
 {
 
+    public class AdminDB
+    {
+        [Key]
+        public int Id { get; set; }
+
+        public string Username { get; set; }
+        public byte[] Password { get; set; }
+        public byte[] Salt { get; set; }
+
+    }
+
 
     public class MailDBContext : DbContext
     {
@@ -20,6 +31,8 @@ namespace wikinomics_mail.DAL
 
         public DbSet<Mail> Mails { get; set; }
         public DbSet<MailAddress> MailAddresses { get; set; }
+
+        public DbSet<AdminDB> Admins { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

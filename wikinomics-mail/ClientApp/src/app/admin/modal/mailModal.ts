@@ -10,11 +10,13 @@ import { Mail } from '../Mail';
 })
 export class MailModal {
   public mail: Mail;
+  public test: String;
 
 
   constructor(public modal: NgbActiveModal, private _http: HttpClient) {
   }
 
   ngOnInit() {
+    this.test = "<h2>hello</h2>";
   }
 }

@@ -28,6 +28,16 @@ namespace wikinomics_mail.DAL
                 Mail mail1 = new Mail { Date = date1, Titel = "Hello and welcome to my dota2 stream", Body = "The kdkdkdkdkkdkdkdkdkdkdkdkkdkdkdkdkdkdkkdkdkdk" };
                 Mail mail2 = new Mail { Date = date2, Titel = "Kjører omvei for å kjøpe sigaretter", Body = "The kdkdkdkdkkdkdkdkdkdkdkdkkdkdkdkdkdkdkkdkdkdk" };
 
+                
+                
+                Admin admin = new Admin { Username = "Admin", Password = "Admin-12345" };
+
+                byte[] salt = AdminRepository.GenerateSalt();
+                byte[] hash = AdminRepository.GenerateHash(admin.Password, salt);
+                admin.PasswordHash = hash;
+                admin.Salt = salt;
+
+
                 List<MailAddress> addresses = new List<MailAddress>
                 {
                     address1,
@@ -43,6 +53,7 @@ namespace wikinomics_mail.DAL
 
                 context.MailAddresses.AddRange(addresses);
                 context.Mails.AddRange(sentMails);
+                context.Admins.Add(admin);
 
                 context.SaveChanges();
 

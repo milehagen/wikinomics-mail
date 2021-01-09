@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -34,15 +35,26 @@ export class AdminComponent {
     ]
   }
 
-  constructor(private _http: HttpClient, private fb: FormBuilder, private modalSerivce: NgbModal) {
+  constructor(private _http: HttpClient, private fb: FormBuilder, private modalSerivce: NgbModal, @Inject(DOCUMENT) private document: Document) {
     this.emailForm = fb.group(this.formValidation);
   }
 
   ngOnInit() {
+    this.checkLogIn();
     this.getListStats();
     this.getMails();
   }
 
+
+  //Checks if you logged in, if not you are sent away from admin page
+  checkLogIn() {
+    this._http.get("api/Admin", { responseType: 'text' })
+      .subscribe(response => {
+        if (response != "Logged in") {
+          this.document.location.href = '/login.html';
+        }
+      })
+  }
 
   //Gets previously sent mails
   getMails() {
@@ -78,7 +90,7 @@ export class AdminComponent {
         if (response == "Mail sent") {
           this.MailSentMessage("Mail sent", true);
 
-          //If it was not a test, we archive it.
+          //If it was not a test, we archive it and refresh the list
           if (!this.sendTest) {
             this.logMail(mail);
             this.getMails();
@@ -93,6 +105,7 @@ export class AdminComponent {
       );
   }
 
+  //Logs the mail just sent to the list on the bottom of the page
   logMail(mail: Mail) {
     this._http.post("api/Mail/LogMail", mail, { responseType: 'text' })
       .subscribe(response => {
