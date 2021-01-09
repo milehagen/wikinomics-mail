@@ -30,11 +30,12 @@ namespace wikinomics_mail.DAL
 
                 
                 
-                Admin admin = new Admin { Username = "Admin", Password = "Admin-12345" };
+                AdminDB admin = new AdminDB { Username = "Admin"};
 
+                string password = "Admin-12345";
                 byte[] salt = AdminRepository.GenerateSalt();
-                byte[] hash = AdminRepository.GenerateHash(admin.Password, salt);
-                admin.PasswordHash = hash;
+                byte[] hash = AdminRepository.GenerateHash(password, salt);
+                admin.Password = hash;
                 admin.Salt = salt;
 
 

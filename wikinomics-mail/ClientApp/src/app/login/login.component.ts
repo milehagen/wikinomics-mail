@@ -29,7 +29,7 @@ export class LoginComponent {
     this.checkLogIn();
   }
 
-  //Checks if you logged in, if not you are sent away from admin page
+  //Checks if you logged in, if you are you are sent to admin page
   checkLogIn() {
     this._http.get("api/Admin", { responseType: 'text' })
       .subscribe(response => {

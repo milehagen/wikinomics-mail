@@ -47,6 +47,7 @@ namespace wikinomics_mail.Controllers
             HttpContext.Session.SetString(_loggedIn, "");
         }
 
+        [HttpGet]
         public ActionResult CheckLogIn()
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggedIn)))
