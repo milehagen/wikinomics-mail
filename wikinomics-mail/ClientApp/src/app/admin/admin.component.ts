@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router, RouterModule } from '@angular/router';
 
 import { MailAddress } from '../home/MailAddress';
 import { Mail } from './Mail';
@@ -35,7 +36,7 @@ export class AdminComponent {
     ]
   }
 
-  constructor(private _http: HttpClient, private fb: FormBuilder, private modalSerivce: NgbModal, @Inject(DOCUMENT) private document: Document) {
+  constructor(private _http: HttpClient, private fb: FormBuilder, private modalSerivce: NgbModal, @Inject(DOCUMENT) private document: Document, private router: Router) {
     this.emailForm = fb.group(this.formValidation);
   }
 
@@ -48,10 +49,10 @@ export class AdminComponent {
 
   //Checks if you logged in, if not you are sent away from admin page
   checkLogIn() {
-    this._http.get("api/Admin", { responseType: 'text' })
+    this._http.get("api/Admin")
       .subscribe(response => {
-        if (response != "Logged in") {
-          this.document.location.href = '/login.html';
+        if (!response) {
+          this.router.navigate(['/login']);
         }
       })
   }

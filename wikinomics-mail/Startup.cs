@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using wikinomics_mail.DAL;
 
 namespace wikinomics_mail
@@ -26,6 +27,14 @@ namespace wikinomics_mail
             services.AddDbContext<MailDBContext>(options => options.UseSqlite("Data source=MailDB.db"));
             services.AddScoped<IMailRepository, MailRepository>();
             services.AddScoped<IMailAddressRepository, MailAddressRepository>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
+
+            services.AddSession(options =>
+            {
+                options.Cookie.Name = ".AdventureWorks.Session";
+                options.IdleTimeout = TimeSpan.FromSeconds(1800); // 30 minutter
+                options.Cookie.IsEssential = true;
+            });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -56,6 +65,7 @@ namespace wikinomics_mail
             }
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
