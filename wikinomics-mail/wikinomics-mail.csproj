@@ -35,6 +35,7 @@
     <None Remove="ClientApp\src\app\admin\Mail.ts" />
     <None Remove="ClientApp\src\app\admin\modal\mailModal.ts" />
     <None Remove="ClientApp\src\app\home\MailAddress.ts" />
+    <None Remove="ClientApp\src\app\login\login.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
