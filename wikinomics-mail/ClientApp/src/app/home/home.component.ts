@@ -9,30 +9,24 @@ import { MailAddress } from './MailAddress';
 })
 export class HomeComponent {
 
-  showHeaderContent: Boolean = false;
-  showNumber: Number = 1;
-
-
-  ShowHeaderContent() {
-    this.showHeaderContent = this.showHeaderContent ? false : true;
-  }
-
-  /*showRegistration() {
-    let info = document.getElementById("info");
-    let registration = document.getElementById("registration");
-    const btnShowReg = document.getElementById("btnShowReg");
-
-    if (info.className = "d-block") {
-      info.className = "d-none";
-      registration.className = "d-block";
-      btnShowReg.className = "d-none";
-    }
-
-  }
-}*/
+  showInfo: Boolean = false;
+  showRegister: Boolean = false;
   public email: String;
 
   constructor(private http: HttpClient) { }
+
+  ShowInfo() {
+    this.showInfo = this.showInfo ? false : true;
+  }
+
+  ShowRegisterField() {
+    this.showRegister = this.showRegister ? false : true;
+  }
+
+  BackToMain() {
+    this.showInfo = false;
+    this.showRegister = false;
+  }
 
   //Adds email to database
   addEmailToDb(email) {

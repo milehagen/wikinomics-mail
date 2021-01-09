@@ -1,14 +1,14 @@
-<div class="container border mt-1">
-  <div *ngIf="!showHeaderContent">
-    <div class="text-center">
+<div class="container border mt-1 d-flex flex-column align-items-center text-center">
+  <div *ngIf="!showInfo">
+    <div>
       <h1>Hei</h1>
       <p>Velkommen til Wikinomics</p>
-      <button class="btn btn-primary" (click)="ShowHeaderContent()">Hva er Wikinomics?</button>
+      <button class="btn btn-dark" (click)="ShowInfo()">Hva er Wikinomics?</button>
     </div>
   </div>
-  <div *ngIf="showHeaderContent" [@slideInOut]=animationsState> 
-    <div *ngIf="!showRegister" [@slideInOut]=animationsState>
-      <p>
+  <div *ngIf="showInfo"> 
+    <div *ngIf="!showRegister">
+      <p class="text-left">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
         pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
         Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
@@ -21,16 +21,18 @@
         Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, 
         non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
       </p>
-      <button class="btn btn-primary" (click)="ShowRegisterField()">Registrer mail</button>
+      <button class="btn btn-dark" (click)="ShowRegisterField()">Registrer mail</button>
+    </div>
+    <div *ngIf="showRegister">
+      <input type="text" class="form-control" [(ngModel)] ="email" placeholder="Skriv inn email"/>
+      <button type="button" class="btn btn-dark" (click) ="addEmailToDb(email)">Send inn</button>
+      <div>
+        navnet er : {{email}} <br/>
+      </div>
+      <h1>Hello, world!</h1>
+      <input type="text">
     </div>
   </div>
-  <button (click)="showHeaderContent=false">Hovedside</button>
+  <button (click)="BackToMain()" class="btn btn-danger mt-1">Hovedside</button>
 </div>
 
-<input type="text" [(ngModel)] ="email" />
-<button type="button" (click) ="addEmailToDb(email)">Send inn</button>
-<div>
-  navnet er : {{email}} <br/>
-</div>
-<h1>Hello, world!</h1>
-<input type="text">
