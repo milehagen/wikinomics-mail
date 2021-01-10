@@ -11,5 +11,6 @@ namespace wikinomics_mail.DAL
         Task<bool> Save(MailAddress email);
         String MakeHash(String inp);
         String GetSubString(String inp);
+        Task<List<MailAddress>> GetAll();
     }
 }

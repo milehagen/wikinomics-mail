@@ -39,5 +39,12 @@ namespace wikinomics_mail.Controllers
             _log.LogInformation("Validation not successfull");
             return BadRequest();
         }
+
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+            List<MailAddress> allMails = await _db.GetAll();
+            return Ok(allMails);
+        }
     }
 }
