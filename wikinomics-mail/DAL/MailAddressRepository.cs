@@ -13,6 +13,7 @@ namespace wikinomics_mail.DAL
     class MailAddressRepository : IMailAddressRepository
     {
         private readonly MailDBContext _db;
+        private List<MailAddress> allMails;
 
         public MailAddressRepository(MailDBContext db)
         {
@@ -23,7 +24,7 @@ namespace wikinomics_mail.DAL
         {
             try
             {
-                List<MailAddress> allMails = await _db.MailAddresses.ToListAsync();
+                allMails = await _db.MailAddresses.ToListAsync();
                 if (allMails.IsNullOrEmpty())
                 {
                     return null;
@@ -51,7 +52,6 @@ namespace wikinomics_mail.DAL
                 var newEmail = new MailAddress();
                 newEmail.Address = email.Address;
                 newEmail.UniqueId = MakeHash(emailSubstring);
-               // checkIfRegistered(newEmail.UniqueId);
                 _db.MailAddresses.Add(newEmail);
                 await _db.SaveChangesAsync();
                 return true;
@@ -115,17 +115,6 @@ namespace wikinomics_mail.DAL
 
             // Return the hexadecimal string.
             return sBuilder.ToString();
-        }
-
-        public bool checkIfRegistered(String uniqueId)
-        {
-            //TODO sammenligne mailen man får inn via input med mails som ligger i databasen
-            /*foreach(String i in )
-            {
-                Console.WriteLine(i);
-            }
-
-            return true; */
         }
     }
      

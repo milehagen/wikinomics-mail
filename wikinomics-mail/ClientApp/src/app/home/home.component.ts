@@ -48,14 +48,18 @@ export class HomeComponent {
   addEmailToDb(email) {
 
     const mailAddress = new MailAddress();
-
     mailAddress.address = email;
-     this.http.post("api/MailAddress", mailAddress)
-       .subscribe(retur => {
-         console.log("vellykket");
-       },
-         error => console.log(error)
-       );
+
+    if (this.checkIfRegistered(mailAddress.address)) {
+      error => window.alert("E-posten er allerede registrert");
+    } else {
+      this.http.post("api/MailAddress", mailAddress)
+        .subscribe(retur => {
+          console.log("vellykket");
+        },
+          error => console.log(error)
+        );
+    }
   }
   // Get an array of all emails from the database
   getEmailAddress() {
@@ -66,5 +70,16 @@ export class HomeComponent {
       },
         error => console.log(error)
       );
+  }
+
+  //Check if the email already exists in the array, if it return false then the email is unique, if true then it is already registered.
+  checkIfRegistered(email: String) {
+    let ok = false;
+    for (let value of this.allMailAdresses) {
+      if (email === value.address) {
+        ok = true;
+      } 
+    }
+    return ok;
   }
  }
