@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Castle.Core.Internal;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -11,10 +13,28 @@ namespace wikinomics_mail.DAL
     class MailAddressRepository : IMailAddressRepository
     {
         private readonly MailDBContext _db;
+        private List<MailAddress> allMails;
 
         public MailAddressRepository(MailDBContext db)
         {
             _db = db;
+        }
+
+        public async Task<List<MailAddress>> GetAll()
+        {
+            try
+            {
+                allMails = await _db.MailAddresses.ToListAsync();
+                if (allMails.IsNullOrEmpty())
+                {
+                    return null;
+                }
+                return allMails;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         //Saves the mailaddress on the server
@@ -76,7 +96,7 @@ namespace wikinomics_mail.DAL
         }
 
         //This is collected directly from microsoft documentation on the ComputeHash method
-        private static string GetHash(HashAlgorithm hashAlgorithm, string input)
+        public static string GetHash(HashAlgorithm hashAlgorithm, string input)
         {
 
             // Convert the input string to a byte array and compute the hash.

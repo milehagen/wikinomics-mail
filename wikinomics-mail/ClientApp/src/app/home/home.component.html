@@ -1,38 +1,39 @@
-<div class="container border mt-1 d-flex flex-column align-items-center text-center">
-  <div *ngIf="!showInfo">
-    <div>
-      <h1>Hei</h1>
-      <p>Velkommen til Wikinomics</p>
-      <button class="btn btn-dark" (click)="ShowInfo()">Hva er Wikinomics?</button>
-    </div>
-  </div>
-  <div *ngIf="showInfo"> 
-    <div *ngIf="!showRegister">
-      <p class="text-left">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
-        pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
-        Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
-        in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-        per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut 
-        vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-        Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat 
-        faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. 
-        Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. 
-        Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, 
-        non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
-      </p>
-      <button class="btn btn-dark" (click)="ShowRegisterField()">Registrer mail</button>
-    </div>
-    <div *ngIf="showRegister">
-      <input type="text" class="form-control" [(ngModel)] ="email" placeholder="Skriv inn email"/>
-      <button type="button" class="btn btn-dark" (click) ="addEmailToDb(email)">Send inn</button>
+<div class="jumbotron d-flex align-items-center min-vh-100">
+  <div class="container text-center">
+    <div *ngIf="!showInfo" @fade>
       <div>
-        navnet er : {{email}} <br/>
+        <h1>Hei</h1>
+        <p>Velkommen til Wikinomics</p>
+        <button class="btn btn-dark" (click)="ShowInfo()">Hva er Wikinomics?</button>
       </div>
-      <h1>Hello, world!</h1>
-      <input type="text">
     </div>
+    <div *ngIf="showInfo" @fade> 
+      <div *ngIf="!showRegister" @fade>
+        <p class="text-left">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
+          pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
+          Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
+          in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
+          per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut 
+          vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
+          Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat 
+          faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. 
+          Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. 
+          Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, 
+          non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+        </p>
+        <button class="btn btn-dark" (click)="ShowRegisterField()">Registrer mail</button>
+      </div>
+      <div *ngIf="showRegister" @fade>
+        <input type="text" class="form-control" style="width: 70%; margin: auto;" [(ngModel)] ="email" placeholder="Skriv inn email"/>
+        <button type="button" class="btn btn-dark" (click) ="addEmailToDb(email)">Send inn</button>
+        <div>
+          navnet er : {{email}} <br/>
+        </div>
+        <h1>Hello, world!</h1>
+        <input type="text">
+      </div>
+    </div>
+    <button (click)="BackToMain()" class="btn btn-danger mt-1">Hovedside</button>
   </div>
-  <button (click)="BackToMain()" class="btn btn-danger mt-1">Hovedside</button>
 </div>
-
