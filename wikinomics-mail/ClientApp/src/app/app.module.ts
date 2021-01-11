@@ -29,6 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     NgbModule
   ],
   providers: [AuthGuard, AuthService],

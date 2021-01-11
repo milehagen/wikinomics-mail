@@ -1,14 +1,14 @@
 <div class="jumbotron d-flex align-items-center min-vh-100">
   <div class="container text-center">
-    <div *ngIf="!showInfo" @fade>
+    <div *ngIf="!showInfo" @fadeIn>
       <div>
         <h1>Hei</h1>
         <p>Velkommen til Wikinomics</p>
         <button class="btn btn-dark" (click)="ShowInfo()">Hva er Wikinomics?</button>
       </div>
     </div>
-    <div *ngIf="showInfo" @fade> 
-      <div *ngIf="!showRegister" @fade>
+    <div *ngIf="showInfo" @fadeIn> 
+      <div *ngIf="!showRegister" @fadeIn>
         <p class="text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
           pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
@@ -24,7 +24,7 @@
         </p>
         <button class="btn btn-dark" (click)="ShowRegisterField()">Registrer mail</button>
       </div>
-      <div *ngIf="showRegister" @fade>
+      <div *ngIf="showRegister" @fadeIn>
         <input type="text" class="form-control" style="width: 70%; margin: auto;" [(ngModel)] ="email" placeholder="Skriv inn email"/>
         <button type="button" class="btn btn-dark" (click) ="addEmailToDb(email)">Send inn</button>
         <div>

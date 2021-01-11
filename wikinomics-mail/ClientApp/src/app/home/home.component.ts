@@ -8,7 +8,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.css' ],
   animations: [
-    trigger('fade', [
+    trigger('fadeIn', [
       transition('void => *', [
         style({transform: 'translateY(-100%)', opacity: 0}),
         animate(500)
