@@ -3,6 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Mail } from '../Mail';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 
 @Component({
@@ -10,13 +11,13 @@ import { Mail } from '../Mail';
 })
 export class MailModal {
   public mail: Mail;
-  public test: String;
+  public htmlString: SafeHtml;
 
 
-  constructor(public modal: NgbActiveModal, private _http: HttpClient) {
+  constructor(public modal: NgbActiveModal, private _http: HttpClient, private domSanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
-    this.test = "<h2>hello</h2>";
+    this.htmlString = this.domSanitizer.bypassSecurityTrustHtml(this.mail.body);
   }
 }

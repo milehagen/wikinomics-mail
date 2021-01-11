@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace wikinomics_mail.Controllers
     {
         private readonly IMailRepository _db;
         private readonly ILogger<MailController> _log;
+        private const string _loggedIn = "";
 
         public MailController(IMailRepository db, ILogger<MailController> log)
         {
@@ -31,10 +33,9 @@ namespace wikinomics_mail.Controllers
 
 
 
-
         [HttpPost("/SendMail")]
         [Route("SendMail")]
-        public async Task<ActionResult> SendMailAsync(Mail mail)
+        public async Task<ActionResult> SendMail(Mail mail)
         {
             if (ModelState.IsValid)
             {

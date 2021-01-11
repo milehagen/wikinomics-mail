@@ -17,6 +17,7 @@ export class AdminComponent {
   public emailForm: FormGroup;
   public allMails: Array<Mail>;
   public sendTest: boolean;
+  public liveMailPreviewToggle: boolean;
   public feedback: string;
 
 
@@ -36,7 +37,7 @@ export class AdminComponent {
     ]
   }
 
-  constructor(private _http: HttpClient, private fb: FormBuilder, private modalSerivce: NgbModal, @Inject(DOCUMENT) private document: Document, private router: Router) {
+  constructor(private _http: HttpClient, private fb: FormBuilder, private modalSerivce: NgbModal, private router: Router) {
     this.emailForm = fb.group(this.formValidation);
   }
 
@@ -56,6 +57,15 @@ export class AdminComponent {
         }
       })
   }
+
+  onLogOut() {
+    this._http.get("api/Admin/LogOut")
+      .subscribe(response => {
+        this.router.navigate(['/login']);
+      });
+  }
+
+
 
   //Gets previously sent mails
   getMails() {
@@ -105,6 +115,7 @@ export class AdminComponent {
         }
       );
   }
+
 
   //Logs the mail just sent to the list on the bottom of the page
   logMail(mail: Mail) {

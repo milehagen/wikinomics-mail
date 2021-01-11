@@ -1,13 +1,19 @@
 <div class="container">
-  <h1>Admin panel</h1>
+  <div class="relativeDiv">
+    <h2>Send mails to mailing list</h2>
+    <p>
+      Here you can send mails to the entire mailing list.<br />
+      A live preview will appear as you type to give you an indication of what it will look like.<br />
+      You can also try sending a test mail.
+    </p>
+
+    <p id="message">{{feedback}}</p>
+
+    <button type="button" class="btn btn-danger" (click)="onLogOut()" style="position: absolute; top: 5px; right: 0px;">Log out</button>
+  </div>
 
 
-  <h2>Send mails to mailing list</h2>
-  <p>Here you can send mails to the entire mailing list.<br />
-  You can also try sending a test mail to a single email to see what it will look like</p>
-
-  <p id="message">{{feedback}}</p>
-
+  <br />
 
   <form [formGroup]="emailForm">
     <div class="form-group">
@@ -22,10 +28,27 @@
       <small id="emailBodyHelp" class="form-text text-muted">This field accepts HTML</small>
     </div>
 
+    <br />
+    <hr>
+    <br />
 
+    <div>
+      <h4>Live preview of mail body</h4>
+      <p>Below you will see a live preview of the mail, with html styling.</p>
+      <button type="button" class="btn btn-secondary" (click)="liveMailPreviewToggle = !liveMailPreviewToggle">Toggle preview</button>
+      <br />
+
+      <div class="htmlPreview" [innerHTML]="emailForm.value.emailBody" *ngIf="liveMailPreviewToggle"></div>
+    </div>
+
+
+
+    <br />
+    <hr>
     <br />
 
     <div class="form-group">
+      <h4>Test mail</h4>
       <p>Wanna send the email to a single address to test what it looks like before sending it to everyone?</p>
       <label for="emailTestAddress">Email test address:</label><br />
 
@@ -35,21 +58,34 @@
             <input type="checkbox" aria-label="Email test" [(ngModel)]="sendTest" (change)="sendTestToggle()" [ngModelOptions]="{standalone: true}">
           </div>
         </div>
-        <input type="text" class="form-control" formControlName="emailTestAddress" placeholder="Email to send test to...">
+        <input type="text" class="form-control" formControlName="emailTestAddress" placeholder="Address to send test to...">
+        <div class="input-group-append">
+          <button type="button" class="btn btn-warning" style="float: right;" (click)="onSendMail()" [disabled]="!emailForm.valid || !sendTest">Send Test Mail</button>
+        </div>
       </div>
-      <button type="button" class="btn btn-warning" (click)="onSendMail()" [disabled]="!emailForm.valid || !sendTest">Send Test Mail</button>
     </div>
 
   </form>
 
+  <br />
+  <hr>
+  <br />
+
   <div class="form-group">
-    <button type="button" class="btn btn-primary" (click)="onSendMail()" [disabled]="!emailForm.valid || sendTest">Send</button>
+    <h4>Send to mailing list</h4>
+    <p>
+      When you are done, you can send to the mailing list.<br />
+      <b style="color: red;">Remember, this sends to everyone on the list!</b>
+    </p>
+    <button type="button" class="btn btn-primary" (click)="onSendMail()" [disabled]="!emailForm.valid || sendTest">Send to mailing list</button>
   </div>
 
 
+  <br />
+  <hr>
+  <br />
 
   <h2>Previously sent mails</h2>
-  <p>Previously sent mails by date, click to expand</p>
 
   <table class="table table-sm table-hover">
     <tr>

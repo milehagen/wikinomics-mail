@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { MailModal } from './admin/modal/mailModal';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,14 +27,10 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'admin', component: AdminComponent, pathMatch: 'full' },
-      { path: 'login', component: LoginComponent, pathMatch: 'full' },
-    ]),
+    AppRoutingModule,
     NgbModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent],
   entryComponents: [MailModal]
 })

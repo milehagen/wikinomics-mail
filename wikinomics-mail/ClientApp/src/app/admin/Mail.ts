@@ -1,5 +1,3 @@
-import { MailAddress } from "../home/MailAddress";
-
 export class Mail {
   id: number;
   address: string;

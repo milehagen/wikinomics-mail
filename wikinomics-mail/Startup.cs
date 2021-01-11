@@ -36,6 +36,8 @@ namespace wikinomics_mail
                 options.Cookie.IsEssential = true;
             });
 
+            services.AddDistributedMemoryCache();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
-import { DOCUMENT } from '@angular/common';
+import { Router, NavigationExtras } from '@angular/router';
+import { Admin } from '../admin/Admin';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +12,11 @@ import { DOCUMENT } from '@angular/common';
 
 export class LoginComponent {
   public loginForm: FormGroup;
+  public allowedAccess: boolean;
 
-  constructor(private _http: HttpClient, private fb: FormBuilder, @Inject(DOCUMENT) private document: Document) {
+  constructor(private _http: HttpClient, private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = fb.group(this.formValidation);
+    this.allowedAccess = this.authService.isRouteAuthenticated();
   }
 
   formValidation = {
@@ -26,17 +30,48 @@ export class LoginComponent {
 
 
   ngOnInit() {
-    this.checkLogIn();
+    //this.checkLogIn();
   }
 
+  //Allows access to admin route
+  allowRouteAccess(): void {
+    this.authService.setIsAuthenticated(true);
+    console.log("access allowed");
+    this.allowedAccess = this.authService.isRouteAuthenticated();
+  }
+
+
   //Checks if you logged in, if you are you are sent to admin page
+  /*
   checkLogIn() {
-    this._http.get("api/Admin", { responseType: 'text' })
+    this._http.get("api/Admin")
       .subscribe(response => {
-        if (response == "Logged in") {
-          this.document.location.href = '/admin';
+        if (!response) {
+          this.router.navigate(['/login']);
+        }
+        else {
+          this.router.navigate(['/admin']);
         }
       })
+  }
+  */
+
+  //Calls login
+  onLogIn() {
+    var admin = new Admin();
+    admin.username = this.loginForm.value.username;
+    admin.password = this.loginForm.value.password;
+
+    this._http.post("api/Admin", admin)
+      .subscribe(response => {
+        if (response) {
+          console.log(response);
+          this.allowRouteAccess();
+          this.router.navigate(['/admin']);
+        }
+      },
+        error => console.log(error),
+      );
   }
 
 }

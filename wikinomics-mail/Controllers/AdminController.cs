@@ -16,7 +16,7 @@ namespace wikinomics_mail.Controllers
     {
         private readonly IAdminRepository _db;
         private readonly ILogger<AdminController> _log;
-        private const string _loggedIn = "";
+        private const string _loggedIn = "";//LOOK AT THIS
 
         public AdminController(IAdminRepository db, ILogger<AdminController> log)
         {
@@ -24,6 +24,7 @@ namespace wikinomics_mail.Controllers
             _log = log;
         }
 
+        [HttpPost]
         public async Task<ActionResult> LogIn(Admin admin)
         {
             if (ModelState.IsValid)
@@ -52,11 +53,11 @@ namespace wikinomics_mail.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggedIn)))
             {
-                return Unauthorized("Not logged in");
+                return Ok(false);
             }
             else
             {
-                return Ok("Logged in");
+                return Ok(true);
             }
         }
     }

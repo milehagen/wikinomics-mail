@@ -32,8 +32,12 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\admin\admin.component.ts" />
+    <None Remove="ClientApp\src\app\admin\Admin.ts" />
     <None Remove="ClientApp\src\app\admin\Mail.ts" />
     <None Remove="ClientApp\src\app\admin\modal\mailModal.ts" />
+    <None Remove="ClientApp\src\app\app-routing.module.ts" />
+    <None Remove="ClientApp\src\app\auth-guard.service.ts" />
+    <None Remove="ClientApp\src\app\auth.service.ts" />
     <None Remove="ClientApp\src\app\home\MailAddress.ts" />
     <None Remove="ClientApp\src\app\login\login.component.ts" />
   </ItemGroup>

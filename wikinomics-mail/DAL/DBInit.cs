@@ -25,7 +25,7 @@ namespace wikinomics_mail.DAL
                 DateTime date1 = new DateTime(2021, 08, 01);
                 DateTime date2 = new DateTime(2021, 06, 01);
 
-                Mail mail1 = new Mail { Date = date1, Titel = "Hello and welcome to my dota2 stream", Body = "The kdkdkdkdkkdkdkdkdkdkdkdkkdkdkdkdkdkdkkdkdkdk" };
+                Mail mail1 = new Mail { Date = date1, Titel = "Hello and welcome to my dota2 stream", Body = "<h1>Title test</h1> <br/> <b>Bold and beautiful</b>" };
                 Mail mail2 = new Mail { Date = date2, Titel = "Kjører omvei for å kjøpe sigaretter", Body = "The kdkdkdkdkkdkdkdkdkdkdkdkkdkdkdkdkdkdkkdkdkdk" };
 
                 
