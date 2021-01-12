@@ -5,7 +5,7 @@ export let slide = trigger('slide', [
     
     transition(':enter', [
       style({transform: 'translateY(100px)', opacity: 0}),
-      animate('400ms 600ms')
+      animate('400ms 500ms')
     ]),
 
     transition(':leave', [
