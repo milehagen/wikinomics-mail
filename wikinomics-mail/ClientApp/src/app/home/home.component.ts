@@ -1,22 +1,14 @@
 import { Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MailAddress } from './MailAddress';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { slide } from '../animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.css' ],
   animations: [
-    trigger('slide', [
-
-      state('void', style({opacity: 0})),
-
-      transition('void => *', [
-        style({transform: 'translateY(100%)'}),
-        animate(500)
-      ])
-    ])
+    slide
   ]
 })
 export class HomeComponent {
