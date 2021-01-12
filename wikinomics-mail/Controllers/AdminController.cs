@@ -24,7 +24,8 @@ namespace wikinomics_mail.Controllers
             _log = log;
         }
 
-        [HttpPost]
+        [HttpPost("/LogIn")]
+        [Route("LogIn")]
         public async Task<ActionResult> LogIn(Admin admin)
         {
             if (ModelState.IsValid)

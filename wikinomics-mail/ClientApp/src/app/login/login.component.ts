@@ -16,20 +16,29 @@ import { slide } from '../animations';
 export class LoginComponent {
   public loginForm: FormGroup;
   loggedIn: boolean;
-  public uniqueId: string;
 
-  constructor(private _http: HttpClient, private router: Router) {
+  constructor(private _http: HttpClient, private fb: FormBuilder, private router: Router) {
+    this.loginForm = fb.group(this.formValidation);
+  }
+
+  formValidation = {
+    username: [
+      null, Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])
+    ],
+    password: [
+      null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(128)])
+    ]
   }
 
 
   ngOnInit() {
-    //this.checkLogIn();
+    this.checkLogIn();
   }
 
   //Checks if you logged in, if you are you are sent to admin page
-  /*
+
   checkLogIn() {
-    this._http.get("api/Admin")
+    this._http.get("api/Admin/CheckLogIn")
       .subscribe(response => {
         if (!response) {
           this.router.navigate(['/login']);
@@ -39,10 +48,23 @@ export class LoginComponent {
         }
       })
   }
-  */
 
-  unsubscribe() {
+  //Calls login
+  onLogIn() {
+    var admin = new Admin();
+    admin.username = this.loginForm.value.username;
+    admin.password = this.loginForm.value.password;
 
+    this._http.post("api/Admin/LogIn", admin)
+      .subscribe(response => {
+        if (response) {
+          console.log(response);
+          this.loggedIn = true;
+          this.router.navigate(['/admin']);
+        }
+      },
+        error => console.log(error),
+      );
   }
 
 }
