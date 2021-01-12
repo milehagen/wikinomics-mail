@@ -9,108 +9,111 @@
   </ng-template>
 </nav>
 
-<div class="container" *ngIf="loggedIn">
-  <div class="relativeDiv">
-    <h2>Send mails to mailing list</h2>
-    <p>
-      Here you can send mails to the entire mailing list.<br />
-      A live preview will appear as you type to give you an indication of what it will look like.<br />
-      You can also try sending a test mail.
-    </p>
 
-    <p id="message">{{feedback}}</p>
-
-    <button type="button" class="btn btn-danger" (click)="onLogOut()" style="position: absolute; top: 5px; right: 0px;">Log out</button>
-  </div>
-
-
-  <br />
-
-  <form [formGroup]="emailForm">
-    <div class="form-group">
-      <label for="emailTitel">Email Titel:</label><br />
-      <input type="text" class="form-control" id="emailTitel" formControlName="emailTitel" /> <br />
+<div class="jumbotron min-vh-100">
+  <div class="container" *ngIf="loggedIn">
+    <div class="relativeDiv">
+      <h2>Send mails to mailing list</h2>
+      <p>
+        Here you can send mails to the entire mailing list.<br />
+        A live preview will appear as you type to give you an indication of what it will look like.<br />
+        You can also try sending a test mail.
+      </p>
+  
+      <p id="message">{{feedback}}</p>
+  
+      <button type="button" class="btn btn-danger" (click)="onLogOut()" style="position: absolute; top: 5px; right: 0px;">Log out</button>
     </div>
-
-
-    <div class="form-group">
-      <label for="emailBody">Email Body:</label><br />
-      <textarea class="form-control" id="emailBody" formControlName="emailBody"></textarea>
-      <small id="emailBodyHelp" class="form-text text-muted">This field accepts HTML</small>
-    </div>
-
+  
+  
     <br />
-    <hr>
-    <br />
-
-    <div>
-      <h4>Live preview of mail body</h4>
-      <p>Below you will see a live preview of the mail, with html styling.</p>
-      <button type="button" class="btn btn-secondary" (click)="liveMailPreviewToggle = !liveMailPreviewToggle">Toggle preview</button>
+  
+    <form [formGroup]="emailForm">
+      <div class="form-group">
+        <label for="emailTitel">Email Titel:</label><br />
+        <input type="text" class="form-control" id="emailTitel" formControlName="emailTitel" /> <br />
+      </div>
+  
+  
+      <div class="form-group">
+        <label for="emailBody">Email Body:</label><br />
+        <textarea class="form-control" id="emailBody" formControlName="emailBody"></textarea>
+        <small id="emailBodyHelp" class="form-text text-muted">This field accepts HTML</small>
+      </div>
+  
       <br />
-
-      <div class="htmlPreview" [innerHTML]="emailForm.value.emailBody" *ngIf="liveMailPreviewToggle"></div>
-    </div>
-
-
-
-    <br />
-    <hr>
-    <br />
-
-    <div class="form-group">
-      <h4>Test mail</h4>
-      <p>Wanna send the email to a single address to test what it looks like before sending it to everyone?</p>
-      <label for="emailTestAddress">Email test address:</label><br />
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <input type="checkbox" aria-label="Email test" [(ngModel)]="sendTest" (change)="sendTestToggle()" [ngModelOptions]="{standalone: true}">
+      <hr>
+      <br />
+  
+      <div>
+        <h4>Live preview of mail body</h4>
+        <p>Below you will see a live preview of the mail, with html styling.</p>
+        <button type="button" class="btn btn-secondary" (click)="liveMailPreviewToggle = !liveMailPreviewToggle">Toggle preview</button>
+        <br />
+  
+        <div class="htmlPreview" [innerHTML]="emailForm.value.emailBody" *ngIf="liveMailPreviewToggle"></div>
+      </div>
+  
+  
+  
+      <br />
+      <hr>
+      <br />
+  
+      <div class="form-group">
+        <h4>Test mail</h4>
+        <p>Wanna send the email to a single address to test what it looks like before sending it to everyone?</p>
+        <label for="emailTestAddress">Email test address:</label><br />
+  
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" aria-label="Email test" [(ngModel)]="sendTest" (change)="sendTestToggle()" [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+          <input type="text" class="form-control" formControlName="emailTestAddress" placeholder="Address to send test to...">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-warning" style="float: right;" (click)="onSendMail()" [disabled]="!emailForm.valid || !sendTest">Send Test Mail</button>
           </div>
         </div>
-        <input type="text" class="form-control" formControlName="emailTestAddress" placeholder="Address to send test to...">
-        <div class="input-group-append">
-          <button type="button" class="btn btn-warning" style="float: right;" (click)="onSendMail()" [disabled]="!emailForm.valid || !sendTest">Send Test Mail</button>
-        </div>
       </div>
+  
+    </form>
+  
+    <br />
+    <hr>
+    <br />
+  
+    <div class="form-group">
+      <h4>Send to mailing list</h4>
+      <p>
+        When you are done, you can send to the mailing list.<br />
+        <b style="color: red;">Remember, this sends to everyone on the list!</b>
+      </p>
+      <button type="button" class="btn btn-primary" (click)="onSendMail()" [disabled]="!emailForm.valid || sendTest">Send to mailing list</button>
     </div>
-
-  </form>
-
-  <br />
-  <hr>
-  <br />
-
-  <div class="form-group">
-    <h4>Send to mailing list</h4>
-    <p>
-      When you are done, you can send to the mailing list.<br />
-      <b style="color: red;">Remember, this sends to everyone on the list!</b>
-    </p>
-    <button type="button" class="btn btn-primary" (click)="onSendMail()" [disabled]="!emailForm.valid || sendTest">Send to mailing list</button>
+  
+  
+    <br />
+    <hr>
+    <br />
+  
+    <h2>Previously sent mails</h2>
+  
+    <table class="table table-sm table-hover">
+      <tr>
+        <th>Date</th>
+        <th>Email Title</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let mail of allMails">
+        <td>{{mail.date}}</td>
+        <td>{{mail.titel}}</td>
+        <td><button class="btn btn-primary" (click)="expandMail(mail)">View</button></td>
+      </tr>
+  
+  
+    </table>
+  
   </div>
-
-
-  <br />
-  <hr>
-  <br />
-
-  <h2>Previously sent mails</h2>
-
-  <table class="table table-sm table-hover">
-    <tr>
-      <th>Date</th>
-      <th>Email Title</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let mail of allMails">
-      <td>{{mail.date}}</td>
-      <td>{{mail.titel}}</td>
-      <td><button class="btn btn-primary" (click)="expandMail(mail)">View</button></td>
-    </tr>
-
-
-  </table>
-
 </div>
