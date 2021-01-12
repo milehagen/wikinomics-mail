@@ -143,7 +143,6 @@ export class AdminComponent {
     } else {
       this.feedback = message;
     }
-
   }
 
   //Opens modal with mail

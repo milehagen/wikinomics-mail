@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default position-fixed">
+  <button class="btn btn-link" [routerLink]="['/home']">Wikinomics</button>
+
+  <button class="btn btn-link" [routerLink]="['/login']">Admin</button>
+</nav>
+
+<div class="jumbotron min-vh-100">
+  <div class="container" @slide>
+    <div class="form-group">
+      <h2>Unsubscribe from mailinglist</h2>
+
+      <br />
+
+      <i>Sorry to see you leave</i>
+
+      <br />
+
+      <b>{{feedback}}</b>
+
+      <br/>
+
+      <button type="button" class="btn btn-primary" (click)="unsubscribe()">Unsubscribe</button>
+    </div>
+  </div>
+</div>

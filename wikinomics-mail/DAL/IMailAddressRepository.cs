@@ -12,5 +12,7 @@ namespace wikinomics_mail.DAL
         String MakeHash(String inp);
         String GetSubString(String inp);
         Task<List<MailAddress>> GetAll();
+
+        Task<bool> Unsubscribe(String UniqueID);
     }
 }

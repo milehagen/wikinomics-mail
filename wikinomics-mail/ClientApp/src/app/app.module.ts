@@ -12,6 +12,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MailModal } from './admin/modal/mailModal';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     AdminComponent,
     MailModal,
-    LoginComponent
+    LoginComponent,
+    UnsubscribeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

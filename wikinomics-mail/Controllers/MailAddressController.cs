@@ -46,5 +46,18 @@ namespace wikinomics_mail.Controllers
             List<MailAddress> allMails = await _db.GetAll();
             return Ok(allMails);
         }
+
+        [HttpDelete("unsubscribe/{UniqueID}")]
+        [Route("unsubscribe/{UniqueID}")]
+        public async Task<ActionResult> Unsubscribe(string UniqueID) 
+        {
+            System.Diagnostics.Debug.WriteLine(UniqueID);
+            var resultOK = await _db.Unsubscribe(UniqueID);
+            if (!resultOK)
+            {
+                return NotFound("Could not unsubscribe from mailing list");
+            }
+            return Ok(true);
+        }
     }
 }

@@ -4,6 +4,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    //canActivate: [AuthGuard],
+  },
+  {
+    path: 'unsubscribe',
+    component: UnsubscribeComponent,
   },
   {
     path: '**',
