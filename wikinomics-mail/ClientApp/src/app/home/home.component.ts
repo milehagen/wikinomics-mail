@@ -1,19 +1,14 @@
 import { Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MailAddress } from './MailAddress';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { slide } from '../animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.css' ],
   animations: [
-    trigger('fade', [
-      transition('void => *', [
-        style({transform: 'translateY(-100%)', opacity: 0}),
-        animate(500)
-      ])
-    ])
+    slide
   ]
 })
 export class HomeComponent {
@@ -29,16 +24,17 @@ export class HomeComponent {
     this.getEmailAddress();
   }
 
-  
-
+  // Shows/hide info field
   ShowInfo() {
     this.showInfo = this.showInfo ? false : true;
   }
 
+  // Shows/hide registration field
   ShowRegisterField() {
     this.showRegister = this.showRegister ? false : true;
   }
 
+  // Shows main page, hides other
   BackToMain() {
     this.showInfo = false;
     this.showRegister = false;
@@ -51,7 +47,7 @@ export class HomeComponent {
     mailAddress.address = email;
 
     if (this.checkIfRegistered(mailAddress.address)) {
-      error => window.alert("E-posten er allerede registrert");
+      window.alert("E-posten er allerede registrert");
     } else {
       this.http.post("api/MailAddress", mailAddress)
         .subscribe(retur => {
