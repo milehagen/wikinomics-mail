@@ -47,7 +47,7 @@ export class HomeComponent {
     mailAddress.address = email;
 
     if (this.checkIfRegistered(mailAddress.address)) {
-      error => window.alert("E-posten er allerede registrert");
+      window.alert("E-posten er allerede registrert");
     } else {
       this.http.post("api/MailAddress", mailAddress)
         .subscribe(retur => {
