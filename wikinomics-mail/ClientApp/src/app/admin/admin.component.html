@@ -1,6 +1,12 @@
-<nav class="navbar navbar-default position-fixed"> 
-  <button class="btn btn-link"><a [routerLink]="['/home']">Wikinomics</a></button>
-  <button class="btn btn-link"><a [routerLink]="['/login']">Admin</a></button>
+<nav class="navbar navbar-default position-fixed">
+  <button class="btn btn-link" [routerLink]="['/home']">Wikinomics</button>
+
+  <ng-container *ngIf="loggedIn; else elseBlock">
+    <button class="btn btn-link" [routerLink]="['/admin']">Admin</button>
+  </ng-container>
+  <ng-template #elseBlock>
+    <button class="btn btn-link" [routerLink]="['/login']">Admin</button>
+  </ng-template>
 </nav>
 
 <div class="container" *ngIf="loggedIn">

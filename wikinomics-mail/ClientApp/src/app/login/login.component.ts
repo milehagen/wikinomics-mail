@@ -11,6 +11,7 @@ import { Admin } from '../admin/Admin';
 
 export class LoginComponent {
   public loginForm: FormGroup;
+  loggedIn: boolean;
 
   constructor(private _http: HttpClient, private fb: FormBuilder, private router: Router) {
     this.loginForm = fb.group(this.formValidation);
@@ -55,6 +56,7 @@ export class LoginComponent {
       .subscribe(response => {
         if (response) {
           console.log(response);
+          this.loggedIn = true;
           this.router.navigate(['/admin']);
         }
       },
