@@ -61,6 +61,28 @@ namespace wikinomics_mail.DAL
                 return false;
             }
         }
+
+        //Unsubscribes a user
+        public async Task<bool> Unsubscribe(string UniqueID)
+        {
+            try
+            {
+                MailAddress address = await _db.MailAddresses.FirstOrDefaultAsync(a => a.UniqueId == UniqueID);
+
+                if(address != null)
+                {
+                    _db.MailAddresses.Remove(address);
+                    await _db.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         //Hash a substring
         public String MakeHash(String inp)
         {
