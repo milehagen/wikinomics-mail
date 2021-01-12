@@ -3,7 +3,6 @@ import { Component, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 import { Admin } from '../admin/Admin';
-import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +11,9 @@ import { AuthService } from '../auth.service';
 
 export class LoginComponent {
   public loginForm: FormGroup;
-  public allowedAccess: boolean;
 
-  constructor(private _http: HttpClient, private fb: FormBuilder, private router: Router, private authService: AuthService) {
+  constructor(private _http: HttpClient, private fb: FormBuilder, private router: Router) {
     this.loginForm = fb.group(this.formValidation);
-    this.allowedAccess = this.authService.isRouteAuthenticated();
   }
 
   formValidation = {
@@ -32,14 +29,6 @@ export class LoginComponent {
   ngOnInit() {
     //this.checkLogIn();
   }
-
-  //Allows access to admin route
-  allowRouteAccess(): void {
-    this.authService.setIsAuthenticated(true);
-    console.log("access allowed");
-    this.allowedAccess = this.authService.isRouteAuthenticated();
-  }
-
 
   //Checks if you logged in, if you are you are sent to admin page
   /*
@@ -66,7 +55,6 @@ export class LoginComponent {
       .subscribe(response => {
         if (response) {
           console.log(response);
-          this.allowRouteAccess();
           this.router.navigate(['/admin']);
         }
       },

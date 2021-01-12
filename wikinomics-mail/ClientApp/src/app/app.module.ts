@@ -11,8 +11,6 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { MailModal } from './admin/modal/mailModal';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './auth-guard.service';
-import { AuthService } from './auth.service';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -31,7 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     NgbModule
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [MailModal]
 })

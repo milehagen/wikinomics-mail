@@ -36,6 +36,93 @@ namespace wikinomics_mail.DAL
         }
 
 
+        public async Task<bool> TestMail(Mail mail)
+        {
+            var fromAddress = new System.Net.Mail.MailAddress("NORWAY.ITPE3200@gmail.com", "NOR-WAY");
+            var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
+            var toAddress = new System.Net.Mail.MailAddress("fail@fail.com");
+
+            SmtpClient MailClient = new SmtpClient("smtp.gmail.com", 587);
+            MailClient.EnableSsl = true;
+            MailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            MailClient.UseDefaultCredentials = false;
+            MailClient.Credentials = new System.Net.NetworkCredential(fromAddress.Address, fromPassword);
+            MailClient.Timeout = 20000;
+
+
+            //If Address is NOT empty, it's a test
+            if (mail.Address != null)
+            {
+                try
+                {
+                    using (MailMessage emailMessage = new MailMessage())
+                    {
+                        toAddress = new System.Net.Mail.MailAddress(mail.Address);
+                        emailMessage.To.Add(toAddress);
+                        emailMessage.From = fromAddress;
+                        emailMessage.Subject = mail.Titel;
+                        emailMessage.Body = mail.Body;
+                        emailMessage.Priority = MailPriority.Normal;
+                        emailMessage.IsBodyHtml = true;
+
+                        try
+                        {
+                            await MailClient.SendMailAsync(emailMessage);
+                            return true;
+                        }
+                        catch (Exception e)
+                        {
+                            System.Diagnostics.Debug.WriteLine(e);
+                            return false;
+                        }
+                    }
+ 
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            //Else it's for the mailing list
+            else
+            {
+                foreach (var obj in _db.MailAddresses)
+                {
+                    string unsubscribeURL = "<a href='https://localhost:44328/unsubscribe'?mail=" + obj.UniqueId;
+                    try
+                    {
+                        using (MailMessage emailMessage = new MailMessage())
+                        {
+                            toAddress = new System.Net.Mail.MailAddress(mail.Address);
+                            emailMessage.To.Add(toAddress);
+                            emailMessage.From = fromAddress;
+                            emailMessage.Subject = mail.Titel;
+                            emailMessage.Body = mail.Body + unsubscribeURL;
+                            emailMessage.Priority = MailPriority.Normal;
+                            emailMessage.IsBodyHtml = true;
+
+                            try
+                            {
+                                await MailClient.SendMailAsync(emailMessage);
+                            }
+                            catch (Exception e)
+                            {
+                                System.Diagnostics.Debug.WriteLine(e);
+                                return false;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+            }
+            MailClient.Dispose();
+            return true;
+        }
+
+
         public async Task<bool> SendMail(Mail mail)
         {
             using (MailMessage emailMessage = new MailMessage())

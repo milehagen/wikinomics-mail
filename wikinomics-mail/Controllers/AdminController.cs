@@ -43,12 +43,15 @@ namespace wikinomics_mail.Controllers
             return BadRequest("Wrong input validation");
         }
 
+        [HttpGet("/LogOut")]
+        [Route("LogOut")]
         public void LogOut()
         {
             HttpContext.Session.SetString(_loggedIn, "");
         }
 
-        [HttpGet]
+        [HttpGet("/CheckLogIn")]
+        [Route("CheckLogIn")]
         public ActionResult CheckLogIn()
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggedIn)))
@@ -60,5 +63,63 @@ namespace wikinomics_mail.Controllers
                 return Ok(true);
             }
         }
+
+        [HttpGet("/GetAll")]
+        [Route("GetAll")]
+        public async Task<ActionResult> GetAll()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggedIn)))
+            {
+                return Unauthorized("Ikke innlogget");
+            }
+            List<Mail> allMails = await _db.GetAll();
+            return Ok(allMails);
+        }
+
+
+
+        [HttpPost("/SendMail")]
+        [Route("SendMail")]
+        public async Task<ActionResult> SendMail(Mail mail)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggedIn)))
+            {
+                return Unauthorized("Ikke innlogget");
+            }
+
+            if (ModelState.IsValid)
+            {
+                var resultOK = await _db.SendMail(mail);
+                if (!resultOK)
+                {
+                    return BadRequest("Mail could not be sent");
+                }
+                return Ok("Mail sent");
+            }
+            return BadRequest("Wrong input validation");
+        }
+
+
+        [HttpPost("/LogMail")]
+        [Route("LogMail")]
+        public async Task<ActionResult> LogMail(Mail mail)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggedIn)))
+            {
+                return Unauthorized("Ikke innlogget");
+            }
+
+            if (ModelState.IsValid)
+            {
+                var resultOK = await _db.LogMail(mail);
+                if (!resultOK)
+                {
+                    return BadRequest("Mail could not be logged");
+                }
+                return Ok("Mail logged");
+            }
+            return BadRequest("Wrong input validation");
+        }
+
     }
 }

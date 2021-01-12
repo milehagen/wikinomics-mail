@@ -1,11 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, RouterModule } from '@angular/router';
 
-import { MailAddress } from '../home/MailAddress';
 import { Mail } from './Mail';
 import { MailModal } from './modal/mailModal';
 
@@ -18,6 +16,7 @@ export class AdminComponent {
   public allMails: Array<Mail>;
   public sendTest: boolean;
   public liveMailPreviewToggle: boolean;
+  public loggedIn: boolean;
   public feedback: string;
 
 
@@ -50,10 +49,13 @@ export class AdminComponent {
 
   //Checks if you logged in, if not you are sent away from admin page
   checkLogIn() {
-    this._http.get("api/Admin")
+    this._http.get("api/Admin/CheckLogIn")
       .subscribe(response => {
         if (!response) {
           this.router.navigate(['/login']);
+        }
+        else {
+          this.loggedIn = true;
         }
       })
   }
@@ -69,16 +71,13 @@ export class AdminComponent {
 
   //Gets previously sent mails
   getMails() {
-    this._http.get<Mail[]>("api/Mail")
+    this._http.get<Mail[]>("api/Admin/GetAll")
       .subscribe(data => {
         this.allMails = data;
       },
         error => console.log(error)
       );
   }
-
-
-
 
   getListStats() {
   }
@@ -96,7 +95,7 @@ export class AdminComponent {
       mail.address = this.emailForm.value.emailTestAddress;
     }
 
-    this._http.post("/api/Mail/SendMail", mail, { responseType: 'text' })
+    this._http.post("/api/Admin/SendMail", mail, { responseType: 'text' })
       .subscribe(response => {
         if (response == "Mail sent") {
           this.MailSentMessage("Mail sent", true);
@@ -119,7 +118,7 @@ export class AdminComponent {
 
   //Logs the mail just sent to the list on the bottom of the page
   logMail(mail: Mail) {
-    this._http.post("api/Mail/LogMail", mail, { responseType: 'text' })
+    this._http.post("api/Admin/LogMail", mail, { responseType: 'text' })
       .subscribe(response => {
       },
       error => console.log(error),
@@ -147,6 +146,7 @@ export class AdminComponent {
 
   }
 
+  //Opens modal with mail
   expandMail(mail: Mail) {
     const modalRef = this.modalSerivce.open(MailModal);
     modalRef.componentInstance.mail = mail;

@@ -9,6 +9,10 @@ code {
   color: #e01a76;
 }
 
+hr {
+    margin: 20px 0px 20px 0px;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -21,5 +25,7 @@ code {
 
 .htmlPreview {
   border: 1px solid;
-  padding: 5px, 0px, 5px, 0px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 0px 5px 0px;
 }
+
