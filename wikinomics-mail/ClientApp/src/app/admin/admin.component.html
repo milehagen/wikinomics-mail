@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default position-fixed"> 
-  <button class="btn btn-link"><a href="../home">Wikinomics</a></button>
-  <button class="btn btn-link"><a href="../login">Admin</a></button>
+  <button class="btn btn-link"><a [routerLink]="['/home']">Wikinomics</a></button>
+  <button class="btn btn-link"><a [routerLink]="['/login']">Admin</a></button>
 </nav>
 
 <div class="container" *ngIf="loggedIn">
