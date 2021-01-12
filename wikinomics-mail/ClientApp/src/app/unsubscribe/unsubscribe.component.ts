@@ -29,15 +29,21 @@ export class UnsubscribeComponent {
     this.route.queryParamMap.subscribe(queryParams => {
       this.uniqueID = queryParams.get("mail");
     })
+    console.log("ID: " + this.uniqueID);
   }
 
   unsubscribe() {
-    this._http.delete("api/Admin/unsubscribe/" + this.uniqueID)
+    this._http.delete("api/MailAddress/unsubscribe/" + this.uniqueID)
       .subscribe(response => {
         if (response) {
           this.feedbackMessage("You are now removed from the mailing list", true)
         }
-      })
+      },
+        error => {
+          console.log(error),
+            this.feedbackMessage("We could not find you in our lists", false);
+        }
+      );
   }
 
   feedbackMessage(message: string, successful: boolean) {
