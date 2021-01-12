@@ -1,10 +1,10 @@
-<nav class="navbar navbar-default position-fixed"> 
-  <button class="btn btn-link"><a href="/home">Wikinomics</a></button>
+<nav class="navbar d-flex justify-content-center position-fixed"> 
+  <button class="btn btn-link" (click)="BackToMain()">Wikinomics</button>
   <button class="btn btn-link"><a href="../login">Admin</a></button>
 </nav>
 
-<div class="jumbotron d-flex align-items-center min-vh-100">
-  <div class="container text-center">
+<div class="jumbotron min-vh-100">
+  <div class="container text-center align-items-center justify-content-center" style="margin: 5rem auto;">
     <div *ngIf="!showInfo" @slide>
       <div>
         <h1>Hei</h1>
