@@ -8,9 +8,12 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.css' ],
   animations: [
-    trigger('fadeIn', [
+    trigger('slide', [
+
+      state('void', style({opacity: 0})),
+
       transition('void => *', [
-        style({transform: 'translateY(-100%)', opacity: 0}),
+        style({transform: 'translateY(100%)'}),
         animate(500)
       ])
     ])
@@ -29,16 +32,17 @@ export class HomeComponent {
     this.getEmailAddress();
   }
 
-  
-
+  // Shows/hide info field
   ShowInfo() {
     this.showInfo = this.showInfo ? false : true;
   }
 
+  // Shows/hide registration field
   ShowRegisterField() {
     this.showRegister = this.showRegister ? false : true;
   }
 
+  // Shows main page, hides other
   BackToMain() {
     this.showInfo = false;
     this.showRegister = false;

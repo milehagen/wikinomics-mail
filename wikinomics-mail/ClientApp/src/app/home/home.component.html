@@ -1,19 +1,19 @@
 <nav class="navbar navbar-default position-fixed"> 
-  <button class="btn btn-link" (click)="BackToMain()">Wikinomics</button>
-  <button class="btn btn-link"><a href="../admin">Admin</a></button>
+  <button class="btn btn-link"><a href="/home">Wikinomics</a></button>
+  <button class="btn btn-link"><a href="../login">Admin</a></button>
 </nav>
 
 <div class="jumbotron d-flex align-items-center min-vh-100">
   <div class="container text-center">
-    <div *ngIf="!showInfo" @fadeIn>
+    <div *ngIf="!showInfo" @slide>
       <div>
         <h1>Hei</h1>
         <p>Velkommen til Wikinomics</p>
         <button class="btn btn-dark" (click)="ShowInfo()">Hva er Wikinomics?</button>
       </div>
     </div>
-    <div *ngIf="showInfo" @fadeIn> 
-      <div *ngIf="!showRegister" @fadeIn>
+    <div *ngIf="showInfo" @slide> 
+      <div *ngIf="!showRegister" @slide>
         <p class="text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
           pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
@@ -28,8 +28,9 @@
           non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
         </p>
         <button class="btn btn-dark" (click)="ShowRegisterField()">Registrer mail</button>
+        <button class="btn btn-danger" (click)="ShowInfo()">Tilbake</button>
       </div>
-      <div *ngIf="showRegister" @fadeIn>
+      <div *ngIf="showRegister" @slide>
         <input type="text" class="form-control" style="width: 70%; margin: auto;" [(ngModel)] ="email" placeholder="Skriv inn email"/>
         <button type="button" class="btn btn-dark" (click) ="addEmailToDb(email)">Send inn</button>
         <div>
@@ -37,8 +38,8 @@
         </div>
         <h1>Hello, world!</h1>
         <input type="text">
+        <button class="btn btn-danger" (click)="ShowRegisterField()">Tilbake</button>
       </div>
     </div>
-    <button (click)="BackToMain()" class="btn btn-danger mt-1">Hovedside</button>
   </div>
 </div>

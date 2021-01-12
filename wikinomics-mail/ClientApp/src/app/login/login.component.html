@@ -1,22 +1,29 @@
-<div class="container">
-  <form [formGroup]="loginForm">
+<nav class="navbar navbar-default position-fixed"> 
+  <button class="btn btn-link"><a href="../home">Wikinomics</a></button>
+  <button class="btn btn-link"><a href="../login">Admin</a></button>
+</nav>
+
+<div class="jumbotron min-vh-100">
+  <div class="container">
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="username">Username:</label><br />
+        <input type="text" class="form-control" id="username" formControlName="username" /> <br />
+      </div>
+
+
+      <div class="form-group">
+        <label for="password">Password:</label><br />
+        <input type="password" class="form-control" id="password" formControlName="password" /> <br />
+      </div>
+
+
+      <br />
+
+    </form>
+
     <div class="form-group">
-      <label for="username">Username:</label><br />
-      <input type="text" class="form-control" id="username" formControlName="username" /> <br />
+      <button type="button" class="btn btn-primary" (click)="onLogIn()" [disabled]="!loginForm.valid">Login</button>
     </div>
-
-
-    <div class="form-group">
-      <label for="password">Password:</label><br />
-      <input type="password" class="form-control" id="password" formControlName="password" /> <br />
-    </div>
-
-
-    <br />
-
-  </form>
-
-  <div class="form-group">
-    <button type="button" class="btn btn-primary" (click)="onLogIn()" [disabled]="!loginForm.valid">Login</button>
   </div>
 </div>
