@@ -3,8 +3,8 @@
   <button class="btn btn-link"><a [routerLink]="['/login']">Admin</a></button>
 </nav>
 
-<div class="jumbotron min-vh-100">
-  <div class="container">
+<div class="jumbotron min-vh-100" >
+  <div class="container" @slide>
     <form [formGroup]="loginForm">
       <div class="form-group">
         <label for="username">Username:</label><br />
