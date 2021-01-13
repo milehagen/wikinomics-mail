@@ -83,7 +83,7 @@ namespace wikinomics_mail.DAL
         }
 
 
-        public async Task<bool> TestMail(Mail mail)
+        public async Task<bool> SendMail(Mail mail)
         {
             var fromAddress = new System.Net.Mail.MailAddress("NORWAY.ITPE3200@gmail.com", "NOR-WAY");
             var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
@@ -135,12 +135,12 @@ namespace wikinomics_mail.DAL
             {
                 foreach (var obj in _db.MailAddresses)
                 {
-                    string unsubscribeURL = "LINK: " + obj.UniqueId;
+                    string unsubscribeURL = "\n <a href=\"https://localhost:44328/unsubscribe?mail=" + obj.UniqueId + ">Unsubscribe</a>";
                     try
                     {
                         using (MailMessage emailMessage = new MailMessage())
                         {
-                            toAddress = new System.Net.Mail.MailAddress(mail.Address);
+                            toAddress = new System.Net.Mail.MailAddress(obj.Address);
                             emailMessage.To.Add(toAddress);
                             emailMessage.From = fromAddress;
                             emailMessage.Subject = mail.Titel;
@@ -154,7 +154,7 @@ namespace wikinomics_mail.DAL
                             }
                             catch (Exception e)
                             {
-                                System.Diagnostics.Debug.WriteLine(e);
+                                System.Diagnostics.Debug.WriteLine(e.StackTrace);
                                 return false;
                             }
                         }
@@ -170,7 +170,7 @@ namespace wikinomics_mail.DAL
         }
 
 
-        public async Task<bool> SendMail(Mail mail)
+        public async Task<bool> SendMailORIGINAL(Mail mail)
         {
             using (MailMessage emailMessage = new MailMessage())
             {
