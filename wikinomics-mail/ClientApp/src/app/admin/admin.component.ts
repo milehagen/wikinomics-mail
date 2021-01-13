@@ -6,10 +6,14 @@ import { Router, RouterModule } from '@angular/router';
 
 import { Mail } from './Mail';
 import { MailModal } from './modal/mailModal';
+import { slide } from '../animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './admin.component.html',
+  animations: [
+    slide
+  ]
 })
 export class AdminComponent {
   public emailForm: FormGroup;
