@@ -13,9 +13,9 @@ import { slide } from '../animations';
 })
 export class HomeComponent {
 
-  showInfo: Boolean = false;
-  showRegister: Boolean = false;
-  public email: String;
+  showInfo: boolean;
+  showRegister: boolean;
+  public email: string;
   public allMailAdresses: Array<MailAddress>;
 
   constructor(private http: HttpClient) { }
