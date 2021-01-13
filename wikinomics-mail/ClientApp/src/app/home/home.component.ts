@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MailAddress } from './MailAddress';
 import { slide } from '../animations';
+import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -12,13 +13,22 @@ import { slide } from '../animations';
   ]
 })
 export class HomeComponent {
-
+  public emailInputForm: FormGroup;
   showInfo: boolean;
   showRegister: boolean;
   public email: string;
   public allMailAdresses: Array<MailAddress>;
+  emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
-  constructor(private http: HttpClient) { }
+  formValidation = {
+    formEmail: [
+      '', Validators.compose([Validators.required, Validators.pattern(this.emailRegex)])
+    ]
+  }
+
+  constructor(private http: HttpClient, private fb: FormBuilder) {
+    this.emailInputForm = fb.group(this.formValidation);
+  }
 
   ngOnInit() {
     this.getEmailAddress();
@@ -41,17 +51,18 @@ export class HomeComponent {
   }
 
   //Adds email to database
-  addEmailToDb(email) {
-
+  addEmailToDb() {
     const mailAddress = new MailAddress();
-    mailAddress.address = email;
+    mailAddress.address = this.emailInputForm.controls.formEmail.value;
+    
 
     if (this.checkIfRegistered(mailAddress.address)) {
       window.alert("E-posten er allerede registrert");
     } else {
       this.http.post("api/MailAddress", mailAddress)
         .subscribe(retur => {
-          console.log("vellykket");
+          window.alert("Registreringen var vellykket");
+          this.emailInputForm.reset();
         },
           error => console.log(error)
         );
@@ -62,7 +73,6 @@ export class HomeComponent {
     this.http.get<MailAddress[]>("api/MailAddress")
       .subscribe(data => {
         this.allMailAdresses = data;
-        console.log(this.allMailAdresses);
       },
         error => console.log(error)
       );
@@ -70,7 +80,7 @@ export class HomeComponent {
 
   //Check if the email already exists in the array, if it return false then the email is unique, if true then it is already registered.
   checkIfRegistered(email: String) {
-    let ok = false;
+    let ok;
     for (let value of this.allMailAdresses) {
       if (email === value.address) {
         ok = true;

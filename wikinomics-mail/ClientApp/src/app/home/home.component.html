@@ -31,14 +31,15 @@
         <button class="btn btn-danger" (click)="ShowInfo()">Tilbake</button>
       </div>
       <div *ngIf="showRegister" @slide>
-        <input type="text" class="form-control" style="width: 70%; margin: auto;" [(ngModel)] ="email" placeholder="Skriv inn email"/>
-        <button type="button" class="btn btn-dark" (click) ="addEmailToDb(email)">Send inn</button>
-        <div>
-          navnet er : {{email}} <br/>
-        </div>
-        <h1>Hello, world!</h1>
-        <input type="text">
-        <button class="btn btn-danger" (click)="ShowRegisterField()">Tilbake</button>
+          <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
+              <input formControlName="formEmail" type="text" class="form-control" style="width: 70%; margin: auto;" placeholder="Skriv inn email" />
+              <br/>
+              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
+                Email is not valid.      
+              </p>
+              <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid">Send inn</button>
+              <button class="btn btn-danger" (click)="ShowRegisterField()">Tilbake</button>
+          </form>
       </div>
     </div>
   </div>
