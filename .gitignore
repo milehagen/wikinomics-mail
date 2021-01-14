@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/wikinomics-mail/Properties/ServiceDependencies/wikinomics-mail20210113150646 - Web Deploy/profile.arm.json
+/wikinomics-mail/Properties/ServiceDependencies/wikinomics-mail20210113153407 - Web Deploy/profile.arm.json
+/wikinomics-mail/.config/dotnet-tools.json

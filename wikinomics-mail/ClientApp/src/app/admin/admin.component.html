@@ -31,13 +31,13 @@
     <form [formGroup]="emailForm">
       <div class="form-group">
         <label for="emailTitel">Email Titel:</label><br />
-        <input type="text" class="form-control" id="emailTitel" formControlName="emailTitel" /> <br />
+        <input type="text" class="form-control cleanText" id="emailTitel" formControlName="emailTitel" /> <br />
       </div>
   
   
       <div class="form-group">
         <label for="emailBody">Email Body:</label><br />
-        <textarea class="form-control" id="emailBody" formControlName="emailBody"></textarea>
+        <textarea class="form-control cleanText" id="emailBody" formControlName="emailBody"></textarea>
         <small id="emailBodyHelp" class="form-text text-muted">This field accepts HTML</small>
       </div>
   
@@ -51,7 +51,7 @@
         <button type="button" class="btn btn-secondary" (click)="liveMailPreviewToggle = !liveMailPreviewToggle">Toggle preview</button>
         <br />
   
-        <div class="htmlPreview" [innerHTML]="emailForm.value.emailBody" *ngIf="liveMailPreviewToggle"></div>
+        <div class="htmlPreview cleanText" [innerHTML]="emailForm.value.emailBody" *ngIf="liveMailPreviewToggle"></div>
       </div>
   
   

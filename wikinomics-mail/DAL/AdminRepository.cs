@@ -169,7 +169,7 @@ namespace wikinomics_mail.DAL
             return true;
         }
 
-
+        //Old, not really in use
         public async Task<bool> SendMailORIGINAL(Mail mail)
         {
             using (MailMessage emailMessage = new MailMessage())
