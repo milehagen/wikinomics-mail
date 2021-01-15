@@ -19,7 +19,7 @@ import { Statistic } from '../Models/Statistic';
 export class AdminComponent {
   public emailForm: FormGroup;
   public allMails: Array<Mail>;
-  public listStats: Statistic;
+  public listStats = new Statistic();
 
   public sendTest: boolean;
   public liveMailPreviewToggle: boolean;
@@ -158,7 +158,8 @@ export class AdminComponent {
 
   //Opens modal with mail
   expandMail(mail: Mail) {
-    const modalRef = this.modalSerivce.open(MailModal);
+    //Custom modal class is found in global css
+    const modalRef = this.modalSerivce.open(MailModal, { windowClass: "customModalClass" });
     modalRef.componentInstance.mail = mail;
   }
 

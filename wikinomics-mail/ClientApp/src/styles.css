@@ -39,6 +39,10 @@ hr {
     font-family: 'Arial', sans-serife 
 }
 
+.customModalClass .modal-dialog {
+  max-width: 800px;
+}
+
 
 * {
   font-family: 'Montserrat', sans-serif;

@@ -1,10 +1,9 @@
 
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title"></h4>
+      <h4 class="modal-title" id="modal-basic-title">Date: {{mail.date}}</h4>
     </div>
     <div class="modal-body">
-      <h4>Date: {{mail.date}}</h4>
 
       <label for="titel">Titel:</label>
       <textarea class="form-control" id="titel" [disabled]="true">{{mail.titel}}</textarea>
@@ -21,5 +20,5 @@
     <div class="modal-footer">
       <button type="button" class="btn btn-default btn-danger" (click)="modal.close('Close')">Close</button>
     </div>
-  </div>
+  </div>  
 
