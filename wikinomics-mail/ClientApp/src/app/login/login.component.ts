@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
-import { Admin } from '../admin/Admin';
+import { Admin } from '../Models/Admin';
 import { slide } from '../animations';
 
 @Component({

@@ -4,7 +4,7 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, RouterModule } from '@angular/router';
 
-import { Mail } from './Mail';
+import { Mail } from '../Models/Mail';
 import { MailModal } from './modal/mailModal';
 import { slide } from '../animations';
 

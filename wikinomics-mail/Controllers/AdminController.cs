@@ -16,7 +16,7 @@ namespace wikinomics_mail.Controllers
     {
         private readonly IAdminRepository _db;
         private readonly ILogger<AdminController> _log;
-        private const string _loggedIn = "";//LOOK AT THIS
+        private const string _loggedIn = "";
 
         public AdminController(IAdminRepository db, ILogger<AdminController> log)
         {
@@ -121,6 +121,5 @@ namespace wikinomics_mail.Controllers
             }
             return BadRequest("Wrong input validation");
         }
-
     }
 }

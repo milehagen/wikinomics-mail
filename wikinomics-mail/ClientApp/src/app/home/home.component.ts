@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MailAddress } from './MailAddress';
+import { MailAddress } from '../Models/MailAddress';
 import { slide } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
