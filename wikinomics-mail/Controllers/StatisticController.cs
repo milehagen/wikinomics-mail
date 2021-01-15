@@ -22,14 +22,32 @@ namespace wikinomics_mail.Controllers
             _log = log;
         }
 
+        [HttpPut]
         public async Task<ActionResult> UpdateStatistic(Statistic statistic)
         {
+            if (ModelState.IsValid)
+            {
+                var resultOK = await _db.UpdateStatistic(statistic);
 
+                if (!resultOK)
+                {
+                    return NotFound("Statistics could not be updated");
+                }
+                return Ok(true);
+            }
+            return BadRequest("Wrong input validation");
         }
 
-        public async Task<Statistic> GetStatistic()
+        [HttpGet]
+        public async Task<ActionResult> GetStatistic()
         {
+            Statistic stats = await _db.GetStatistic();
 
+            if(stats == null)
+            {
+                return NotFound("Statistics not found");
+            }
+            return Ok(stats);
         }
     }
 }
