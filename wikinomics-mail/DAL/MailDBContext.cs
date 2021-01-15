@@ -51,6 +51,8 @@ namespace wikinomics_mail.DAL
 
         public DbSet<AdminDB> Admins { get; set; }
 
+        public DbSet<Statistic> Statistics { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();

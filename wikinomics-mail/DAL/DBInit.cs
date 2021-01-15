@@ -66,6 +66,18 @@ namespace wikinomics_mail.DAL
                     context.Admins.Add(admin);
                 }
 
+                if (!context.Statistics.Any())
+                {
+                    context.Statistics.Add(
+                        new Statistic
+                        {
+                            LastSignUp = DateTime.Parse("1970-01-01"),
+                            TotalSubscribes = 2,
+                            TotalUnsubscribes = 0,
+                            CurrentSubscribes = 2
+                        });
+                }
+
                 context.SaveChanges();
 
             }

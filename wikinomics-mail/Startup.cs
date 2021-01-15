@@ -28,6 +28,7 @@ namespace wikinomics_mail
             services.AddDbContext<MailDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MailDBContext")));
             services.AddScoped<IMailAddressRepository, MailAddressRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<IStatisticRepository, StatisticRepository>();
 
             services.AddSession(options =>
             {
