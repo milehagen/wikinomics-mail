@@ -15,6 +15,27 @@ namespace wikinomics_mail.DAL
         {
             _db = db;
         }
+
+        public async Task<Statistic> GetStatistic()
+        {
+            try
+            {
+                Statistic dbStats = await _db.Statistics.FirstOrDefaultAsync(s => s.Id == 1);
+                if(dbStats != null)
+                {
+                    return dbStats;
+                }
+                return null;
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+
         public async Task<bool> UpdateStatistic(Statistic statistic)
         {
             try

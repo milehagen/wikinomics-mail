@@ -8,6 +8,8 @@ namespace wikinomics_mail.DAL
 {
     public interface IStatisticRepository
     {
+        public Task<Statistic> GetStatistic();
+
         public Task<bool> UpdateStatistic(Statistic statistic);
     }
 }

@@ -4,6 +4,7 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { Admin } from '../Models/Admin';
 import { slide } from '../animations';
+import { Statistic } from '../Models/Statistic';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import { slide } from '../animations';
 
 export class UnsubscribeComponent {
   public unsubscribeForm: FormGroup;
+  public unsubscribed: boolean;
   loggedIn: boolean;
   uniqueID: string;
   public feedback: string;
@@ -36,7 +38,9 @@ export class UnsubscribeComponent {
     this._http.delete("api/MailAddress/unsubscribe/" + this.uniqueID)
       .subscribe(response => {
         if (response) {
+          this.unsubscribed = true;
           this.feedbackMessage("You are now removed from the mailing list", true)
+          this.updateDBStatistics();
         }
       },
         error => {
@@ -52,6 +56,18 @@ export class UnsubscribeComponent {
     } else {
       this.feedback = message;
     }
+  }
+
+
+  updateDBStatistics() {
+    var stats = new Statistic();
+
+    stats.totalUnsubscribes = -1;
+
+    this._http.put("api/Statistic", stats)
+      .subscribe(response => {
+
+      })
   }
 
 }

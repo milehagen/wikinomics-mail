@@ -7,6 +7,7 @@ import { Router, RouterModule } from '@angular/router';
 import { Mail } from '../Models/Mail';
 import { MailModal } from './modal/mailModal';
 import { slide } from '../animations';
+import { Statistic } from '../Models/Statistic';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,8 @@ import { slide } from '../animations';
 export class AdminComponent {
   public emailForm: FormGroup;
   public allMails: Array<Mail>;
+  public listStats: Statistic;
+
   public sendTest: boolean;
   public liveMailPreviewToggle: boolean;
   public loggedIn: boolean;
@@ -84,6 +87,10 @@ export class AdminComponent {
   }
 
   getListStats() {
+    this._http.get<Statistic>("api/Statistic")
+      .subscribe(data => {
+        this.listStats = data;
+      })
   }
 
   //Sending out mail

@@ -18,8 +18,9 @@
       <b>{{feedback}}</b>
 
       <br/>
-
-      <button type="button" class="btn btn-primary" (click)="unsubscribe()">Unsubscribe</button>
+      <ng-container *ngIf="!unsubscribed">
+        <button type="button" class="btn btn-primary" (click)="unsubscribe()">Unsubscribe</button>
+      </ng-container>
     </div>
   </div>
 </div>

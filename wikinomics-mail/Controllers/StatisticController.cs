@@ -26,5 +26,10 @@ namespace wikinomics_mail.Controllers
         {
 
         }
+
+        public async Task<Statistic> GetStatistic()
+        {
+
+        }
     }
 }

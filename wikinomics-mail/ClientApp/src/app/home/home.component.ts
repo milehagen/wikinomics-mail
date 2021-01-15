@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MailAddress } from '../Models/MailAddress';
+import { Statistic } from '../Models/Statistic';
 import { slide } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
@@ -63,6 +64,7 @@ export class HomeComponent {
         .subscribe(retur => {
           window.alert("Registreringen var vellykket");
           this.emailInputForm.reset();
+          this.updateDBStatistics();
         },
           error => console.log(error)
         );
@@ -76,6 +78,18 @@ export class HomeComponent {
       },
         error => console.log(error)
       );
+  }
+
+  updateDBStatistics() {
+    var stats = new Statistic();
+
+    stats.lastSignUp = new Date();
+    stats.totalSubscribes = 1;
+
+    this.http.put("api/Statistic", stats)
+      .subscribe(response => {
+
+      })
   }
 
   //Check if the email already exists in the array, if it return false then the email is unique, if true then it is already registered.
