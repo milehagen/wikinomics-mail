@@ -16,45 +16,55 @@ namespace wikinomics_mail.DAL
             {
                 var context = serviceScope.ServiceProvider.GetService<MailDBContext>();
 
-                context.Database.EnsureDeleted();
-                context.Database.EnsureCreated();
-                
-                MailAddress address1 = new MailAddress { Address = "magnushjk@gmail.com", UniqueId = "BullshitImMakingUp" };
-                MailAddress address2 = new MailAddress { Address = "shakus89@hotmail.com", UniqueId = "SomeOtherBullshit" };
 
-                DateTime date1 = new DateTime(2021, 08, 01);
-                DateTime date2 = new DateTime(2021, 06, 01);
-
-                Mail mail1 = new Mail { Date = date1, Titel = "Hello and welcome to my dota2 stream", Body = "<h1>Title test</h1> <br/> <b>Bold and beautiful</b>" };
-                Mail mail2 = new Mail { Date = date2, Titel = "Kjører omvei for å kjøpe sigaretter", Body = "The kdkdkdkdkkdkdkdkdkdkdkdkkdkdkdkdkdkdkkdkdkdk" };
-
-                
-                
-                AdminDB admin = new AdminDB { Username = "Admin"};
-
-                string password = "Admin-12345";
-                byte[] salt = AdminRepository.GenerateSalt();
-                byte[] hash = AdminRepository.GenerateHash(password, salt);
-                admin.Password = hash;
-                admin.Salt = salt;
-
-
-                List<MailAddress> addresses = new List<MailAddress>
+                //If tables empty, we put something in them
+                if (!context.MailAddresses.Any())
                 {
-                    address1,
-                    address2
-                };
+                    context.MailAddresses.AddRange(
+                        new MailAddress
+                        {
+                            Address = "magnushjk@gmail.com",
+                            UniqueId = "BullshitImMakingUp"
+                        },
+                        new MailAddress
+                        {
+                            Address = "shakus89@hotmail.com",
+                            UniqueId = "SomeOtherBullshit"
+                        }
 
-                List<Mail> sentMails = new List<Mail>
+                    );
+                }
+
+                if (!context.Mails.Any())
                 {
-                    mail1,
-                    mail2
-                };
+                    context.Mails.AddRange(
+                        new Mail
+                        {
+                            Titel = "Hello and welcome to my dota2 stream",
+                            Body = "<h1>Title test</h1> <br/> <b>Bold and beautiful</b>",
+                            Date = DateTime.Parse("2021-08-01")
+                        },
+                        new Mail
+                        {
+                            Titel = "Kjører omvei for å kjøpe sigaretter",
+                            Body = "The kdkdkdkdkkdkdkdkdkdkdkdkkdkdkdkdkdkdkkdkdkdk",
+                            Date = DateTime.Parse("2021-06-01")
+                        }
+                    );
+                }
 
+                if (!context.Admins.Any())
+                {
+                    AdminDB admin = new AdminDB { Username = "Admin" };
 
-                context.MailAddresses.AddRange(addresses);
-                context.Mails.AddRange(sentMails);
-                context.Admins.Add(admin);
+                    string password = "Admin-12345";
+                    byte[] salt = AdminRepository.GenerateSalt();
+                    byte[] hash = AdminRepository.GenerateHash(password, salt);
+                    admin.Password = hash;
+                    admin.Salt = salt;
+
+                    context.Admins.Add(admin);
+                }
 
                 context.SaveChanges();
 

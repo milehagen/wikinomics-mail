@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,7 @@ namespace wikinomics_mail
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<MailDBContext>(options => options.UseSqlite("Data source=MailDB.db"));
+            services.AddDbContext<MailDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MailDBContext")));
             services.AddScoped<IMailAddressRepository, MailAddressRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
 
