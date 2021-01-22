@@ -79,6 +79,8 @@ export class KnowONEComponent {
 
         stats.lastSignUp = new Date();
         stats.totalSubscribes = 1;
+        stats.currentSubscribes = 0;
+        stats.totalUnsubscribes = 0;
 
         this.http.put("api/Statistic", stats)
         .subscribe(response => {

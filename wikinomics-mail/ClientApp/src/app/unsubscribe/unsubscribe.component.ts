@@ -64,6 +64,9 @@ export class UnsubscribeComponent {
 
     stats.totalUnsubscribes = -1;
 
+    stats.currentSubscribes = 0;
+    stats.totalSubscribes = 0;
+
     this._http.put("api/Statistic", stats)
       .subscribe(response => {
 
