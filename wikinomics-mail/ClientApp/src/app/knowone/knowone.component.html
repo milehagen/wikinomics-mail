@@ -1,0 +1,96 @@
+<div class="overflow-hidden" style="height: 100vh;">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="navbar-brand" style="width: 50px; height: 50px; border-radius: 50%; background-color: black;"></div>
+        <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggle-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <button class="btn btn-link" [routerLink]="['/home']">Hjem</button>
+            </li>
+            <li class="nav-item">
+            <button class="btn btn-link" [routerLink]="['/knowone']">KnowONE</button>
+            </li>
+            <li class="nav-item">
+            <button class="btn btn-link" [routerLink]="['/aboutus']">Om oss</button>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <div id="home" class="container-fluid d-flex align-items-center justify-content-center" @slide>
+        <div class="text-center">
+        <h2>La oss sette i gang.</h2>
+        <button class="btn btn-primary" (click)="GiveFeedback()">Fortsett</button>
+        </div>
+    </div>
+
+    <div id="feedback" class="container-fluid d-flex flex-row align-items-center justify-content-center">
+        <div class="text-center">
+            <p>Veldig gøyalt at du har lyst til å være en av første som tester ut KnowONE! <br />Kan du fortelle litt om hva du håper å få ut av tjenesten?</p>
+            <textarea style="width: 100%; height: 8rem;"></textarea>
+            <button class="btn btn-primary" (click)="RegisterMail()">Videre</button>
+        </div>
+    </div>
+
+    <div id="register" class="container-fluid d-flex align-items-center justify-content-center">
+        <div class="text-center">
+            <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
+                <input formControlName="formEmail" type="text" class="form-control" style="width: 100%; margin: auto;" placeholder="Skriv inn email" />
+                <br/>
+                <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
+                  Email is not valid.      
+                </p>
+                <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid">Send inn</button>
+                <button class="btn btn-danger" (click)="GiveFeedback()">Tilbake</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<!--
+  <div class="jumbotron min-vh-100">
+    <div class="container text-center align-items-center justify-content-center" style="margin: 5rem auto;">
+      <div *ngIf="!showInfo" @slide>
+        <div>
+          <h1>Hei</h1>
+          <p>Velkommen til Wikinomics</p>
+          <button class="btn btn-dark" (click)="ShowInfo()">Hva er Wikinomics?</button>
+        </div>
+      </div>
+      <div *ngIf="showInfo" @slide> 
+        <div *ngIf="!showRegister" @slide>
+          <p class="text-left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
+            pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
+            Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
+            in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
+            per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut 
+            vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
+            Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat 
+            faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. 
+            Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. 
+            Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, 
+            non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+          </p>
+          <button class="btn btn-dark" (click)="ShowRegisterField()">Registrer mail</button>
+          <button class="btn btn-danger" (click)="ShowInfo()">Tilbake</button>
+        </div>
+        <div *ngIf="showRegister" @slide>
+            <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
+                <input formControlName="formEmail" type="text" class="form-control" style="width: 70%; margin: auto;" placeholder="Skriv inn email" />
+                <br/>
+                <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
+                  Email is not valid.      
+                </p>
+                <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid">Send inn</button>
+                <button class="btn btn-danger" (click)="ShowRegisterField()">Tilbake</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+-->

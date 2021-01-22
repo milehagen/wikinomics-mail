@@ -1,46 +1,62 @@
-<nav class="navbar d-flex justify-content-center position-fixed"> 
-  <button class="btn btn-link" (click)="BackToMain()">Wikinomics</button>
-  <button class="btn btn-link" [routerLink]="['/login']">Admin</button>
-</nav>
-
-<div class="jumbotron min-vh-100">
-  <div class="container text-center align-items-center justify-content-center" style="margin: 5rem auto;">
-    <div *ngIf="!showInfo" @slide>
-      <div>
-        <h1>Hei</h1>
-        <p>Velkommen til Wikinomics</p>
-        <button class="btn btn-dark" (click)="ShowInfo()">Hva er Wikinomics?</button>
-      </div>
+<div id="page" style="height: 100vh; overflow: hidden;">  
+  <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="navbar-brand" style="width: 50px; height: 50px; border-radius: 50%; background-color: black;"></div>
+    <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggle-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <button class="btn btn-link" [routerLink]="['/home']">Hjem</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-link" [routerLink]="['/knowone']">KnowONE</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-link" [routerLink]="['/aboutus']">Om oss</button>
+        </li>
+      </ul>
     </div>
-    <div *ngIf="showInfo" @slide> 
-      <div *ngIf="!showRegister" @slide>
-        <p class="text-left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
-          pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
-          Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
-          in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-          per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut 
-          vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-          Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat 
-          faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. 
-          Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. 
-          Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, 
-          non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
-        </p>
-        <button class="btn btn-dark" (click)="ShowRegisterField()">Registrer mail</button>
-        <button class="btn btn-danger" (click)="ShowInfo()">Tilbake</button>
-      </div>
-      <div *ngIf="showRegister" @slide>
-          <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
-              <input formControlName="formEmail" type="text" class="form-control" style="width: 70%; margin: auto;" placeholder="Skriv inn email" />
-              <br/>
-              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
-                Email is not valid.      
-              </p>
-              <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid">Send inn</button>
-              <button class="btn btn-danger" (click)="ShowRegisterField()">Tilbake</button>
-          </form>
-      </div>
+  </nav>
+
+
+  <div id="home" class="container-fluid d-flex align-items-center justify-content-center" @slide>
+    <div class="text-center">
+      <h2>Glem alt du vet<br />om nettverksbygging</h2>
+      <button class="btn btn-primary" (click)="ToSection1()">Neste</button>
+    </div>
+    
+  </div>
+  
+  <div id="section1" class="container-fluid bg-light d-flex align-items-center justify-content-around">
+    <div class="info d-flex justify-content-around">
+      <h1 class="header d-flex align-items-center justify-content-center bg-secondary">1.</h1>
+      <p class="text">KnowONE er Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fisce nec posuere turpis</p>
+    </div>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR4AAACwCAMAAADudvHOAAAAElBMVEX///8AAAC8vLy/v7+Hh4eLi4ullY4rAAABhElEQVR4nO3QsQ2DUBTAQMKD/VeOlOJHIopbKO4msLy9CNvdAc9mT7InffYcs3Mx59ozGz9m7dnvTnmi3Z5iT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7InfffM3SlPNGvPMTsXc649/GNPsifZk95LnxUz+g17XgAAAABJRU5ErkJggg==" width="40%" height="100px" alt="KnowONE-bilde" />
+    <button class="btn btn-primary" (click)="ToSection2()">Neste</button>
+  </div>
+  
+  <div id="section2" class="container-fluid d-flex align-items-center justify-content-around">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR4AAACwCAMAAADudvHOAAAAElBMVEX///8AAAC8vLy/v7+Hh4eLi4ullY4rAAABhElEQVR4nO3QsQ2DUBTAQMKD/VeOlOJHIopbKO4msLy9CNvdAc9mT7InffYcs3Mx59ozGz9m7dnvTnmi3Z5iT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7In2ZPsSfYke5I9yZ5kT7InfffM3SlPNGvPMTsXc649/GNPsifZk95LnxUz+g17XgAAAABJRU5ErkJggg==" width="40%" height="100px" alt="KnowONE-bilde" />
+    <div class="info d-flex justify-content-around">
+      <h1 class="header d-flex align-items-center justify-content-center bg-secondary">2.</h1>
+      <p class="text">KnowONE er Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fisce nec posuere turpis</p>
+    </div>
+    <button class="btn btn-primary" (click)="ToSection3()">Neste</button>
+  </div>
+  
+  <div id="section3" class="container-fluid bg-light d-flex align-items-center justify-content-around">
+    <div class="info d-flex justify-content-around">
+      <h1 class="header d-flex align-items-center justify-content-center bg-secondary">3.</h1>
+      <p class="text">KnowONE er Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fisce nec posuere turpis</p>
+    </div>
+    <button class="btn btn-primary" (click)="ToSection4()">Neste</button>
+  </div>
+  
+  <div id="section4" class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="">
+      <button class="btn btn-primary bg-dark rounded shadow-sm p-3 mb-5 rounded" [routerLink]="['/knowone']">Kom i gang</button>
     </div>
   </div>
 </div>

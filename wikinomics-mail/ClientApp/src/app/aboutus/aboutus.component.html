@@ -1,0 +1,28 @@
+<div id="page" style="height: 100vh; overflow: hidden;">  
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+      <div class="navbar-brand" style="width: 50px; height: 50px; border-radius: 50%; background-color: black;"></div>
+      <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggle-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <button class="btn btn-link" [routerLink]="['/home']">Hjem</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-link" [routerLink]="['/knowone']">KnowONE</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-link" [routerLink]="['/aboutus']">Om oss</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid d-flex align-items-center justify-content-center" @slide>
+        <div class="text-center">
+            <h1>HEI</h1>
+            <button class="btn btn-dark" style="width: 100%">DRAFT</button>
+        </div>
+    </div>
+</div>

@@ -51,12 +51,12 @@ namespace wikinomics_mail.DAL
                 {
                     dbStats.LastSignUp = statistic.LastSignUp;
                 }
-                if(statistic.TotalSubscribes != null)
+                if(statistic.TotalSubscribes != 0)
                 {
                     dbStats.TotalSubscribes += Math.Sign(statistic.TotalSubscribes);
                     dbStats.CurrentSubscribes += Math.Sign(statistic.TotalSubscribes);
                 }
-                if(statistic.TotalUnsubscribes != null)
+                if(statistic.TotalUnsubscribes != 0)
                 {
                     dbStats.TotalUnsubscribes += Math.Sign(statistic.TotalUnsubscribes);
                     dbStats.CurrentSubscribes += Math.Sign(statistic.TotalUnsubscribes);
