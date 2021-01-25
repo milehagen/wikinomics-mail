@@ -1,28 +1,66 @@
 <div id="page" style="height: 100vh; overflow: hidden;">  
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
-      <div class="navbar-brand" style="width: 50px; height: 50px; border-radius: 50%; background-color: black;"></div>
-      <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggle-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <button class="btn btn-link" [routerLink]="['/home']">Hjem</button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-link" [routerLink]="['/knowone']">KnowONE</button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-link" [routerLink]="['/aboutus']">Om oss</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
     <div class="container-fluid d-flex align-items-center justify-content-center" @slide>
-        <div class="text-center">
-            <h1>HEI</h1>
-            <button class="btn btn-dark" style="width: 100%">DRAFT</button>
+      <div class="text-center">
+        <h1>KnowONE</h1>
+        <p>Hvem er vi?</p>
+        <button class="btn btn-dark" style="width: 100%" (click)="ToAboutUs1()">DRAFT</button>
+      </div>
+    </div>
+    <div id="aboutus1" class="container-fluid d-flex align-items-center justify-content-center">
+      <div class="info d-flex justify-content-around">
+        <h1 class="header d-flex align-items-center justify-content-center bg-secondary">1.</h1>
+        <div class="text text-center">
+          <label>Vision</label>
+          <p>We envision a world where zero talent is wasted.</p>
+
+          <label>Mission</label>
+          <p>
+            Wikinomics is a platform and community that empowers you, by enabling access to people who study,
+            or work, within the field of your curiosity. By doing so, we help you expand the network that is 
+            relevant for you and your career growth.
+          </p>
+
+          <p>
+            Our mission is to ensure that no talent is wasted due to lack of a relevant network.
+          </p>
+          <button class="btn btn-primary" (click)="ToAboutUs2()">Neste</button>
         </div>
+        
+      </div>
+    </div>
+    <div id="aboutus2" class="container-fluid d-flex">
+      <div class="info d-flex justify-content-around">
+        <h1 class="header d-flex align-items-center justify-content-center bg-secondary">2.</h1>
+        <div class="text text-center">
+          <label>The Power of KnowONE</label>
+          <p>
+            "I'm <span style="font-style: italic;">no one</span>. What can I offer to these experienced people?".
+          </p>
+          <p>
+            Sound familiar? It might not always feel like it, but everyone has value to offer others. So, you may 
+            feel like "no one", but we are convinced that you know (at least) ONE person who can be of value to 
+            someone else.
+          </p>
+          <p>
+            So, more than a career platform, it's a movement.
+          </p>
+
+          <label>Words from Mi Le Hagen, the Founder</label>
+          <p>
+            Hi everyone! I'm so delighted that you are here, reading about us, and about what we are trying to do. 
+            My name is Mi Le Hagen. I'm of Vietnamese descent, but was born and raised in Oslo, Norway. To be more 
+            concise, I'm from Stovner, which is a place dominated by immigrants.
+          </p>
+          <p>
+            When I went to high school, I made the decision to attend a school located in the city centre, instead 
+            of the one in my local area. And, when I attended college, I made the conscious decision to take part 
+            in student organizations. I did this mainly because I knew it would look good on mye resume. But, what 
+            I didn't realise was how much value I would gain from the network that I had built. 
+          </p>
+          
+        </div>
+        
+      </div>
     </div>
 </div>

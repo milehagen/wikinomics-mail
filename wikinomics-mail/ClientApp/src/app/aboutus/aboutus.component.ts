@@ -14,5 +14,13 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
   ]
 })
 export class AboutUsComponent {
+  constructor() {}
 
+  ToAboutUs1() {
+    document.getElementById("aboutus1").scrollIntoView({behavior: "smooth"});
+  }
+
+  ToAboutUs2() {
+    document.getElementById("aboutus2").scrollIntoView({behavior: "smooth"});
+  }
 }

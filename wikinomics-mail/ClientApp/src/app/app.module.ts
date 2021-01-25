@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from  './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { MailModal } from './admin/modal/mailModal';
@@ -18,6 +19,7 @@ import { AboutUsComponent } from './aboutus/aboutus.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     HomeComponent,
     KnowONEComponent,
     AboutUsComponent,
@@ -36,7 +38,7 @@ import { AboutUsComponent } from './aboutus/aboutus.component';
     NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, NavbarComponent],
   entryComponents: [MailModal]
 })
 export class AppModule { }

@@ -18,11 +18,11 @@
 
 @media(max-width: 500px) {
     #page {
-        overflow: scroll;
+        overflow: visible;
     }
 
     .container-fluid{
-        height: 100vh;
+        height: 50vh;
         font-size: 7px;
     }
 }
