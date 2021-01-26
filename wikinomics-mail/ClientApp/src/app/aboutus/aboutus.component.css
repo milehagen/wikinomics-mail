@@ -10,12 +10,15 @@
 
 .info {
     width: 90%;
-    margin-top: 70px;
+    margin-top: 80px;
+}
+
+.row {
+    overflow: auto;
 }
 
 .text {
-    width: 70%;
-    overflow: auto;
+    width: 60%;
 }
 
 .text label {

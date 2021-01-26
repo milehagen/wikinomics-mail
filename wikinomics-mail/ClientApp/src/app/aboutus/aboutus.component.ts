@@ -2,7 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MailAddress } from '../Models/MailAddress';
 import { Statistic } from '../Models/Statistic';
-import { slide } from '../animations';
+import { fade } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
   templateUrl: './aboutus.component.html',
   styleUrls: [ './aboutus.component.css' ],
   animations: [
-    slide
+    fade
   ]
 })
 export class AboutUsComponent {

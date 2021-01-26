@@ -6,14 +6,14 @@ import { Router, RouterModule } from '@angular/router';
 
 import { Mail } from '../Models/Mail';
 import { MailModal } from './modal/mailModal';
-import { slide } from '../animations';
+import { fade } from '../animations';
 import { Statistic } from '../Models/Statistic';
 
 @Component({
   selector: 'app-home',
   templateUrl: './admin.component.html',
   animations: [
-    slide
+    fade
   ]
 })
 export class AdminComponent {

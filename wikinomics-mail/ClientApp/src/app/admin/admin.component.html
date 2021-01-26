@@ -1,17 +1,5 @@
-<nav class="navbar navbar-default position-fixed">
-  <button class="btn btn-link" [routerLink]="['/home']">Wikinomics</button>
-
-  <ng-container *ngIf="loggedIn; else elseBlock">
-    <button class="btn btn-link" [routerLink]="['/admin']">Admin</button>
-  </ng-container>
-  <ng-template #elseBlock>
-    <button class="btn btn-link" [routerLink]="['/login']">Admin</button>
-  </ng-template>
-</nav>
-
-
-<div class="jumbotron min-vh-100">
-  <div class="container" *ngIf="loggedIn">
+<div id="page" style="height: 100vh; overflow: auto;">
+  <div class="container" *ngIf="loggedIn" style="margin-top: 80px;">
     <div class="relativeDiv">
       <h2>Send mails to mailing list</h2>
       <p>

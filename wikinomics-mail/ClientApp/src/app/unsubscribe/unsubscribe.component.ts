@@ -3,14 +3,14 @@ import { Component, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { Admin } from '../Models/Admin';
-import { slide } from '../animations';
+import { fade } from '../animations';
 import { Statistic } from '../Models/Statistic';
 
 @Component({
   selector: 'app-home',
   templateUrl: './unsubscribe.component.html',
   animations: [
-    slide
+    fade
   ]
 })
 

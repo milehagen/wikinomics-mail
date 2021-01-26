@@ -16,13 +16,18 @@
     width: 50%;
 }
 
+.row img {
+    width: 60%;
+    height: 100px;  
+}
+
 @media(max-width: 500px) {
     #page {
         overflow: visible;
     }
 
     .container-fluid{
-        height: 50vh;
+        
         font-size: 7px;
     }
 }

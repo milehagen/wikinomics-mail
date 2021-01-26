@@ -1,8 +1,8 @@
-import { Component,HostListener,OnInit } from '@angular/core';
+import { Component,HostListener,OnInit, Directive, Host } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MailAddress } from '../Models/MailAddress';
 import { Statistic } from '../Models/Statistic';
-import { slide } from '../animations';
+import { fade } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.css' ],
   animations: [
-    slide
+    fade
   ]
 })
 export class HomeComponent {
@@ -19,13 +19,14 @@ export class HomeComponent {
 
   ngOnInit() {}
 
+
   // Scroll to home section
   ToHome() {
     document.getElementById("home").scrollIntoView({behavior:"smooth"});
   }
 
   // Scroll to info section 1
-  ToSection1() {
+  ToSection1(section1) {
     document.getElementById("section1").scrollIntoView({behavior:"smooth"});
   }
 

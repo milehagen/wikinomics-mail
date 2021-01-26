@@ -3,13 +3,13 @@ import { Component, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 import { Admin } from '../Models/Admin';
-import { slide } from '../animations';
+import { fade } from '../animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './login.component.html',
   animations: [
-    slide
+    fade
   ]
 })
 
