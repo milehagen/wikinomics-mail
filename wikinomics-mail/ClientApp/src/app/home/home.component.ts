@@ -14,7 +14,7 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
   ]
 })
 export class HomeComponent {
-
+  
   constructor() {}
 
   ngOnInit() {}

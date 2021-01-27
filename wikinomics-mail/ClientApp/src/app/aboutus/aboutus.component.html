@@ -1,66 +1,77 @@
-<div id="page" style="height: 100vh; overflow: hidden;">  
+<div id="page" style="height: 100vh">  
 
-    <div class="container-fluid d-flex align-items-center justify-content-center" @fade>
+    <div class="container-fluid" @fade>
       <div class="text-center">
         <h1>KnowONE</h1>
-        <p>Hvem er vi?</p>
+        <p>Who are we?</p>
         <button class="btn btn-dark" style="width: 100%" (click)="ToAboutUs1()">DRAFT</button>
       </div>
     </div>
-    <div id="aboutus1" class="container-fluid d-flex justify-content-center align-items-center">
+    <div id="aboutus1" class="container-fluid" (click)="ToAboutUs2()">
       <div class="row">
-        <div class="col info d-flex justify-content-around">
-          <h1 class="header d-flex align-items-center justify-content-center bg-secondary">1.</h1>
+        <div class="col info">
           <div class="text text-center">
             <label>Vision</label>
-            <p>We envision a world where zero talent is wasted.</p>
+            <p>Zero talent is wasted</p>
 
             <label>Mission</label>
             <p>
-              Wikinomics is a platform and community that empowers you, by enabling access to people who study,
-              or work, within the field of your curiosity. By doing so, we help you expand the network that is 
+              KnowONE is a career platform that empowers you, by connecting you to people who are 
               relevant for you and your career growth.
+            </p>
+
+            <p>
+              Through anonymity, we lower the threshold to ask those burning career oriented questions 
+              you may have, but are too afraid to ask.
             </p>
 
             <p>
               Our mission is to ensure that no talent is wasted due to lack of a relevant network.
             </p>
-            <button class="btn btn-primary" (click)="ToAboutUs2()">Neste</button>
           </div>
         </div>
       </div>
     </div>
-    <div id="aboutus2" class="container-fluid d-flex justify-content-center align-items-center">
+    <div id="aboutus2" class="container-fluid">
       <div class="row">
-        <div class="col info d-flex justify-content-around">
-          <h1 class="header d-flex align-items-center justify-content-center bg-secondary">2.</h1>
+        <div class="col info">
+          <div class="text text-center">
+            <label>Why KnowONE Matters</label>
+            <p>
+              "To the world, you may be one person. But, to one person, you may be the world." <br />
+              (Dr. Seuss)
+            </p>
+
+            <p>
+              Through our platform, we hope you are reminded of how valuable your knowledge and network 
+              is. And, once you realise this, we hope you leverage this to help others. <br />
+              KnowONE matters, because <span style="font-style: italic;">everyone</span> matters.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="aboutus3" class="container-fluid">
+      <div class="row">
+        <div class="col info">
           <div class="text text-center">
             <label>The Power of KnowONE</label>
             <p>
-              "I'm <span style="font-style: italic;">no one</span>. What can I offer to these experienced people?".
+              We believe that everyone has a superpower. And, that superpower is about connecting people.
             </p>
             <p>
-              Sound familiar? It might not always feel like it, but everyone has value to offer others. So, you may 
-              feel like "no one", but we are convinced that you know (at least) ONE person who can be of value to 
-              someone else.
+              Although you may feel young and inexperienced, and perhaps even feel like you're "no one", 
+              we're convinced that you know ONE person in your network, that can be of help to someone else. 
+              And, your SUPERPOWER is to introduce that <span style="font-style: italic;">one</span> person 
+              to someone else, who you think may benefit from being connected.
             </p>
             <p>
-              So, more than a career platform, it's a movement.
-            </p>
-
-            <label>Words from Mi Le Hagen, the Founder</label>
-            <p>
-              Hi everyone! I'm so delighted that you are here, reading about us, and about what we are trying to do. 
-              My name is Mi Le Hagen. I'm of Vietnamese descent, but was born and raised in Oslo, Norway. To be more 
-              concise, I'm from Stovner, which is a place dominated by immigrants.
+              When you connect people, your knowledge and network is amplified. And that, my friend, is the 
+              power of KnowONE.
             </p>
             <p>
-              When I went to high school, I made the decision to attend a school located in the city centre, instead 
-              of the one in my local area. And, when I attended college, I made the conscious decision to take part 
-              in student organizations. I did this mainly because I knew it would look good on mye resume. But, what 
-              I didn't realise was how much value I would gain from the network that I had built. 
+              KnowONE is more than a career platform; it's a movement.
             </p>
-            
           </div>
         </div>
       </div>

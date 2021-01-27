@@ -4,17 +4,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }">
-    <ul class="navbar-nav">
+    <ul class="nav navbar-nav navbar-center">
       <li class="nav-item active">
-        <button class="btn btn-link" [routerLink]="['/home']">Hjem</button>
+        <button class="btn btn-link" [routerLink]="['/home']">Home</button>
       </li>
       <li class="nav-item">
         <button class="btn btn-link" [routerLink]="['/knowone']">KnowONE</button>
       </li>
       <li class="nav-item">
-        <button class="btn btn-link" [routerLink]="['/aboutus']">Om oss</button>
+        <button class="btn btn-link" [routerLink]="['/aboutus']">About Us</button>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" style="visibility: hidden;">
         <button class="btn btn-link" [routerLink]="['/admin']">Admin</button>
       </li>
     </ul>
