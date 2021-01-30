@@ -30,10 +30,10 @@
     width: 50%;
 }
 
-.row img {
-    width: 60%;
-    height: 100px;  
+.imgHome {
+    height: 250px;
 }
+
 
 @media(max-width: 500px) {
     #page {

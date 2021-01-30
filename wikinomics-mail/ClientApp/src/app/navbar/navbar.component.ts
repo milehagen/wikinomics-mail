@@ -14,4 +14,8 @@ export class NavbarComponent {
   toggle() {
     this.isExpanded = !this.isExpanded;
   }
+
+  scrollToTop(event) {
+    window.scroll(0,0);
+  }
 }

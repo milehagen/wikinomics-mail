@@ -1,19 +1,34 @@
 <div id="page" style="height: 100vh">  
 
-    <div class="container-fluid" @fade>
-      <div class="text-center">
-        <h1>KnowONE</h1>
-        <p>Who are we?</p>
-        <button class="btn btn-dark" style="width: 100%" (click)="ToAboutUs1()">DRAFT</button>
+    <div class="container-fluid" (click)="ToAboutUs1()" @fade>
+      <div class="row text-center d-flex flex-column">
+        <div class="col">
+          <img src="../../assets/images/aboutus/imagintation.svg" height="200px">
+        </div>
+        <div class="col">
+          <h2>Our intention, and Reason For Our Existence</h2>
+        </div>
       </div>
     </div>
+
     <div id="aboutus1" class="container-fluid" (click)="ToAboutUs2()">
       <div class="row">
-        <div class="col info">
+        <div class="col col-2">
+          <img class="imgPlants" src="../../assets/images/aboutus/plant5.svg">
+        </div>
+        <div class="col col-6 info">
           <div class="text text-center">
             <label>Vision</label>
-            <p>Zero talent is wasted</p>
+            <p>We envision a world where zero talent is wasted</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div id="aboutus2" class="container-fluid">
+      <div class="row">
+        <div class="col col-6 info align-center">
+          <div class="text text-center">
             <label>Mission</label>
             <p>
               KnowONE is a career platform that empowers you, by connecting you to people who are 
@@ -30,30 +45,42 @@
             </p>
           </div>
         </div>
+        <div class="col col-2">
+          <img class="imgPlants" src="../../assets/images/aboutus/plant6.svg" />
+        </div>
       </div>
     </div>
-    <div id="aboutus2" class="container-fluid">
+
+    <div id="aboutus3" class="container-fluid">
       <div class="row">
-        <div class="col info">
+        <div class="col col-2">
+          <img class="imgPlants" src="../../assets/images/aboutus/plant1.svg" />
+        </div>
+        <div class="col col-6 info">
           <div class="text text-center">
             <label>Why KnowONE Matters</label>
             <p>
-              "To the world, you may be one person. But, to one person, you may be the world." <br />
-              (Dr. Seuss)
+              It's a well known fact that the size of your network allows you access to opportunities 
+              you might not have known about otherwise. But, if there's an upside to being well-connected, 
+              we believe the opposite to be true for those with a small network. In other words, the playing 
+              field is not level.
             </p>
 
             <p>
               Through our platform, we hope you are reminded of how valuable your knowledge and network 
-              is. And, once you realise this, we hope you leverage this to help others. <br />
+              is. And, once you realise this, we hope you leverage this to help others.
+            </p>
+
+            <p>
               KnowONE matters, because <span style="font-style: italic;">everyone</span> matters.
             </p>
           </div>
         </div>
       </div>
     </div>
-    <div id="aboutus3" class="container-fluid">
+    <div id="aboutus4" class="container-fluid">
       <div class="row">
-        <div class="col info">
+        <div class="col col-6 info">
           <div class="text text-center">
             <label>The Power of KnowONE</label>
             <p>
@@ -66,6 +93,20 @@
               to someone else, who you think may benefit from being connected.
             </p>
             <p>
+              Don't believe us?
+            </p>
+            <p>
+              Researchers at Microsoft studied records of 30 billion electronic conversations among 180 million 
+              people in various countries, and worked out that any two strangers are, on average, distanced by 
+              precisely 6.6 degrees of separation. In other words, you are linked by a string of seven or fewer 
+              accquintances to Bill gates, the Dalai Lama and the Queen.
+            </p>
+            <p>
+              Imagine the endless potential for personal and professional growth, if only we shared our experience 
+              and knowledge with people <span style="font-style: italic">outside</span> of our own network- the 
+              people we call strangers.
+            </p>
+            <p>
               When you connect people, your knowledge and network is amplified. And that, my friend, is the 
               power of KnowONE.
             </p>
@@ -73,6 +114,9 @@
               KnowONE is more than a career platform; it's a movement.
             </p>
           </div>
+        </div>
+        <div class="col col-2">
+          <img class="imgPlants" src="../../assets/images/aboutus/plant4.svg" />
         </div>
       </div>
     </div>

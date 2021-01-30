@@ -19,14 +19,13 @@ export class HomeComponent {
 
   ngOnInit() {}
 
-
   // Scroll to home section
   ToHome() {
     document.getElementById("home").scrollIntoView({behavior:"smooth"});
   }
 
   // Scroll to info section 1
-  ToSection1(section1) {
+  ToSection1() {
     document.getElementById("section1").scrollIntoView({behavior:"smooth"});
   }
 

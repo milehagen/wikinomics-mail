@@ -4,9 +4,9 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }">
-    <ul class="nav navbar-nav navbar-center">
+    <ul class="nav navbar-nav navbar-center mx-auto d-flex justify-content-between">
       <li class="nav-item active">
-        <button class="btn btn-link" [routerLink]="['/home']">Home</button>
+        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home']">Home</button>
       </li>
       <li class="nav-item">
         <button class="btn btn-link" [routerLink]="['/knowone']">KnowONE</button>

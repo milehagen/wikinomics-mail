@@ -6,23 +6,30 @@
 }
 
 .col {
-    display: flex;
-    justify-content: space-around;
+    text-align: center;
 }
 
 .info {
-    width: 90%;
+    width: 100%;
     margin-top: 80px;
 }
 
 .row {
     overflow: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text {
-    width: 60%;
+    width: 100%;
 }
 
 .text label {
     font-weight: bold;
+}
+
+.imgPlants {
+    height: 200px;
 }
