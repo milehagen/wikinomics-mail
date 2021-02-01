@@ -21,7 +21,7 @@ export class HomeComponent {
 
   // Scroll to home section
   toHome() {
-    document.getElementById("home").scrollIntoView({behavior:"smooth"});
+    document.getElementById("page").scrollIntoView({behavior:"smooth"});
   }
 
   // Scroll to info section 1

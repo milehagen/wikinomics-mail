@@ -10,13 +10,17 @@
     font-size: 1.5vw;
 }
 
+#home {
+    height: 90vh;
+}
+
 h2 {
     font-size: 2vw;
 }
 
 .header {
-    height: 4rem;
-    width: 4rem;
+    height: 7rem;
+    width: 7rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -25,12 +29,16 @@ h2 {
 
 .row {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.col-7, .col-4 {
+.col {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70vh;
 }
 
 .info {
@@ -41,12 +49,17 @@ h2 {
     width: 70%;
 }
 
+.text label {
+    font-weight: bold;
+}
+
 .imgPlants {
     width: 30%;
 }
 
 @media (max-width: 600px) {
-    .container-fluid {
+    .container-fluid, #home {
         height: 33vh;
     }
+
 }

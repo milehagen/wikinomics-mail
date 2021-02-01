@@ -10,12 +10,21 @@
     font-size: 1.5vw;
 }
 
+#home {
+    height: 90vh;
+}
+
 h2 {
     font-size: 2vw;
 }
 
 .row {
-    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,11 +35,11 @@ h2 {
 }
 
 .imgPlants {
-    width: 80%;
+    width: 30%;
 }
 
 @media (max-width: 600px) {
-    .container-fluid {
-        height: 50vh;
+    .container-fluid, #home {
+        height: 33vh;
     }
 }
