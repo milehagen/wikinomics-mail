@@ -13,6 +13,7 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
     fade
   ]
 })
+
 export class HomeComponent {
   
   constructor() {}
