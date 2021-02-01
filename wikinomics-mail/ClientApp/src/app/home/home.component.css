@@ -1,47 +1,52 @@
+.page {
+    padding-top: 80px;
+}
+
 .container-fluid {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    overflow: auto;
+    font-size: 1.5vw;
+}
+
+h2 {
+    font-size: 2vw;
 }
 
 .header {
-    width: 100px; 
-    height: 100px;  
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.col {
+.row {
+    width: 100%;
+}
+
+.col-7, .col-4 {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 .info {
-    width: 40%;
+    text-align: center;
 }
 
 .text {
-    width: 50%;
+    width: 70%;
 }
 
-.imgHome {
-    height: 250px;
+.imgPlants {
+    width: 30%;
 }
 
-
-@media(max-width: 500px) {
-    #page {
-        overflow: visible;
-    }
-
-    .container-fluid{
-        
-        font-size: 7px;
+@media (max-width: 600px) {
+    .container-fluid {
+        height: 33vh;
     }
 }

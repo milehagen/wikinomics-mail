@@ -1,20 +1,18 @@
-<div id="page" style="height: 100vh">  
+<div class="page" style="height: 100vh">  
 
-    <div class="container-fluid" (click)="ToAboutUs1()" @fade>
+    <div id="home" class="container-fluid" (click)="toAboutUs1()" @fade>
       <div class="row text-center d-flex flex-column">
         <div class="col">
-          <img src="../../assets/images/aboutus/imagintation.svg" height="200px">
-        </div>
-        <div class="col">
+          <img src="../../assets/images/aboutus/imagintation.svg" width="30%;">
           <h2>Our intention, and Reason For Our Existence</h2>
         </div>
       </div>
     </div>
-
-    <div id="aboutus1" class="container-fluid" (click)="ToAboutUs2()">
+    <hr />
+    <div id="aboutus1" class="container-fluid" (click)="toAboutUs2()">
       <div class="row">
         <div class="col col-2">
-          <img class="imgPlants" src="../../assets/images/aboutus/plant5.svg">
+          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant5.svg">
         </div>
         <div class="col col-6 info">
           <div class="text text-center">
@@ -24,8 +22,8 @@
         </div>
       </div>
     </div>
-
-    <div id="aboutus2" class="container-fluid">
+    <hr />
+    <div id="aboutus2" class="container-fluid" (click)="toAboutUs3()">
       <div class="row">
         <div class="col col-6 info align-center">
           <div class="text text-center">
@@ -46,15 +44,15 @@
           </div>
         </div>
         <div class="col col-2">
-          <img class="imgPlants" src="../../assets/images/aboutus/plant6.svg" />
+          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant6.svg" />
         </div>
       </div>
     </div>
-
-    <div id="aboutus3" class="container-fluid">
+    <hr />
+    <div id="aboutus3" class="container-fluid" (click)="toAboutUs4()">
       <div class="row">
         <div class="col col-2">
-          <img class="imgPlants" src="../../assets/images/aboutus/plant1.svg" />
+          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant1.svg" />
         </div>
         <div class="col col-6 info">
           <div class="text text-center">
@@ -78,9 +76,10 @@
         </div>
       </div>
     </div>
-    <div id="aboutus4" class="container-fluid">
+    <hr />
+    <div id="aboutus4" class="container-fluid" (click)="toAboutUs5()">
       <div class="row">
-        <div class="col col-6 info">
+        <div class="col col-9 info">
           <div class="text text-center">
             <label>The Power of KnowONE</label>
             <p>
@@ -99,7 +98,7 @@
               Researchers at Microsoft studied records of 30 billion electronic conversations among 180 million 
               people in various countries, and worked out that any two strangers are, on average, distanced by 
               precisely 6.6 degrees of separation. In other words, you are linked by a string of seven or fewer 
-              accquintances to Bill gates, the Dalai Lama and the Queen.
+              accquintances to Bill Gates, the Dalai Lama and the Queen.
             </p>
             <p>
               Imagine the endless potential for personal and professional growth, if only we shared our experience 
@@ -116,7 +115,21 @@
           </div>
         </div>
         <div class="col col-2">
-          <img class="imgPlants" src="../../assets/images/aboutus/plant4.svg" />
+          <img class="img-responsive pull-right imgPlants" src="../../assets/images/aboutus/plant4.svg" />
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div id="aboutus5" class="container-fluid" (click)="toHome()">
+      <div class="row">
+        <div class="col-2">
+          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/avatar.svg" />
+        </div>
+        <div class="col-6">
+          <div class="text text-center">
+            <label>Words From The Founder, Mi Le Hagen</label>
+            <p>dawdawawfawf</p>
+          </div>
         </div>
       </div>
     </div>

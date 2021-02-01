@@ -18,4 +18,5 @@ export class NavbarComponent {
   scrollToTop(event) {
     window.scroll(0,0);
   }
+
 }

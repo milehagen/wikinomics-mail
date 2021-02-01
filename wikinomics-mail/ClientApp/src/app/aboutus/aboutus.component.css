@@ -1,29 +1,24 @@
+.page {
+    padding-top: 80px;
+}
+
 .container-fluid {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    overflow: auto;
+    font-size: 1.5vw;
 }
 
-.col {
-    text-align: center;
-}
-
-.info {
-    width: 100%;
-    margin-top: 80px;
+h2 {
+    font-size: 2vw;
 }
 
 .row {
-    overflow: auto;
-    width: 100%;
+    margin: 10px;
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.text {
-    width: 100%;
+    align-items: center;
 }
 
 .text label {
@@ -31,5 +26,11 @@
 }
 
 .imgPlants {
-    height: 200px;
+    width: 80%;
+}
+
+@media (max-width: 600px) {
+    .container-fluid {
+        height: 50vh;
+    }
 }
