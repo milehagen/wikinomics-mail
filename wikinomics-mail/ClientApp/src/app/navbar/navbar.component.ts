@@ -7,8 +7,6 @@ import { Component, Directive, HostListener } from '@angular/core';
 })
 export class NavbarComponent {
   isExpanded = false;
-  showNav = true;
-  previousScrollPosition = window.pageYOffset;
 
   collapse() {
     this.isExpanded = false;
@@ -21,14 +19,4 @@ export class NavbarComponent {
   scrollToTop(event) {
     window.scroll(0,0);
   }
-
-  @HostListener('window:scroll') hideShow() {
-    let currentScrollPosition = window.pageYOffset;
-    if(this.previousScrollPosition > currentScrollPosition) {
-        this.showNav = true;
-    } else {
-        this.showNav = false;
-    }
-    this.previousScrollPosition = currentScrollPosition;
-}
 }

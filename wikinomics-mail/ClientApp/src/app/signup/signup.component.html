@@ -1,0 +1,34 @@
+<div class="page" id="page" style="height: 100vh;">
+
+    <div id="home" class="container-fluid" (click)="GiveFeedback()" @fade>
+        <div class="row text-center">
+            <div class="col d-flex flex-column">
+                <img src="../../assets/images/knowone/standing.svg" width="15%" />
+                <h2>Sign up to explore the power of KnowONE!</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="feedback" class="container-fluid flex-row">
+        <div class="text-center">
+            <p>Veldig gøyalt at du har lyst til å være en av første som tester ut KnowONE! <br />Kan du fortelle litt om hva du håper å få ut av tjenesten?</p>
+            <textarea style="width: 100%; height: 8rem;"></textarea>
+            <button class="btn btn-primary" (click)="RegisterMail()">Send inn</button>
+        </div>
+    </div>
+
+    <div id="register" class="container-fluid">
+        <div class="text-center">
+            <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
+                <input formControlName="formEmail" type="text" class="form-control" style="width: 100%; margin: auto;" placeholder="Skriv inn email" />
+                <br/>
+                <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
+                  Email is not valid.      
+                </p>
+                <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid">Send inn</button>
+                <button class="btn btn-danger" (click)="GiveFeedback()">Tilbake</button>
+            </form>
+        </div>
+    </div>
+    <button class="btnToHome btn btn-secondary" (click)="toHome()">To Home</button>
+</div>

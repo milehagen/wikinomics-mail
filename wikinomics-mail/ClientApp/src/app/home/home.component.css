@@ -44,6 +44,14 @@ h2 {
     width: 60%;
 }
 
+.kursiv {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 .text label {
     font-weight: bold;
 }

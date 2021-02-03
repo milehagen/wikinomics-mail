@@ -5,71 +5,66 @@
       <div class="col d-flex flex-column">
         <img src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" width="40%"/>
         <br />
-        <h2>Forget Everything You Know About Networking</h2>
+        <h2>
+          What if we told you that you could be engaged in<br />
+          networking, whithout the discomfort of<br />
+          networking?
+        </h2>
+        <br />
+        <button class="btn btn-lg btn-primary bg-dark shadow-sm p-3 mb-5 rounded-pill" [routerLink]="['/knowone']">Say no more,<br />I'm in</button>
       </div>
     </div>
   </div>
   
   <div id="section1" class="container-fluid bg-light" (click)="toSection2()">
     <div class="row">
+      <div class="col col-4">
+        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/homeoffice.svg">
+      </div>    
       <div class="col col-7 info">
         <div class="text">
-          <h2>You Are More Powerful than You Think</h2>
+          <h2>
+            Real People<br />
+            Real answers
+          </h2>
+          <br />
           <p>
-            Your knowledge and experience is unique. And, we are convinced that there is someone out there 
-            who needs to hear from <span style="font-style: italic;">you</span>, and learn from 
-            <span style="font-style: italic;">your</span> experience.
+            KnowONE is the go-to-place for your burning career oriented questions; answered by ordinary people, 
+            who study within the field of your interest, hold a role you may be curious about, or work within an 
+            industry you want to learn more about.
           </p>
         </div>
       </div>
-      <div class="col col-4">
-        <img class="img-responsive pull-right homeImg" src="../../assets/images/home/homegarden.svg">
-      </div>    
     </div>
   </div>
   
   <div id="section2" class="container-fluid" (click)="toSection3()">
     <div class="row">
-      <div class="col col-4">
-        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/brainstorming.svg">
-      </div>
-      <div class="col col-7 info">
-        <div class="text">
-          <h2>You Can Make a Difference</h2>
-          <p>
-            Think back to your younger self, when you were exploring what to study, day-dreaming abour your 
-            future job, or working towards a promotion at work.
-          </p>
-          <p>
-            What do you wish someone told you? What advice would you give to your younger self?
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="section3" class="container-fluid bg-light" (click)="toSection4()">
-    <div class="row">
       <div class="col col-7 info">
         <div class="text">
           <h2>Knowledge without Application is a Waste</h2>
+          <br />
           <p class="text-left">
-            KnowONE is the place where you:
+            This is the place where you can:
           </p>
           <ul class="text-left">
-            <li>share your knowledge and experience with those who seek it</li>
-            <li>gather information that is relevant to you and your career development</li>
-            <li>discuss industry trends, and topics that matter to you and your peers</li>
+            <li><span class="bold">Recieve career advice</span> from someone you want to learn from.</li>
+            <li><span class="bold">Share your knowledge and experience</span> with those who seek it.</li>
+            <li><span class="bold">Discuss topics that matter</span> to you and your peers.</li>
+            <li>
+              <span class="bold">Join groups and communities</span> that serve as information resources, 
+              and cheerleaders for your career development.
+            </li>
           </ul>
         </div>
       </div>
       <div class="col col-4">
         <img class="img-responsive pull-right homeImg" src="../../assets/images/home/statsandgraphs.svg">
-      </div>    
+      </div>
     </div>
   </div>
 
-  <div id="section4" class="container-fluid" (click)="toSection5()">
+  <div id="section3" class="container-fluid bg-light" (click)="toSection5()">
     <div class="row">
       <div class="col col-4">
         <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor.svg">
@@ -85,8 +80,50 @@
       </div>
     </div>
   </div>
+
+  <div id="section4" class="container-fluid" (click)="toSection3()">
+    <div class="row">
+      <div class="col col-7 info">
+        <div class="text">
+          <h2>You Are more Powerful than You Think</h2>
+          <br />
+          <p class="text-left">
+            Your knowledge and experience is unique. And, we are convinced that there is someone out there who 
+            needs to hear from <span class="kursiv">you</span> and learn from <span class="kursiv">your</span> 
+            experience.
+          </p>
+          <p>
+            Therefore, in addition to recieving advice, and learning from others, KnowONE is the place where 
+            you experience to help others.
+          </p>
+        </div>
+      </div>
+      <div class="col col-4">
+        <img class="img-responsive pull-right homeImg" src="../../assets/images/home/homegarden.svg">
+      </div>
+    </div>
+  </div>
+
+  <div id="section5" class="container-fluid bg-light" (click)="toSection5()">
+    <div class="row">
+      <div class="col col-4">
+        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/brainstorming.svg">
+      </div>
+      <div class="col col-7 info">
+        <div class="text">
+          <h2>You Can Make A Difference</h2>
+          <br />
+          <p>
+            Think back to your younger self, when you were exploring what to study, day-dreaming abour your future job, 
+            or working towards a promotion at work.
+          </p>
+          <p>What do you wish someone told you? What advice would you give to your younger self?</p>
+        </div>
+      </div>
+    </div>
+  </div>
   
-  <div id="section4" class="container-fluid bg-light" (click)="toHome()">
+  <div id="section6" class="container-fluid" (click)="toHome()">
     <div class="row">
       <div class="col d-flex justify-content-center align-items-center">
         <button class="btn btn-lg btn-primary bg-dark shadow-sm p-3 mb-5 rounded-pill" [routerLink]="['/knowone']">Say no more,<br />I'm in</button>
