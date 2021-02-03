@@ -10,3 +10,9 @@ export let fade = trigger('fade', [
         animate('500ms', style({opacity: 0}))
     ])
 ]);
+
+export let fadeOutNav = trigger('fadeOutNav', [
+  transition('* => void', [
+    animate('1000ms', style({opacity: 0}))
+  ])
+]);

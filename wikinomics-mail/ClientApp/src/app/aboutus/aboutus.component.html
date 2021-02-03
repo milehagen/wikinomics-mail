@@ -1,9 +1,9 @@
-<div class="page" style="height: 100vh">  
+<div class="page" id="page" style="height: 100vh">  
 
     <div id="home" class="container-fluid" (click)="toAboutUs1()" @fade>
       <div class="row text-center">
         <div class="col d-flex flex-column">
-          <img src="../../assets/images/aboutus/imagintation.svg" width="30%;">
+          <img src="../../assets/images/aboutus/imagintation.svg" alt="imagination.svg" width="30%;">
           <h2>Our intention, and Reason For Our Existence</h2>
         </div>
       </div>
@@ -12,7 +12,7 @@
     <div id="aboutus1" class="container-fluid" (click)="toAboutUs2()">
       <div class="row">
         <div class="col col-4">
-          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant5.svg">
+          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant5.svg" alt="plant.svg">
         </div>
         <div class="col col-7 info">
           <div class="text text-center">
@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="col col-4">
-          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant6.svg" />
+          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant6.svg" alt="plant.svg" />
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
     <div id="aboutus3" class="container-fluid" (click)="toAboutUs4()">
       <div class="row">
         <div class="col col-4">
-          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant1.svg" />
+          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant1.svg" alt="plant.svg" />
         </div>
         <div class="col col-7 info">
           <div class="text text-center">
@@ -115,7 +115,7 @@
           </div>
         </div>
         <div class="col col-4">
-          <img class="img-responsive pull-right imgPlants" src="../../assets/images/aboutus/plant4.svg" />
+          <img class="img-responsive pull-right imgPlants" src="../../assets/images/aboutus/plant4.svg" alt="plant.svg" />
         </div>
       </div>
     </div>
@@ -123,7 +123,7 @@
     <div id="aboutus5" class="container-fluid" (click)="toHome()">
       <div class="row">
         <div class="col col-4">
-          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/avatar.svg" />
+          <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/avatar.svg" alt="plant.svg" />
         </div>
         <div class="col col-7">
           <div class="text text-center">
@@ -133,4 +133,5 @@
         </div>
       </div>
     </div>
+    <button class="btnToHome btn btn-secondary" (click)="toHome()">To Home</button>
 </div>

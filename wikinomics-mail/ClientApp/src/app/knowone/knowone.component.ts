@@ -35,14 +35,9 @@ export class KnowONEComponent {
         this.getEmailAddress();
     }
 
-    // Scrolls to feedback section
-    GiveFeedback() {
-        document.getElementById("feedback").scrollIntoView({behavior: "smooth"});
-    }
-
-    // Scrolls to mail registration section
-    RegisterMail() {
-        document.getElementById("register").scrollIntoView({behavior: "smooth"});
+    // Scrolls to top of page/home
+    toHome() {
+        document.getElementById("home").scrollIntoView({behavior: "smooth"});
     }
 
     //Adds email to database

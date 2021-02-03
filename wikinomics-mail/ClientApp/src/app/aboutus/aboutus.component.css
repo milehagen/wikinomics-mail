@@ -38,6 +38,12 @@ h2 {
     width: 30%;
 }
 
+.btnToHome {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
 @media (max-width: 600px) {
     .container-fluid, #home {
         height: 33vh;

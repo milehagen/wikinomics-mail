@@ -5,7 +5,7 @@
       <div class="col d-flex flex-column">
         <img src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" width="40%"/>
         <br />
-        <h2>You Are More Powerful than You Think</h2>
+        <h2>Forget Everything You Know About Networking</h2>
       </div>
     </div>
   </div>
@@ -13,18 +13,17 @@
   <div id="section1" class="container-fluid bg-light" (click)="toSection2()">
     <div class="row">
       <div class="col col-7 info">
-        <div class="header bg-secondary">1.</div>
         <div class="text">
-          <label>Experienced People, honest answers</label>
+          <h2>You Are More Powerful than You Think</h2>
           <p>
-            KnowONE is the go-to place for your burning career-oriented questions; answered by people who study 
-            within the field of your interest, hold a title you may be curious about, or work within an industry 
-            you want to learn more about.
+            Your knowledge and experience is unique. And, we are convinced that there is someone out there 
+            who needs to hear from <span style="font-style: italic;">you</span>, and learn from 
+            <span style="font-style: italic;">your</span> experience.
           </p>
         </div>
       </div>
       <div class="col col-4">
-        <img class="img-responsive pull-right imgPlants" src="../../assets/images/aboutus/plant5.svg">
+        <img class="img-responsive pull-right homeImg" src="../../assets/images/home/homegarden.svg">
       </div>    
     </div>
   </div>
@@ -32,12 +31,18 @@
   <div id="section2" class="container-fluid" (click)="toSection3()">
     <div class="row">
       <div class="col col-4">
-        <img class="img-responsive pull-left imgPlants" src="../../assets/images/aboutus/plant5.svg">
+        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/brainstorming.svg">
       </div>
       <div class="col col-7 info">
-        <div class="header bg-secondary">2.</div>
         <div class="text">
-          <p>KnowONE er Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fisce nec posuere turpis</p>
+          <h2>You Can Make a Difference</h2>
+          <p>
+            Think back to your younger self, when you were exploring what to study, day-dreaming abour your 
+            future job, or working towards a promotion at work.
+          </p>
+          <p>
+            What do you wish someone told you? What advice would you give to your younger self?
+          </p>
         </div>
       </div>
     </div>
@@ -46,22 +51,47 @@
   <div id="section3" class="container-fluid bg-light" (click)="toSection4()">
     <div class="row">
       <div class="col col-7 info">
-        <div class="header bg-secondary">3.</div>
         <div class="text">
-          <p>KnowONE er Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fisce nec posuere turpis</p>
+          <h2>Knowledge without Application is a Waste</h2>
+          <p class="text-left">
+            KnowONE is the place where you:
+          </p>
+          <ul class="text-left">
+            <li>share your knowledge and experience with those who seek it</li>
+            <li>gather information that is relevant to you and your career development</li>
+            <li>discuss industry trends, and topics that matter to you and your peers</li>
+          </ul>
         </div>
       </div>
       <div class="col col-4">
-        <img class="img-responsive pull-right imgPlants" src="../../assets/images/aboutus/plant5.svg">
+        <img class="img-responsive pull-right homeImg" src="../../assets/images/home/statsandgraphs.svg">
       </div>    
     </div>
   </div>
-  
-  <div id="section4" class="container-fluid" (click)="toHome()">
+
+  <div id="section4" class="container-fluid" (click)="toSection5()">
     <div class="row">
-      <div class="col d-flex justify-content-center align-items-center">
-        <button class="btn btn-primary bg-dark rounded shadow-sm p-3 mb-5 rounded" [routerLink]="['/knowone']">Kom i gang</button>
+      <div class="col col-4">
+        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor.svg">
+      </div>
+      <div class="col col-7 info">
+        <div class="text">
+          <h2>KnowONE is a safe space</h2>
+          <p>
+            ...Oh, and we know how scary it can be to put yourself out there. So, we've - of course - made 
+            sure that you can be anonymous. Because, fear of judgement should not stand in the way of knowledge-sharing.
+          </p>
+        </div>
       </div>
     </div>
   </div>
+  
+  <div id="section4" class="container-fluid bg-light" (click)="toHome()">
+    <div class="row">
+      <div class="col d-flex justify-content-center align-items-center">
+        <button class="btn btn-lg btn-primary bg-dark shadow-sm p-3 mb-5 rounded-pill" [routerLink]="['/knowone']">Say no more,<br />I'm in</button>
+      </div>
+    </div>
+  </div>
+  <button class="btnToHome btn btn-secondary" (click)="toHome()">To Top</button>
 </div>

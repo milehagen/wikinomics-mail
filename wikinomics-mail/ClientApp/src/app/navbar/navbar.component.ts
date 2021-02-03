@@ -5,9 +5,6 @@ import { Component, Directive, HostListener } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-@Directive({
-  selector: '[scroll]'
-})
 export class NavbarComponent {
   isExpanded = false;
   showNav = true;
@@ -28,11 +25,10 @@ export class NavbarComponent {
   @HostListener('window:scroll') hideShow() {
     let currentScrollPosition = window.pageYOffset;
     if(this.previousScrollPosition > currentScrollPosition) {
-      this.showNav = true;
+        this.showNav = true;
     } else {
-      this.showNav = false;
+        this.showNav = false;
     }
     this.previousScrollPosition = currentScrollPosition;
-  }
-
+}
 }

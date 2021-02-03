@@ -20,29 +20,9 @@ export class HomeComponent {
 
   ngOnInit() {}
 
-  // Scroll to home section
+  // Scrolls to top of page/home
   toHome() {
     document.getElementById("page").scrollIntoView({behavior:"smooth"});
-  }
-
-  // Scroll to info section 1
-  toSection1() {
-    document.getElementById("section1").scrollIntoView({behavior:"smooth"});
-  }
-
-  // Scroll to info section 2
-  toSection2() {
-    document.getElementById("section2").scrollIntoView({behavior: "smooth"});
-  }
-
-  // Scroll to info section 3
-  toSection3() {
-    document.getElementById("section3").scrollIntoView({behavior: "smooth"});
-  }
-
-  // Scroll to info section 4
-  toSection4() {
-    document.getElementById("section4").scrollIntoView({behavior: "smooth"});
   }
 
  }

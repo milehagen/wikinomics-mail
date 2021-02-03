@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     overflow: auto;
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 
 #home {
@@ -16,15 +16,6 @@
 
 h2 {
     font-size: 2vw;
-}
-
-.header {
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .row {
@@ -38,7 +29,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+}
+
+.col-7 {
+    display: flex;
+    justify-content: space-around;
 }
 
 .info {
@@ -46,15 +41,27 @@ h2 {
 }
 
 .text {
-    width: 70%;
+    width: 60%;
 }
 
 .text label {
     font-weight: bold;
 }
 
-.imgPlants {
-    width: 30%;
+.homeImg {
+    width: 70%;
+}
+
+.btnToHome {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+@media (max-width: 1000px) {
+    .container-fluid, #home {
+        height: 50vh;
+    }
 }
 
 @media (max-width: 600px) {
