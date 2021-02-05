@@ -23,11 +23,15 @@ namespace wikinomics_mail.DAL
                     context.MailAddresses.AddRange(
                         new MailAddress
                         {
+                            firstname = "maggy",
+                            lastname = "moo",
                             Address = "magnushjk@gmail.com",
                             UniqueId = "BullshitImMakingUp"
                         },
                         new MailAddress
                         {
+                            firstname = "shaky",
+                            lastname = "shoe",
                             Address = "shakus89@hotmail.com",
                             UniqueId = "SomeOtherBullshit"
                         }

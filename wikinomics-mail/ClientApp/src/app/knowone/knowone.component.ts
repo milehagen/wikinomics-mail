@@ -85,12 +85,12 @@ export class KnowONEComponent {
 
     //Check if the email already exists in the array, if it return false then the email is unique, if true then it is already registered.
     checkIfRegistered(email: String) {
-        let ok;
-        for (let value of this.allMailAdresses) {
-        if (email === value.address) {
-            ok = true;
-        } 
+       /* for (let value of this.allMailAdresses) {
+          if (email === value.address) {
+          return true;
+          } 
         }
-        return ok;
+        */
+        return false;
     }
 }

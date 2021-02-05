@@ -50,6 +50,8 @@ namespace wikinomics_mail.DAL
            try
             {
                 var newEmail = new MailAddress();
+                newEmail.firstname = email.firstname;
+                newEmail.lastname = email.lastname;
                 newEmail.Address = email.Address;
                 newEmail.UniqueId = MakeHash(emailSubstring);
                 _db.MailAddresses.Add(newEmail);

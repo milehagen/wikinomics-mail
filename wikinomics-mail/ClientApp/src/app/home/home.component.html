@@ -128,7 +128,9 @@
       <div class="col col-7 info">
         <div class="text-center">
           <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
-              <input formControlName="formEmail" type="text" class="form-control" style="width: 100%; margin: auto;" placeholder="Skriv inn email" />
+            <input formControlName="formFirstname" type="text" placeholder="Fornavn"/>
+            <input formControlName="formLastname" type="text" placeholder="Etternavn" />
+            <input formControlName="formEmail" type="text" class="form-control" style="width: 100%; margin: auto;" placeholder="Skriv inn email" />
               <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
                 Email is not valid.      
               </p>

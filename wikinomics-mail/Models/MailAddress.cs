@@ -11,6 +11,10 @@ namespace wikinomics_mail.Models
         //Auto increment ID in DB
         public int Id { get; set; }
 
+        public string firstname { get; set; }
+
+        public string lastname { get; set; }
+
         //Email address
         public string Address { get; set; }
 

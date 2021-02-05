@@ -1,5 +1,7 @@
 export class MailAddress {
   id: number;
-  address: String;
+  firstname: string
+  lastname: string
+  address: string;
   uniqueId: number;
 }
