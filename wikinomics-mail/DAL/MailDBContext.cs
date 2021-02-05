@@ -34,6 +34,8 @@ namespace wikinomics_mail.DAL
 
         public DbSet<Statistic> Statistics { get; set; }
 
+        public DbSet<Feedback> Feedbacks { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();

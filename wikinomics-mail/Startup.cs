@@ -29,6 +29,7 @@ namespace wikinomics_mail
             services.AddScoped<IMailAddressRepository, MailAddressRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<IStatisticRepository, StatisticRepository>();
+            services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 
             services.AddSession(options =>
             {

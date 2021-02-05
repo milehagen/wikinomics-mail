@@ -40,7 +40,7 @@ namespace wikinomics_mail.DAL
                     context.Mails.AddRange(
                         new Mail
                         {
-                            Titel = "Hello and welcome to my dota2 stream",
+                            Titel = "Hello and welcome to my dota2 stream, its amazing",
                             Body = "<h1>Title test</h1> <br/> <b>Bold and beautiful</b>",
                             Date = DateTime.Parse("2021-08-01")
                         },
@@ -78,6 +78,15 @@ namespace wikinomics_mail.DAL
                         });
                 }
 
+                if (!context.Feedbacks.Any()) 
+                {
+                    context.Feedbacks.Add(
+                        new Feedback {
+                            Id = 1,
+                            Message = "H"
+                        }
+                    );
+                }
                 context.SaveChanges();
 
             }
