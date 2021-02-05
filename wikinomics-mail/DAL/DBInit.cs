@@ -78,15 +78,6 @@ namespace wikinomics_mail.DAL
                         });
                 }
 
-                if (!context.Feedbacks.Any()) 
-                {
-                    context.Feedbacks.Add(
-                        new Feedback {
-                            Id = 1,
-                            Message = "H"
-                        }
-                    );
-                }
                 context.SaveChanges();
 
             }
