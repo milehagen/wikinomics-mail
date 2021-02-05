@@ -13,7 +13,6 @@ import { MailModal } from './admin/modal/mailModal';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
-import { KnowONEComponent } from './knowone/knowone.component';
 import { AboutUsComponent } from './aboutus/aboutus.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { AboutUsComponent } from './aboutus/aboutus.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    KnowONEComponent,
     AboutUsComponent,
     AdminComponent,
     MailModal,

@@ -4,7 +4,6 @@ import { AboutUsComponent } from './aboutus/aboutus.component';
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { KnowONEComponent } from './knowone/knowone.component';
 import { LoginComponent } from './login/login.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
@@ -18,10 +17,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'knowone',
-    component: KnowONEComponent
   },
   {
     path: 'aboutus',
