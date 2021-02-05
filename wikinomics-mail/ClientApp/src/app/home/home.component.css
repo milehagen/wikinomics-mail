@@ -60,6 +60,12 @@ h2 {
     width: 70%;
 }
 
+.form-check {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
 .btnToHome {
     position: fixed;
     bottom: 0;
