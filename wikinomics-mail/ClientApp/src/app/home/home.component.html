@@ -122,6 +122,54 @@
       </div>
     </div>
   </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col col-7 info">
+        <div class="text-center">
+          <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
+              <input formControlName="formEmail" type="text" class="form-control" style="width: 100%; margin: auto;" placeholder="Skriv inn email" />
+              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
+                Email is not valid.      
+              </p>
+              <br/>
+              
+              <div class="form-check form-check-inline">
+                <div class="row">
+                  <div class="col-2">
+                    <input class="checkbox" id="checkbox1" type="checkbox">
+                  </div>
+                  <div class="col-6">
+                    <label for="checkbox1">I accept the terms and conditions</label>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="form-check form-check-inline">
+                <div class="row">
+                  <div class="col-2">
+                    <input class="checkbox" id="checkbox2" type="checkbox">
+                  </div>
+                  <div class="col-6">
+                    <label for="checkbox2">
+                      I definitely want to follow KnowONE's startup journey by email, and hear 
+                      from the founder.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid">Send inn</button>
+              <button class="btn btn-danger" (click)="GiveFeedback()">Tilbake</button>
+          </form>
+        </div>
+      </div>
+      <div class="col col-4">
+        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor2.svg">
+      </div>
+    </div>
+
+  </div>
   
   <div id="section6" class="container-fluid" (click)="toHome()">
     <div class="row">

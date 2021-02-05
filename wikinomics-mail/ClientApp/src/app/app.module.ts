@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { KnowONEComponent } from './knowone/knowone.component';
 import { AboutUsComponent } from './aboutus/aboutus.component';
-import { SignUpComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { SignUpComponent } from './signup/signup.component';
     HomeComponent,
     KnowONEComponent,
     AboutUsComponent,
-    SignUpComponent,
     AdminComponent,
     MailModal,
     LoginComponent,

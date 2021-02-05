@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { KnowONEComponent } from './knowone/knowone.component';
 import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './signup/signup.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
 
@@ -27,10 +26,6 @@ const routes: Routes = [
   {
     path: 'aboutus',
     component: AboutUsComponent
-  },
-  {
-    path: 'signup',
-    component: SignUpComponent
   },
   {
     path: 'login',
