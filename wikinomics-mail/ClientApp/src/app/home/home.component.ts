@@ -41,6 +41,10 @@ export class HomeComponent {
     document.getElementById("page").scrollIntoView({behavior:"smooth"});
   }
 
+  toSignUp() {
+    document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
+  }
+
   //Adds email to database
   addEmailToDb() {
       const mailAddress = new MailAddress();

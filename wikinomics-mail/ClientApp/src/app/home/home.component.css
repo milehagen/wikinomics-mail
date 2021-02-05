@@ -44,6 +44,14 @@ h2 {
     width: 60%;
 }
 
+.text p {
+    text-align: left;
+}
+
+.text h2 {
+    font-weight: bold;
+}
+
 .kursiv {
     font-style: italic;
 }
