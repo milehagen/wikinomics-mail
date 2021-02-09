@@ -7,6 +7,7 @@ import { Component, Directive, HostListener } from '@angular/core';
 })
 export class NavbarComponent {
   isExpanded = false;
+  english = true;
 
   collapse() {
     this.isExpanded = false;
@@ -19,4 +20,14 @@ export class NavbarComponent {
   scrollToTop(event) {
     window.scroll(0,0);
   }
+
+  changeLanguage() {
+    if(this.english) {
+      this.english = false;
+    } else {
+      this.english = true;
+    }
+  }
+
+ 
 }

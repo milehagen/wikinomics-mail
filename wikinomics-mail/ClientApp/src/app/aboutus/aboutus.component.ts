@@ -21,3 +21,20 @@ export class AboutUsComponent {
     document.getElementById("home").scrollIntoView({behavior: "smooth"});
   }
 }
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './aboutusNorwegian.component.html',
+  styleUrls: [ './aboutus.component.css' ],
+  animations: [
+    fade
+  ]
+})
+export class AboutUsNorwegianComponent {
+  constructor() {}
+
+  // Scrolls to top of page/home
+  toHome () {
+    document.getElementById("home").scrollIntoView({behavior: "smooth"});
+  }
+}

@@ -7,20 +7,22 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from  './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent, HomeNorwegianComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { MailModal } from './admin/modal/mailModal';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
-import { AboutUsComponent } from './aboutus/aboutus.component';
+import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
+    HomeNorwegianComponent,
     AboutUsComponent,
+    AboutUsNorwegianComponent,
     AdminComponent,
     MailModal,
     LoginComponent,

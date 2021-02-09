@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutUsComponent } from './aboutus/aboutus.component';
+import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.component';
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent, HomeNorwegianComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
@@ -19,8 +19,16 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'home/no',
+    component: HomeNorwegianComponent
+  },
+  {
     path: 'aboutus',
     component: AboutUsComponent
+  },
+  {
+    path: 'aboutus/no',
+    component: AboutUsNorwegianComponent
   },
   {
     path: 'login',

@@ -11,7 +11,7 @@
           networking?
         </h2>
         <br />
-        <button class="btn btn-lg btn-primary bg-dark shadow-sm p-3 mb-5 rounded-pill" (click)="toSignUp()">Say no more,<br />I'm in</button>
+        <button class="btn btn-lg btn-primary bg-dark shadow-sm rounded-pill" (click)="toSignUp()">Say no more,<br />I'm in</button>
       </div>
     </div>
   </div>
@@ -70,11 +70,11 @@
           <h2>This is the Place Where You Can...</h2>
           <br />
           <ul class="text-left">
-            <li><span class="bold">Recieve career advice</span> from someone you want to learn from.</li>
-            <li><span class="bold">Share your knowledge and experience</span> with those who seek it.</li>
-            <li><span class="bold">Discuss topics that matter</span> to you and your peers.</li>
+            <li><b>Recieve career advice</b> from someone you want to learn from.</li>
+            <li><b>Share your knowledge and experience</b> with those who seek it.</li>
+            <li><b>Discuss topics that matter</b> to you and your peers.</li>
             <li>
-              <span class="bold">Join groups and communities</span> that serve as information resources, 
+              <b>Join groups and communities</b> that serve as information resources, 
               and cheerleaders for your career development.
             </li>
           </ul>
@@ -113,10 +113,6 @@
           <h2>You Can Make A Difference</h2>
           <br />
           <p>
-            Your life experience is unique. And, we are convinced that there is someone out there who needs to 
-            hear from <span class="kursiv">you</span>, and learn from <span class="kursiv">your</span> experience.
-          </p>
-          <p>
             It doesn't matter if you're a student, a CEO of a big company, or an aspiring entrepreneur. What you 
             have gone through in life is unique, and someone out there needs to hear what you have to say.
           </p>
@@ -128,34 +124,22 @@
       </div>
     </div>
   </div>
-  
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col col-4">
-        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/brainstorming.svg">
-      </div>
-      <div class="col col-7 info">
-        <div class="text">
-          <h2>You Can Make A Difference</h2>
-          <br />
-          <p>
-            Think back to your younger self, when you were exploring what to study, day-dreaming abour your future job, 
-            or working towards a promotion at work.
-          </p>
-          <p>What do you wish someone told you? What advice would you give to your younger self?</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="signUp" class="container-fluid bg-light">
-    <div class="row">
+  <div id="signUp" class="container-fluid">
+    <div class="row row-register">
       <div class="col col-7 info">
         <div class="text-center">
+          <h2>Sign up to test KnowONE</h2>
+          <p>
+            We will be launching soon!
+          </p>
+          <p>
+            Sign up now, and be mong the 100 users to get FREE access for life!
+          </p>
           <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
-            <input formControlName="formFirstname" type="text" placeholder="Fornavn"/>
-            <input formControlName="formLastname" type="text" placeholder="Etternavn" />
-            <input formControlName="formEmail" type="text" class="form-control" style="width: 100%; margin: auto;" placeholder="Skriv inn email" />
+            <input formControlName="formFirstname" type="text" class="form-control" placeholder="Fornavn"/>
+            <input formControlName="formLastname" type="text" class="form-control" placeholder="Etternavn" />
+            <input formControlName="formEmail" type="text" class="form-control" placeholder="Skriv inn email" />
               <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
                 Email is not valid.      
               </p>
@@ -164,20 +148,20 @@
               <div class="form-check form-check-inline">
                 <div class="row">
                   <div class="col-2">
-                    <input class="checkbox" id="checkbox1" type="checkbox">
+                    <input class="checkbox" id="checkbox1" type="checkbox" (change)="acceptTerms($event)">
                   </div>
-                  <div class="col-6">
+                  <div class="col-8 check">
                     <label for="checkbox1">I accept the terms and conditions</label>
                   </div>
                 </div>
               </div>
               <br />
               <div class="form-check form-check-inline">
-                <div class="row">
+                <div class="row register">
                   <div class="col-2">
                     <input class="checkbox" id="checkbox2" type="checkbox">
                   </div>
-                  <div class="col-6">
+                  <div class="col-8 check">
                     <label for="checkbox2">
                       I definitely want to follow KnowONE's startup journey by email, and hear 
                       from the founder.
@@ -186,22 +170,13 @@
                 </div>
               </div>
               <br />
-              <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid">Send inn</button>
+              <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid || !termsAccepted">Send inn</button>
               <button class="btn btn-danger">Tilbake</button>
           </form>
         </div>
       </div>
       <div class="col col-4">
         <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor2.svg">
-      </div>
-    </div>
-
-  </div>
-  
-  <div id="section6" class="container-fluid" (click)="toHome()">
-    <div class="row">
-      <div class="col d-flex justify-content-center align-items-center">
-        <button class="btn btn-lg btn-primary bg-dark shadow-sm p-3 mb-5 rounded-pill" [routerLink]="['/knowone']">Say no more,<br />I'm in</button>
       </div>
     </div>
   </div>
