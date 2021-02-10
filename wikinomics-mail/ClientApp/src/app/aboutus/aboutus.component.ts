@@ -5,6 +5,7 @@ import { Statistic } from '../Models/Statistic';
 import { fade } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
+// Component for English page
 @Component({
   selector: 'app-home',
   templateUrl: './aboutus.component.html',
@@ -22,6 +23,8 @@ export class AboutUsComponent {
   }
 }
 
+
+// Component for Norwegian page
 @Component({
   selector: 'app-home',
   templateUrl: './aboutusNorwegian.component.html',

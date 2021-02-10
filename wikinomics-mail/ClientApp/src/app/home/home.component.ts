@@ -5,6 +5,7 @@ import { Statistic } from '../Models/Statistic';
 import { fade } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
+// Component for English home page
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,7 +16,6 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 })
 
 export class HomeComponent {
-  registerView = 'regView1';
   termsAccepted: boolean;
   public emailInputForm: FormGroup;
   showInfo: boolean;
@@ -49,6 +49,7 @@ export class HomeComponent {
     document.getElementById("page").scrollIntoView({behavior:"smooth"});
   }
 
+  // Scrolls to sign up field
   toSignUp() {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
   }
@@ -107,6 +108,7 @@ export class HomeComponent {
     return false;
   }
 
+  // Checks if terms and conditions is accepted
   acceptTerms(event) {
     if(event.target.checked) {
       this.termsAccepted = true;
@@ -117,6 +119,7 @@ export class HomeComponent {
 
 }
 
+// Component for Norwegian home page
 @Component({
   selector: 'app-home',
   templateUrl: './homeNorwegian.component.html',
@@ -127,7 +130,6 @@ export class HomeComponent {
 })
 
 export class HomeNorwegianComponent {
-  registerView = 'regView1';
   termsAccepted: boolean;
   public emailInputForm: FormGroup;
   showInfo: boolean;
@@ -161,6 +163,7 @@ export class HomeNorwegianComponent {
     document.getElementById("page").scrollIntoView({behavior:"smooth"});
   }
 
+  // Scrolls to sign up field
   toSignUp() {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
   }
@@ -219,6 +222,7 @@ export class HomeNorwegianComponent {
     return false;
   }
 
+  // Checks if terms and conditions is accepted
   acceptTerms(event) {
     if(event.target.checked) {
       this.termsAccepted = true;
