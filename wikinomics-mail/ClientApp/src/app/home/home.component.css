@@ -75,6 +75,10 @@ h2 {
     width: 20px;
 }
 
+.btnSignUp {
+    text-align: center;
+    margin: auto;
+}
 
 .btnToHome {
     position: fixed;
@@ -92,6 +96,10 @@ h2 {
         font-size: 14px;
     }
 
+    .col {
+        overflow: auto;
+    }
+
     .text {
         width: 100%;
         height: 100%;
@@ -102,10 +110,12 @@ h2 {
     }
 
     .homeImg {
-        width: 100%;
+        width: 200px;
+        overflow: hidden;
     }
 
     .row-register {
         flex-direction: column;
+        margin-top: 50px;
     }
 }

@@ -11,17 +11,17 @@
           networking?
         </h2>
         <br />
-        <button class="btn btn-lg btn-primary bg-dark shadow-sm rounded-pill" (click)="toSignUp()">Say no more,<br />I'm in</button>
+        <button class="btn btn-primary bg-dark shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Say no more,<br />I'm in</button>
       </div>
     </div>
   </div>
   
   <div class="container-fluid bg-light">
     <div class="row">
-      <div class="col col-4">
+      <div class="col">
         <img class="img-responsive pull-left homeImg" src="../../assets/images/home/homeoffice.svg">
       </div>    
-      <div class="col col-7 info">
+      <div class="col info">
         <div class="text">
           <h2>
             Real People<br />
@@ -40,7 +40,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col col-7 info">
+      <div class="col info">
         <div class="text">
           <h2>Put All Your Assumptions Aside</h2>
           <br />
@@ -54,7 +54,7 @@
           </p>
         </div>
       </div>
-      <div class="col col-4">
+      <div class="col">
         <img class="img-responsive pull-right homeImg" src="../../assets/images/home/searching.png">
       </div>
     </div>
@@ -62,10 +62,10 @@
   
   <div class="container-fluid bg-light">
     <div class="row">
-      <div class="col col-4">
+      <div class="col">
         <img class="img-responsive pull-right homeImg" src="../../assets/images/home/brainstorming.svg">
       </div>
-      <div class="col col-7 info">
+      <div class="col info">
         <div class="text">
           <h2>This is the Place Where You Can...</h2>
           <br />
@@ -85,7 +85,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col col-7 info">
+      <div class="col info">
         <div class="text">
           <h2>A Safe Place For "Stupid" Questions</h2>
           <p>
@@ -97,7 +97,7 @@
           </p>
         </div>
       </div>
-      <div class="col col-4">
+      <div class="col">
         <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor.svg">
       </div>
     </div>
@@ -105,10 +105,10 @@
 
   <div class="container-fluid bg-light">
     <div class="row">
-      <div class="col col-4">
+      <div class="col">
         <img class="img-responsive pull-right homeImg" src="../../assets/images/home/homegarden.svg">
       </div>
-      <div class="col col-7 info">
+      <div class="col info">
         <div class="text">
           <h2>You Can Make A Difference</h2>
           <br />
@@ -127,14 +127,14 @@
 
   <div id="signUp" class="container-fluid">
     <div class="row row-register">
-      <div class="col col-7 info">
-        <div class="text-center">
+      <div class="col info">
+        <div class="regText text-center">
           <h2>Sign up to test KnowONE</h2>
           <p>
             We will be launching soon!
           </p>
           <p>
-            Sign up now, and be mong the 100 users to get FREE access for life!
+            Sign up now, and be among the 100 users to get FREE access for life!
           </p>
           <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
             <input formControlName="formFirstname" type="text" class="form-control" placeholder="Fornavn"/>
@@ -175,7 +175,7 @@
           </form>
         </div>
       </div>
-      <div class="col col-4">
+      <div class="col">
         <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor2.svg">
       </div>
     </div>

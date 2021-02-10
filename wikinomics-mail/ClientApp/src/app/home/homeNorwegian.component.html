@@ -11,17 +11,17 @@
             nettverksbygging?
           </h2>
           <br />
-          <button class="btn btn-lg btn-primary bg-dark shadow-sm p-3 mb-5 rounded-pill" (click)="toSignUp()">Trenger ikke mer<br />Jeg er med!</button>
+          <button class="btn btn-primary bg-dark shadow-sm p-3 mb-5 rounded-pill btnSignUp" (click)="toSignUp()">Trenger ikke mer<br />Jeg er med!</button>
         </div>
       </div>
     </div>
     
     <div class="container-fluid bg-light">
       <div class="row">
-        <div class="col col-4">
+        <div class="col">
           <img class="img-responsive pull-left homeImg" src="../../assets/images/home/homeoffice.svg">
         </div>    
-        <div class="col col-7 info">
+        <div class="col info">
           <div class="text">
             <h2>
                 Ekte folk, <br />
@@ -43,7 +43,7 @@
   
     <div class="container-fluid">
       <div class="row">
-        <div class="col col-7 info">
+        <div class="col info">
           <div class="text">
             <h2>Legg Alle Antagelser Til Side</h2>
             <br />
@@ -57,7 +57,7 @@
             </p>
           </div>
         </div>
-        <div class="col col-4">
+        <div class="col">
           <img class="img-responsive pull-right homeImg" src="../../assets/images/home/searching.png">
         </div>
       </div>
@@ -65,10 +65,10 @@
     
     <div class="container-fluid bg-light">
       <div class="row">
-        <div class="col col-4">
+        <div class="col">
           <img class="img-responsive pull-right homeImg" src="../../assets/images/home/brainstorming.svg">
         </div>
-        <div class="col col-7 info">
+        <div class="col info">
           <div class="text">
             <h2>På KnowONE kan du...</h2>
             <br />
@@ -88,19 +88,17 @@
   
     <div class="container-fluid">
       <div class="row">
-        <div class="col col-7 info">
+        <div class="col info">
           <div class="text">
             <h2>Et Trygt Sted for "Dumme" Spørsmål</h2>
             <p>
-              We believe that there are no "stupid questions". However, we also know how scary it can be to put 
-              yourself out there. That's why we've made sure that you can be anonymous.
-            </p>
-            <p>
-              ...Because, fear of judgement should not stand in the way of gaining knowledge.
+              Vi mener at ingen spørsmål er dumme. Men, vi er også klare over hvor skummelt det kan være å stille 
+              spørsmål til erfarne mennesker. Derfor har vi sørget for at du kan være anonym... fordi frykten over 
+              å dumme seg ut ikke skal stå i veien for økt kunnskap.
             </p>
           </div>
         </div>
-        <div class="col col-4">
+        <div class="col">
           <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor.svg">
         </div>
       </div>
@@ -108,10 +106,10 @@
   
     <div class="container-fluid bg-light">
       <div class="row">
-        <div class="col col-4">
+        <div class="col">
           <img class="img-responsive pull-right homeImg" src="../../assets/images/home/homegarden.svg">
         </div>
-        <div class="col col-7 info">
+        <div class="col info">
           <div class="text">
             <h2>Du Kan Utgjøre En Forskjell</h2>
             <br />
@@ -131,8 +129,15 @@
   
     <div id="signUp" class="container-fluid">
       <div class="row row-register">
-        <div class="col col-7 info">
-          <div class="text-center">
+        <div class="col info">
+          <div class="regText text-center">
+            <h2>Registrer deg for å teste KnowONE</h2>
+            <p>
+              KnowONE lanseres snart!
+            </p>
+            <p>
+              Registrer deg nå og bli blant de 100 brukerne som får GRATIS tilgang på livstid!
+            </p>
             <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
               <input formControlName="formFirstname" type="text" class="form-control" placeholder="Fornavn"/>
               <input formControlName="formLastname" type="text" class="form-control" placeholder="Etternavn" />
@@ -171,7 +176,7 @@
             </form>
           </div>
         </div>
-        <div class="col col-4">
+        <div class="col">
           <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor2.svg">
         </div>
       </div>
