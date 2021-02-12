@@ -6,15 +6,15 @@
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }" *ngIf="english">
     <ul class="nav navbar-nav mx-auto">
       <li class="nav-item active">
-        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home']">Home</button>
+        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home']">HOME</button>
       </li>
       <li class="nav-item">
-        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus']">About Us</button>
+        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus']">ABOUT US</button>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item">
-        <button class="btn btn-link" (click)="changeLanguage()" [routerLink]="['/home/no']">Norwegian</button>
+        <button class="btn btn-link" (click)="changeLanguage()" [routerLink]="['/home/no']">NORWEGIAN</button>
       </li>
     </ul>
   </div>

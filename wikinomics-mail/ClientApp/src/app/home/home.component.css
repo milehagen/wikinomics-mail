@@ -1,34 +1,37 @@
-.page {
-    padding-top: 80px;
-}
-
 .container-fluid {
     height: 100vh;
     display: flex;
     justify-content: center;
     overflow: auto;
-    font-size: 1vw;
+    font-size: 20px;
 }
 
-#home {
-    height: 90vh;
+.main h2{
+    margin: 40px;
 }
 
 h2 {
-    font-size: 2vw;
+    font-size: 22px;
 }
 
 .row {
-    width: 100%;
+    width: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.section {
+    display: flex;
 }
 
 .col {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px;
+    width: 70%;
+    height: 50vh;
 }
 
 .col-7 {
@@ -41,7 +44,9 @@ h2 {
 }
 
 .text {
-    width: 60%;
+    width: 80%;
+    height: auto;
+    object-fit: cover;
 }
 
 .text p {
@@ -56,28 +61,26 @@ h2 {
     font-weight: bold;
 }
 
+.mainImg {
+    width: 50%;
+    height: auto;
+}
+
 .homeImg {
-    width: 70%;
+    width: 80%;
+    height: auto;
+    object-fit: cover;
 }
 
 .inputReg {
     width: 50%;
 }
 
-.form-check {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.form-check input {
-    height: 20px;
-    width: 20px;
-}
 
 .btnSignUp {
     text-align: center;
     margin: auto;
+    padding: 20px;
 }
 
 .btnToHome {
@@ -86,8 +89,68 @@ h2 {
     right: 0;
 }
 
-@media (max-width: 600px) {
-    .container-fluid, #home {
+.col > *, form > * {
+    margin: 10px;
+}
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    .container-fluid{
+        height: 100vh;
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    .section {
+        display: inline-block;
+    }
+
+    .info, .image {
+        margin: auto;
+        overflow: visible;
+        height: max-content;
+        margin-bottom: 20px;
+    }
+
+
+    .text p {
+        text-align: left;
+    }
+
+    .row-register {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container-fluid {
+        font-size: 16px;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .homeImg {
+        width: auto;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .container-fluid{
         height: 100vh;
         font-size: 12px;
     }
@@ -96,26 +159,36 @@ h2 {
         font-size: 14px;
     }
 
-    .col {
-        overflow: auto;
+    .row {
+        width: 100%;
     }
 
-    .text {
+    .col {
         width: 100%;
-        height: 100%;
     }
+
+    .section {
+        display: inline-block;
+    }
+
+    .info, .image {
+        margin: auto;
+        overflow: visible;
+        height: max-content;
+        margin-bottom: 20px;
+    }
+
 
     .text p {
-        text-align: center;
-    }
-
-    .homeImg {
-        width: 200px;
-        overflow: hidden;
+        text-align: left;
     }
 
     .row-register {
         flex-direction: column;
         margin-top: 50px;
+    }
+
+    .regImg {
+        display: none;
     }
 }

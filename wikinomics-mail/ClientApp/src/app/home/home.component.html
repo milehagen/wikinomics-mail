@@ -2,37 +2,38 @@
 
   <div id="home" class="container-fluid" scroll @fade>
     <div class="row text-center">
-      <div class="col d-flex flex-column">
-        <img src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" width="40%"/>
-        <br />
+      <div class="col flex-column">
+        <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" />
         <h2>
           What if we told you that you could be engaged in<br />
           networking, whithout the discomfort of<br />
           networking?
         </h2>
-        <br />
         <button class="btn btn-primary bg-dark shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Say no more,<br />I'm in</button>
+        <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" />Read more</button>
       </div>
     </div>
   </div>
   
-  <div class="container-fluid bg-light">
+  <div id="section1" class="container-fluid bg-light">
     <div class="row">
-      <div class="col">
-        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/homeoffice.svg">
-      </div>    
-      <div class="col info">
-        <div class="text">
-          <h2>
-            Real People<br />
-            Real answers
-          </h2>
-          <br />
-          <p>
-            KnowONE is the go-to-place for your burning career oriented questions; answered by ordinary people, 
-            who study within the field of your interest, hold a role you may be curious about, or work within an 
-            industry you want to learn more about.
-          </p>
+      <div class="section">
+        <div class="col image">
+          <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/home/homeoffice.svg">
+        </div>    
+        <div class="col info">
+          <div class="text">
+            <h2>
+              Real People<br />
+              Real answers
+            </h2>
+            <br />
+            <p>
+              KnowONE is the go-to-place for your burning career oriented questions; answered by ordinary people, 
+              who study within the field of your interest, hold a role you may be curious about, or work within an 
+              industry you want to learn more about.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -40,44 +41,48 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col info">
-        <div class="text">
-          <h2>Put All Your Assumptions Aside</h2>
-          <br />
-          <p>
-            Curious about what a product designer does? Or, how is it really to work as a data scientis? What does 
-            a "CEO" really do? And, what is it really like to study "digital art"?
-          </p>
-          <p>
-            KnowONE is the place where you can put all your career-related assumptions aside, and get your questions 
-            answered straight from the horse's mouth!
-          </p>
+      <div class="section">
+        <div class="col info">
+          <div class="text">
+            <h2>Put All Your Assumptions Aside</h2>
+            <br />
+            <p>
+              Curious about what a product designer does? Or, how is it really to work as a data scientis? What does 
+              a "CEO" really do? And, what is it really like to study "digital art"?
+            </p>
+            <p>
+              KnowONE is the place where you can put all your career-related assumptions aside, and get your questions 
+              answered straight from the horse's mouth!
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <img class="img-responsive pull-right homeImg" src="../../assets/images/home/searching.png">
+        <div class="col image">
+          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/searching.png">
+        </div>
       </div>
     </div>
   </div>
   
   <div class="container-fluid bg-light">
     <div class="row">
-      <div class="col">
-        <img class="img-responsive pull-right homeImg" src="../../assets/images/home/brainstorming.svg">
-      </div>
-      <div class="col info">
-        <div class="text">
-          <h2>This is the Place Where You Can...</h2>
-          <br />
-          <ul class="text-left">
-            <li><b>Recieve career advice</b> from someone you want to learn from.</li>
-            <li><b>Share your knowledge and experience</b> with those who seek it.</li>
-            <li><b>Discuss topics that matter</b> to you and your peers.</li>
-            <li>
-              <b>Join groups and communities</b> that serve as information resources, 
-              and cheerleaders for your career development.
-            </li>
-          </ul>
+      <div class="section">
+        <div class="col image">
+          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/brainstorming.svg">
+        </div>
+        <div class="col info">
+          <div class="text">
+            <h2>This is the Place Where You Can...</h2>
+            <br />
+            <ul class="text-left">
+              <li><b>Recieve career advice</b> from someone you want to learn from.</li>
+              <li><b>Share your knowledge and experience</b> with those who seek it.</li>
+              <li><b>Discuss topics that matter</b> to you and your peers.</li>
+              <li>
+                <b>Join groups and communities</b> that serve as information resources, 
+                and cheerleaders for your career development.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -85,100 +90,89 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col info">
-        <div class="text">
-          <h2>A Safe Place For "Stupid" Questions</h2>
-          <p>
-            We believe that there are no "stupid questions". However, we also know how scary it can be to put 
-            yourself out there. That's why we've made sure that you can be anonymous.
-          </p>
-          <p>
-            ...Because, fear of judgement should not stand in the way of gaining knowledge.
-          </p>
+      <div class="section">
+        <div class="col info">
+          <div class="text">
+            <h2>A Safe Place For "Stupid" Questions</h2>
+            <br />
+            <p>
+              We believe that there are no "stupid questions". However, we also know how scary it can be to put 
+              yourself out there. That's why we've made sure that you can be anonymous.
+            </p>
+            <p>
+              ...Because, fear of judgement should not stand in the way of gaining knowledge.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor.svg">
+        <div class="col image">
+          <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/home/sittingonfloor.svg">
+        </div>
       </div>
     </div>
   </div>
 
   <div class="container-fluid bg-light">
     <div class="row">
-      <div class="col">
-        <img class="img-responsive pull-right homeImg" src="../../assets/images/home/homegarden.svg">
-      </div>
-      <div class="col info">
-        <div class="text">
-          <h2>You Can Make A Difference</h2>
-          <br />
-          <p>
-            It doesn't matter if you're a student, a CEO of a big company, or an aspiring entrepreneur. What you 
-            have gone through in life is unique, and someone out there needs to hear what you have to say.
-          </p>
-          <p>
-            So, in addition to recieving advice and learning from others, we hope you take the time to give back 
-            to society, by sharing what you have learnt throughout your career journey.
-          </p>
+      <div class="section">
+        <div class="col image">
+          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/homegarden.svg">
+        </div>
+        <div class="col info">
+          <div class="text">
+            <h2>You Can Make A Difference</h2>
+            <br />
+            <p>
+              It doesn't matter if you're a student, a CEO of a big company, or an aspiring entrepreneur. What you 
+              have gone through in life is unique, and someone out there needs to hear what you have to say.
+            </p>
+            <p>
+              So, in addition to recieving advice and learning from others, we hope you take the time to give back 
+              to society, by sharing what you have learnt throughout your career journey.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <div id="signUp" class="container-fluid">
-    <div class="row row-register">
-      <div class="col info">
-        <div class="regText text-center">
+    <div class="row form-row">
+      <div class="section">
+        <div class="col info flex-column">
           <h2>Sign up to test KnowONE</h2>
-          <p>
-            We will be launching soon!
-          </p>
-          <p>
-            Sign up now, and be among the 100 users to get FREE access for life!
-          </p>
+          <p class="text-center">We will be launching soon!</p>
+          <p class="text-center">Sign up now, and be among the 100 users to get FREE access for life!</p>
           <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
-            <input formControlName="formFirstname" type="text" class="form-control" placeholder="Fornavn"/>
-            <input formControlName="formLastname" type="text" class="form-control" placeholder="Etternavn" />
-            <input formControlName="formEmail" type="text" class="form-control" placeholder="Skriv inn email" />
-              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">
-                Email is not valid.      
-              </p>
-              <br/>
-              
-              <div class="form-check form-check-inline">
-                <div class="row">
-                  <div class="col-2">
-                    <input class="checkbox" id="checkbox1" type="checkbox" (change)="acceptTerms($event)">
-                  </div>
-                  <div class="col-8 check">
-                    <label for="checkbox1">I accept the terms and conditions</label>
-                  </div>
-                </div>
-              </div>
-              <br />
-              <div class="form-check form-check-inline">
-                <div class="row register">
-                  <div class="col-2">
-                    <input class="checkbox" id="checkbox2" type="checkbox">
-                  </div>
-                  <div class="col-8 check">
-                    <label for="checkbox2">
-                      I definitely want to follow KnowONE's startup journey by email, and hear 
-                      from the founder.
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <br />
-              <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid || !termsAccepted">Send inn</button>
-              <button class="btn btn-danger">Tilbake</button>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="formFirstname" placeholder="First name">
+              <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID'">First name is not valid</p>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="formLastname" placeholder="Last name">
+              <p *ngIf="this.emailInputForm.controls.formLastname.status=='INVALID'">Last name is not valid</p>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" formControlName="formEmail" placeholder="Email">
+              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">Email is not valid</p>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="checkboxTerms" (change)="acceptTerms($event)">
+              <label class="form-check-label" for="checkboxTerms">I accept terms and conditions</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="checkbox2">
+              <label class="form-check-label" for="checkbox2">
+                I definitely want to follow KnowONE's startup journey by e-mail, and hear from the founder.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid || !termsAccepted">Sign up</button>
           </form>
         </div>
-      </div>
-      <div class="col">
-        <img class="img-responsive pull-left homeImg" src="../../assets/images/home/sittingonfloor2.svg">
+        <div class="col image regImg">
+          <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/home/sittingonfloor2.svg">
+        </div>
       </div>
     </div>
   </div>
-  <button class="btnToHome btn btn-secondary" (click)="toHome()">To Top</button>
+  <button id="btnTop" class="btnToHome btn btn-secondary" (click)="toHome()">To Top</button>
 </div>
