@@ -10,8 +10,14 @@
     margin: 40px;
 }
 
+.bg-sec {
+    background-color: var(--secondaryColor);
+}
+
 h2 {
-    font-size: 22px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .row {
@@ -39,8 +45,13 @@ h2 {
     justify-content: space-around;
 }
 
-.info {
-    text-align: center;
+.form-row p{
+    width: 70%;
+}
+
+form input[type="text"], form input[type="email"], form p {
+    width: 70%;
+    margin-left: 0;
 }
 
 .text {
@@ -51,10 +62,6 @@ h2 {
 
 .text p {
     text-align: left;
-}
-
-h2 {
-    font-weight: bold;
 }
 
 .text label {
@@ -79,12 +86,14 @@ h2 {
 
 .btnSignUp {
     text-align: center;
+    width: 10vw;
+    font-size: 15px;
     margin: auto;
     padding: 20px;
 }
 
 .btnToHome {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     right: 0;
 }
@@ -153,6 +162,11 @@ h2 {
     .container-fluid{
         height: 100vh;
         font-size: 12px;
+    }
+
+    .btnSignUp {
+        width: 70px;
+        font-size: 10px;
     }
 
     h2 {

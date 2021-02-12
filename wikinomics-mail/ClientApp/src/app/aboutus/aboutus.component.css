@@ -1,51 +1,157 @@
-.page {
-    padding-top: 80px;
-}
-
 .container-fluid {
     height: 100vh;
     display: flex;
     justify-content: center;
     overflow: auto;
-    font-size: 1.5vw;
+    font-size: 20px;
 }
 
-#home {
-    height: 90vh;
+.main h2{
+    margin: 40px;
 }
 
 h2 {
-    font-size: 2vw;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .row {
+    width: 70%;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
+}
+
+.section {
+    display: flex;
 }
 
 .col {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px;
+    width: 70%;
+    height: 50vh;
+}
+
+.form-row p{
+    width: 70%;
+}
+
+form input[type="text"], form input[type="email"], form p {
+    width: 70%;
+    margin-left: 0;
+}
+
+.info {
+    text-align: center;
+}
+
+.text {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image {
+    width: 80%;
+}
+
+.text p {
+    text-align: center;
+}
+
+h2 {
+    font-weight: bold;
 }
 
 .text label {
     font-weight: bold;
 }
 
+.homeImg {
+    width: 50%;
+    height: auto;
+}
+
 .imgPlants {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.inputReg {
     width: 50%;
 }
 
+
+.btnSignUp {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
 .btnToHome {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     right: 0;
 }
 
-@media (max-width: 600px) {
-    .container-fluid, #home {
+@media (max-width: 1000px) {
+    .container-fluid{
+        height: 100vh;
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    .section {
+        display: inline-block;
+    }
+
+    .info, .image {
+        margin: auto;
+        overflow: visible;
+        height: max-content;
+        margin-bottom: 20px;
+    }
+
+
+    .text p {
+        text-align: left;
+    }
+
+    .row-register {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container-fluid {
+        font-size: 16px;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .homeImg {
+        width: auto;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .container-fluid{
         height: 100vh;
         font-size: 12px;
     }
@@ -54,14 +160,25 @@ h2 {
         font-size: 14px;
     }
 
-    .col {
-        overflow: auto;
+    .row {
+        width: 100%;
     }
 
-    .text {
+    .col {
         width: 100%;
-        height: 100%;
     }
+
+    .section {
+        display: inline-block;
+    }
+
+    .info, .image {
+        margin: auto;
+        overflow: visible;
+        height: max-content;
+        margin-bottom: 20px;
+    }
+
 
     .text p {
         text-align: center;
