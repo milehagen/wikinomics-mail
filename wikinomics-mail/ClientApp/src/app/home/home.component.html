@@ -1,20 +1,22 @@
 <div class="page" id="page" style="height: 100vh">  
 
-  <div id="home" class="container-fluid bg-main" scroll @fade>
+  <div id="home" class="container-fluid bg-main home" scroll @fade>
     <div class="row text-center">
       <div class="col flex-column">
-        <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" />
+        <img class="img-responsive img-fluid mainImg" src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" />
+        <br />
         <h2>
           What if we told you that you could be engaged in 
           networking, whithout the discomfort of 
           networking?
         </h2>
-        <button class="btn btn-primary bg-dark shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Say no more,<br />I'm in</button>
+        <br />
+        <button class="btn btn-primary shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Say no more,<br />I'm in</button>
         <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
       </div>
     </div>
   </div>
-  <div id="section1" class="container-fluid bg-light">
+  <div id="section1" class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
         <div class="col image">
@@ -63,7 +65,7 @@
     </div>
   </div>
   
-  <div class="container-fluid bg-light">
+  <div class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
         <div class="col image">
@@ -111,7 +113,7 @@
     </div>
   </div>
 
-  <div class="container-fluid bg-light">
+  <div class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
         <div class="col image">
@@ -139,10 +141,12 @@
     <div class="row form-row">
       <div class="section">
         <div class="col info flex-column">
-          <h1><b>Sign up to test KnowONE</b></h1>
-          <p class="text-center">We will be launching soon!</p>
-          <p class="text-center">Sign up now, and be among the 100 users to get FREE access for life!</p>
           <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
+            <div class="form-group">
+              <h2><b>Sign up to test KnowONE</b></h2>
+              <p>We will be launching soon!</p>
+              <p>Sign up now, and be among the 100 users to get FREE access for life!</p>
+            </div>
             <div class="form-group">
               <input type="text" class="form-control" formControlName="formFirstname" placeholder="First name">
               <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID'">First name is not valid</p>
@@ -165,7 +169,7 @@
                 I definitely want to follow KnowONE's startup journey by e-mail, and hear from the founder.
               </label>
             </div>
-            <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid || !termsAccepted">Sign up</button>
+            <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" [disabled]="!emailInputForm.valid || !termsAccepted">Sign up</button>
           </form>
         </div>
         <div class="col image regImg">

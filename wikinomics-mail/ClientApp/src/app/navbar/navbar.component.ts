@@ -7,7 +7,7 @@ import { Component, Directive, HostListener } from '@angular/core';
 })
 export class NavbarComponent {
   isExpanded = false;
-  english = true;
+  english: boolean = true;
 
   collapse() {
     this.isExpanded = false;
@@ -23,9 +23,11 @@ export class NavbarComponent {
 
   changeLanguage() {
     if(this.english) {
-      this.english = false;
+      localStorage.setItem('english', 'false');
+      this.english = JSON.parse(localStorage.getItem('english'));
     } else {
-      this.english = true;
+      localStorage.setItem('english', 'true');
+      this.english = JSON.parse(localStorage.getItem('english'));
     }
   }
 

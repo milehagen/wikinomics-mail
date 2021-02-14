@@ -1,13 +1,18 @@
 .container-fluid {
-    height: 100vh;
     display: flex;
     justify-content: center;
-    overflow: auto;
     font-size: 20px;
+    padding: 100px;
+    min-height: 100vh;
 }
+
 
 .main h2{
     margin: 40px;
+}
+
+.bg-sec {
+    background-color: var(--mainColor);
 }
 
 h2 {
@@ -17,10 +22,11 @@ h2 {
 }
 
 .row {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    max-width: 1500px;
 }
 
 .section {
@@ -29,25 +35,14 @@ h2 {
 
 .col {
     display: flex;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     margin: 20px;
-    width: 70%;
-    height: 50vh;
+    max-width: 600px;
+    padding: 20px;
 }
 
-.form-row p{
-    width: 70%;
-}
-
-form input[type="text"], form input[type="email"], form p {
-    width: 70%;
-    margin-left: 0;
-}
-
-.info {
-    text-align: center;
-}
 
 .text {
     width: 80%;
@@ -55,31 +50,22 @@ form input[type="text"], form input[type="email"], form p {
     object-fit: cover;
 }
 
-.image {
-    width: 80%;
-}
-
 .text p {
     text-align: center;
-}
-
-h2 {
-    font-weight: bold;
 }
 
 .text label {
     font-weight: bold;
 }
 
-.homeImg {
-    width: 50%;
+.mainImg {
+    width: 80%;
     height: auto;
 }
 
-.imgPlants {
-    width: 50%;
-    height: auto;
-    object-fit: cover;
+.homeImg {
+    width: 80%;
+    height: 80%;
 }
 
 .inputReg {
@@ -91,6 +77,7 @@ h2 {
     text-align: center;
     margin: auto;
     padding: 20px;
+    background-color: var(--mainColor);
 }
 
 .btnToHome {
@@ -99,19 +86,50 @@ h2 {
     right: 0;
 }
 
+.btnRegister {
+    background-color: var(--mainColor);
+}
+
+.col > *, form > * {
+    margin: 10px;
+}
+
+form {
+    width: 80%;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+button:hover {
+    text-decoration: none;
+}
+
+
+
+@media (max-width: 1500px) {
+    .container-fluid {
+        font-size: 14px;
+    }
+
+    .col {
+        width: 80%;
+    }
+}
+
+
 @media (max-width: 1000px) {
     .container-fluid{
-        height: 100vh;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     h2 {
         font-size: 20px;
     }
 
-    .row {
-        width: 100%;
-    }
 
     .section {
         display: inline-block;
@@ -125,13 +143,13 @@ h2 {
     }
 
 
-    .text p {
-        text-align: left;
-    }
-
     .row-register {
         flex-direction: column;
         margin-top: 50px;
+    }
+
+    .regImg {
+        display: none;
     }
 }
 
@@ -144,16 +162,29 @@ h2 {
         width: 100%;
     }
 
+    .row {
+        width: 100%;
+    }
+
+    .col {
+        width: 100%;
+    }
+
     .homeImg {
-        width: auto;
+        width: 400px;
     }
 
 }
 
 @media (max-width: 480px) {
     .container-fluid{
-        height: 100vh;
         font-size: 12px;
+        padding: 0;
+    }
+
+    .btnSignUp {
+        width: 70px;
+        font-size: 10px;
     }
 
     h2 {
@@ -166,6 +197,7 @@ h2 {
 
     .col {
         width: 100%;
+        min-height: 0;
     }
 
     .section {
@@ -179,8 +211,16 @@ h2 {
         margin-bottom: 20px;
     }
 
+    .row-register {
+        flex-direction: column;
+        margin-top: 50px;
+    }
 
-    .text p {
-        text-align: center;
+    .regImg {
+        display: none;
+    }
+
+    .homeImg {
+        width: 40%;
     }
 }

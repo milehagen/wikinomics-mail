@@ -4,9 +4,11 @@
     <div class="row text-center">
       <div class="col flex-column">
         <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" />
+        <br />
         <h2>
           Hva om vi fortalte deg at du kunne bli engasjert i nettverksbygging, uten ubehaget ved nettverksbytting?
         </h2>
+        <br />
         <button class="btn btn-primary bg-dark shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Say no more,<br />I'm in</button>
         <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" />Read more</button>
       </div>
@@ -139,10 +141,10 @@
     <div class="row form-row">
       <div class="section">
         <div class="col info flex-column">
-          <h1>Sign up to test KnowONE</h1>
-          <p class="text-center">We will be launching soon!</p>
-          <p class="text-center">Sign up now, and be among the 100 users to get FREE access for life!</p>
           <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
+            <h2>Sign up to test KnowONE</h2>
+            <p>We will be launching soon!</p>
+            <p>Sign up now, and be among the 100 users to get FREE access for life!</p>
             <div class="form-group">
               <input type="text" class="form-control" formControlName="formFirstname" placeholder="First name">
               <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID'">First name is not valid</p>
