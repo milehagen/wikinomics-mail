@@ -4,6 +4,32 @@
     align-items: center;
 }
 
+.navbar {
+    background-color: var(--mainColor);
+}
+
+.navbar a, .navbar button, .navbar span {
+    color: white;
+}
+
 .btn {
     color: black;
+}
+
+button {
+    font-weight: bold;
+}
+
+button.active {
+    font-size: 22px;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+button:hover {
+    text-decoration: none;
 }

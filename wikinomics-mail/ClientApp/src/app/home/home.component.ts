@@ -49,10 +49,15 @@ export class HomeComponent {
     document.getElementById("page").scrollIntoView({behavior:"smooth"});
   }
 
+  scrollToSection1() {
+    document.getElementById("section1").scrollIntoView({behavior: "smooth"});
+  }
+
   // Scrolls to sign up field
   toSignUp() {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
   }
+
 
   //Adds email to database
   addEmailToDb() {
@@ -161,6 +166,11 @@ export class HomeNorwegianComponent {
   // Scrolls to top of page/home
   toHome() {
     document.getElementById("page").scrollIntoView({behavior:"smooth"});
+  }
+
+  // Scrolls to first section
+  scrollToSection1() {
+    document.getElementById("section1").scrollIntoView({behavior: "smooth"});
   }
 
   // Scrolls to sign up field
