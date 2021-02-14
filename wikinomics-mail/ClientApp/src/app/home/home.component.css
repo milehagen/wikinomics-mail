@@ -16,7 +16,7 @@
 
 
 h2 {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     font-weight: bold;
 }
@@ -40,7 +40,6 @@ h2 {
     align-items: center;
     margin: 20px;
     max-width: 600px;
-    padding: 20px;
 }
 
 
@@ -75,7 +74,6 @@ h2 {
 
 .btnSignUp {
     text-align: center;
-    margin: auto;
     padding: 30px;
     background-color: var(--mainColor);
 }

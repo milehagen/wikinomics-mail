@@ -23,12 +23,13 @@ export class NavbarComponent {
 
   changeLanguage() {
     if(this.english) {
-      localStorage.setItem('english', 'false');
-      this.english = JSON.parse(localStorage.getItem('english'));
+      window.localStorage.setItem('english', 'false');
+      this.english = JSON.parse(window.localStorage.getItem('english'));
     } else {
-      localStorage.setItem('english', 'true');
-      this.english = JSON.parse(localStorage.getItem('english'));
+      window.localStorage.setItem('english', 'true');
+      this.english = JSON.parse(window.localStorage.getItem('english'));
     }
+    console.log(this.english)
   }
 
  

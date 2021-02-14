@@ -9,8 +9,8 @@
           Hva om vi fortalte deg at du kunne bli engasjert i nettverksbygging, uten ubehaget ved nettverksbytting?
         </h2>
         <br />
-        <button class="btn btn-primary bg-dark shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Say no more,<br />I'm in</button>
-        <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" />Read more</button>
+        <button class="btn btn-primary shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Ikke si mer.<br />Jeg er med!</button>
+        <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" /><b>Les mer</b></button>
       </div>
     </div>
   </div>
@@ -167,7 +167,7 @@
                 I definitely want to follow KnowONE's startup journey by e-mail, and hear from the founder.
               </label>
             </div>
-            <button type="submit" class="btn btn-dark" [disabled]="!emailInputForm.valid || !termsAccepted">Sign up</button>
+            <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" [disabled]="!emailInputForm.valid || !termsAccepted">Sign up</button>
           </form>
         </div>
         <div class="col image regImg">
@@ -176,5 +176,4 @@
       </div>
     </div>
   </div>
-  <button id="btnTop" class="btnToHome btn btn-secondary" (click)="toHome()">To Top</button>
 </div>

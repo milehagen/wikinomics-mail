@@ -168,6 +168,11 @@ export class HomeNorwegianComponent {
     document.getElementById("page").scrollIntoView({behavior:"smooth"});
   }
 
+  // Scrolls to first section
+  scrollToSection1() {
+    document.getElementById("section1").scrollIntoView({behavior: "smooth"});
+  }
+
   // Scrolls to sign up field
   toSignUp() {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
