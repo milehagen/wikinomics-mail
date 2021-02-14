@@ -19,21 +19,16 @@ namespace wikinomics_mail.DAL
         {
             _db = db;
         }
-
-        public async Task<List<MailAddress>> GetAll()
+        public bool CheckIfRegistered(MailAddress email)
         {
-            try
+            allMails = _db.MailAddresses.ToList();
+
+            if(allMails.Contains(email))
             {
-                allMails = await _db.MailAddresses.ToListAsync();
-                if (allMails.IsNullOrEmpty())
-                {
-                    return null;
-                }
-                return allMails;
-            }
-            catch
+                return true;
+            } else
             {
-                return null;
+                return false;
             }
         }
 
@@ -46,6 +41,12 @@ namespace wikinomics_mail.DAL
             {
                 throw new InvalidOperationException("The substring of the email cannot be empty or null");
             }
+            //Check if email already is registered
+            if(CheckIfRegistered(email))
+            {
+                throw new InvalidOperationException("Email already exists");
+            }
+
             //Make a new email MailAddress object
            try
             {
