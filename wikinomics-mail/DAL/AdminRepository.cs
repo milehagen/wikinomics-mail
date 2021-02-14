@@ -133,35 +133,39 @@ namespace wikinomics_mail.DAL
             //Else it's for the mailing list
             else
             {
-                foreach (var obj in _db.MailAddresses)
+                //Looping through the list, and sending mail if the want it
+                foreach (var address in _db.MailAddresses)
                 {
-                    string unsubscribeURL = "\n <a href=\"https://localhost:44328/unsubscribe?mail=" + obj.UniqueId + ">Unsubscribe</a>";
-                    try
+                    if (address.SendUpdates)
                     {
-                        using (MailMessage emailMessage = new MailMessage())
+                        string unsubscribeURL = "\n <a href=\"https://localhost:44328/unsubscribe?mail=" + address.UniqueId + ">Unsubscribe</a>";
+                        try
                         {
-                            toAddress = new System.Net.Mail.MailAddress(obj.Address);
-                            emailMessage.To.Add(toAddress);
-                            emailMessage.From = fromAddress;
-                            emailMessage.Subject = mail.Titel;
-                            emailMessage.Body = mail.Body + unsubscribeURL;
-                            emailMessage.Priority = MailPriority.Normal;
-                            emailMessage.IsBodyHtml = true;
+                            using (MailMessage emailMessage = new MailMessage())
+                            {
+                                toAddress = new System.Net.Mail.MailAddress(address.Address);
+                                emailMessage.To.Add(toAddress);
+                                emailMessage.From = fromAddress;
+                                emailMessage.Subject = mail.Titel;
+                                emailMessage.Body = mail.Body + unsubscribeURL;
+                                emailMessage.Priority = MailPriority.Normal;
+                                emailMessage.IsBodyHtml = true;
 
-                            try
-                            {
+                                try
+                                {
                                 await MailClient.SendMailAsync(emailMessage);
-                            }
-                            catch (Exception e)
-                            {
-                                System.Diagnostics.Debug.WriteLine(e.StackTrace);
-                                return false;
+                                }
+                                catch (Exception e)
+                                {
+                                    System.Diagnostics.Debug.WriteLine(e.StackTrace);
+                                    return false;
+                                }
                             }
                         }
-                    }
-                    catch
-                    {
-                        return false;
+                        catch
+                        {
+                            return false;
+                        }
                     }
                 }
             }

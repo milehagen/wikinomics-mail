@@ -20,5 +20,8 @@ namespace wikinomics_mail.Models
 
         //A unique code used for unsubscribing from the mailing list
         public string UniqueId { get; set; }
+
+        //If an email wants newsletter updates
+        public bool SendUpdates { get; set; }
     }
 }

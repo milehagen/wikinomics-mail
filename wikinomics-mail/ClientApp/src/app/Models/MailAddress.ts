@@ -4,4 +4,5 @@ export class MailAddress {
   lastname: string
   address: string;
   uniqueId: number;
+  sendUpdates: boolean;
 }
