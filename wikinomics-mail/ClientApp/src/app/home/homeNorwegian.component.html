@@ -154,7 +154,7 @@
               <p *ngIf="this.emailInputForm.controls.formLastname.status=='INVALID' && lastnameVal">Etternavn er ikke gyldig</p>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" formControlName="formEmail" placeholder="Email" (change)="showEmailValidation">
+              <input type="email" class="form-control" formControlName="formEmail" placeholder="Email" (change)="showEmailValidation()">
               <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID' && emailVal">Email er ikke gyldig</p>
             </div>
             <div class="form-check">
