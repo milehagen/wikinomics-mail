@@ -14,7 +14,7 @@ export class NavbarComponent {
   constructor(private url : LocationStrategy) {}
 
   ngOnInit() {
-    if(this.url.path() === '/home/no') {
+    if(this.url.path() === '/home/no' || this.url.path() === '/aboutus/no') {
       this.norwegian = true;
     } else {
       this.norwegian = false;
