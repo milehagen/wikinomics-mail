@@ -1,8 +1,8 @@
-<div class="page" id="page" style="height: 100vh">  
+<div class="page" id="page">  
 
   <div id="home" class="container-fluid bg-main home" scroll @fade>
     <div class="row text-center">
-      <div class="col flex-column">
+      <div class="col flex-column main">
         <img class="img-responsive img-fluid mainImg" src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" />
         <br />
         <h2>
@@ -11,7 +11,7 @@
           networking?
         </h2>
         <br />
-        <button class="btn shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Jeg er med!</button>
+        <button class="btn shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">I'm in!</button>
         <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
       </div>
     </div>
@@ -19,10 +19,7 @@
   <div id="section1" class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
-        <div class="col image">
-          <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/home/homeoffice.svg">
-        </div>    
-        <div class="col info">
+        <div class="col info order-sm-12">
           <div class="text">
             <h2>
               Real People<br />
@@ -36,6 +33,9 @@
             </p>
           </div>
         </div>
+        <div class="col image order-sm-1">
+          <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/home/homeoffice.svg">
+        </div>    
       </div>
     </div>
 
@@ -68,10 +68,7 @@
   <div class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
-        <div class="col image">
-          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/brainstorming.svg">
-        </div>
-        <div class="col info">
+        <div class="col info order-sm-12">
           <div class="text">
             <h2>This is the Place Where You Can...</h2>
             <br />
@@ -85,6 +82,9 @@
               </li>
             </ul>
           </div>
+        </div>
+        <div class="col image order-sm-1">
+          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/brainstorming.svg">
         </div>
       </div>
     </div>
@@ -116,10 +116,7 @@
   <div class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
-        <div class="col image">
-          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/homegarden.svg">
-        </div>
-        <div class="col info">
+        <div class="col info order-sm-12">
           <div class="text">
             <h2>You Can Make A Difference</h2>
             <br />
@@ -132,6 +129,9 @@
               to society, by sharing what you have learnt throughout your career journey.
             </p>
           </div>
+        </div>
+        <div class="col image order-sm-1">
+          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/homegarden.svg">
         </div>
       </div>
     </div>
