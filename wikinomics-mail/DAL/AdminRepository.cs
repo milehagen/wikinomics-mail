@@ -138,7 +138,7 @@ namespace wikinomics_mail.DAL
                 {
                     if (address.SendUpdates)
                     {
-                        string unsubscribeURL = "\n <a href=\"https://localhost:44328/unsubscribe?mail=" + address.UniqueId + ">Unsubscribe</a>";
+                        string unsubscribeURL = "\n <a href=\"https://localhost:44328/unsubscribe?mail=" + address.UniqueId + "\"" + " > Unsubscribe</a>";
                         try
                         {
                             using (MailMessage emailMessage = new MailMessage())
@@ -171,73 +171,6 @@ namespace wikinomics_mail.DAL
             }
             MailClient.Dispose();
             return true;
-        }
-
-        //Old, not really in use
-        public async Task<bool> SendMailORIGINAL(Mail mail)
-        {
-            using (MailMessage emailMessage = new MailMessage())
-            {
-                var fromAddress = new System.Net.Mail.MailAddress("NORWAY.ITPE3200@gmail.com", "NOR-WAY");
-                var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
-                var toAddress = new System.Net.Mail.MailAddress("fail@fail.com");
-
-
-                //If Address is NOT empty, it's a test
-                if (mail.Address != null)
-                {
-                    try
-                    {
-                        toAddress = new System.Net.Mail.MailAddress(mail.Address);
-                        emailMessage.To.Add(toAddress);
-                    }
-                    catch
-                    {
-                        return false;
-                    }
-                }
-                //Adding everyone on the mailing list
-                else
-                {
-                    foreach (var obj in _db.MailAddresses)
-                    {
-                        try
-                        {
-                            toAddress = new System.Net.Mail.MailAddress(obj.Address);
-                            emailMessage.To.Add(toAddress);
-                        }
-                        catch
-                        {
-                            return false;
-                        }
-                    }
-                }
-
-                emailMessage.From = fromAddress;
-                emailMessage.Subject = mail.Titel;
-                emailMessage.Body = mail.Body;
-                emailMessage.Priority = MailPriority.Normal;
-                emailMessage.IsBodyHtml = true;
-
-                using (SmtpClient MailClient = new SmtpClient("smtp.gmail.com", 587))
-                {
-                    try
-                    {
-                        MailClient.EnableSsl = true;
-                        MailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        MailClient.UseDefaultCredentials = false;
-                        MailClient.Credentials = new System.Net.NetworkCredential(fromAddress.Address, fromPassword);
-                        MailClient.Timeout = 20000;
-                        await MailClient.SendMailAsync(emailMessage);
-                        return true;
-                    }
-                    catch (Exception e)
-                    {
-                        System.Diagnostics.Debug.WriteLine(e);
-                        return false;
-                    }
-                }
-            }
         }
 
         public async Task<bool> LogMail(Mail inMail)

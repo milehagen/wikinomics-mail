@@ -22,6 +22,7 @@ export class HomeComponent {
   showRegister: boolean;
   public email: string;
   public allMailAdresses: Array<MailAddress>;
+  public sendUpdates: boolean;
   emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
@@ -59,22 +60,41 @@ export class HomeComponent {
   }
 
 
+  //Event listener to the checkbox for subscribing to mailing list
+  wantUpdates(event) {
+    this.sendUpdates = event.target.checked;
+  }
+
+
   //Adds email to database
   addEmailToDb() {
     const mailAddress = new MailAddress();
     mailAddress.firstname = this.emailInputForm.controls.formFirstname.value;
     mailAddress.lastname = this.emailInputForm.controls.formLastname.value;
     mailAddress.address = this.emailInputForm.controls.formEmail.value;
-    console.log(mailAddress);
+
+    console.log(this.sendUpdates);
+    //If the user checks of that they want to get updates from mailinglist
+    if (this.sendUpdates) {
+      mailAddress.sendUpdates = true;
+    }
+    else {
+      mailAddress.sendUpdates = false;
+    }
       
       if (this.checkIfRegistered(mailAddress.address)) {
       window.alert("E-posten er allerede registrert");
-      } else {
-      this.http.post("api/MailAddress", mailAddress)
+      }
+      else {
+        this.http.post("api/MailAddress", mailAddress)
           .subscribe(retur => {
-          window.alert("Registreringen var vellykket");
-          this.emailInputForm.reset();
-          this.updateDBStatistics();
+            window.alert("Registreringen var vellykket");
+            this.emailInputForm.reset();
+
+            if (this.sendUpdates) {
+              this.updateDBStatistics();
+            }
+            
           },
           error => console.log(error)
           );
@@ -140,6 +160,7 @@ export class HomeNorwegianComponent {
   showInfo: boolean;
   showRegister: boolean;
   public email: string;
+  public sendUpdates: boolean;
   public allMailAdresses: Array<MailAddress>;
   emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
@@ -178,13 +199,26 @@ export class HomeNorwegianComponent {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
   }
 
+  //Event listener to the checkbox for subscribing to mailing list
+  wantUpdates(event) {
+    this.sendUpdates = event.target.checked;
+  }
+
   //Adds email to database
   addEmailToDb() {
     const mailAddress = new MailAddress();
     mailAddress.firstname = this.emailInputForm.controls.formFirstname.value;
     mailAddress.lastname = this.emailInputForm.controls.formLastname.value;
     mailAddress.address = this.emailInputForm.controls.formEmail.value;
-    console.log(mailAddress);
+    console.log(this.sendUpdates);
+
+    //If the user checks of that they want to get updates from mailinglist
+    if (this.sendUpdates) {
+      mailAddress.sendUpdates = true;
+    }
+    else {
+      mailAddress.sendUpdates = false;
+    }
       
       if (this.checkIfRegistered(mailAddress.address)) {
       window.alert("E-posten er allerede registrert");
@@ -193,7 +227,9 @@ export class HomeNorwegianComponent {
           .subscribe(retur => {
           window.alert("Registreringen var vellykket");
           this.emailInputForm.reset();
-          this.updateDBStatistics();
+            if (this.sendUpdates) {
+              this.updateDBStatistics();
+            }
           },
           error => console.log(error)
           );

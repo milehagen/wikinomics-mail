@@ -54,7 +54,8 @@ namespace wikinomics_mail.DAL
                 newEmail.lastname = email.lastname;
                 newEmail.Address = email.Address;
                 newEmail.UniqueId = MakeHash(emailSubstring);
-                _db.MailAddresses.Add(newEmail);
+                newEmail.SendUpdates = email.SendUpdates;
+                await _db.MailAddresses.AddAsync(newEmail);
                 await _db.SaveChangesAsync();
                 return true;
             }
@@ -73,7 +74,7 @@ namespace wikinomics_mail.DAL
 
                 if(address != null)
                 {
-                    _db.MailAddresses.Remove(address);
+                    address.SendUpdates = false;
                     await _db.SaveChangesAsync();
                     return true;
                 }
