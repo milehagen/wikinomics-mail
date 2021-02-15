@@ -1,4 +1,6 @@
+import { LocationStrategy } from '@angular/common';
 import { Component, Directive, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -7,7 +9,17 @@ import { Component, Directive, HostListener } from '@angular/core';
 })
 export class NavbarComponent {
   isExpanded = false;
-  norwegian: boolean = JSON.parse(window.localStorage.getItem('norwegian'));
+  norwegian = false;
+
+  constructor(private url : LocationStrategy) {}
+
+  ngOnInit() {
+    if(this.url.path() === '/home/no') {
+      this.norwegian = true;
+    } else {
+      this.norwegian = false;
+    }
+  }
 
   collapse() {
     this.isExpanded = false;
@@ -24,14 +36,10 @@ export class NavbarComponent {
   // Changes language of navbar when language of page changes
   changeLanguage() {
     if(this.norwegian) {
-      window.localStorage.setItem('norwegian', 'false');
-      this.norwegian = JSON.parse(window.localStorage.getItem('norwegian'));
+      this.norwegian = false;
     } else {
-      window.localStorage.setItem('norwegian', 'true');
-      this.norwegian = JSON.parse(window.localStorage.getItem('norwegian'));
+      this.norwegian = true;
     }
-    
   }
-
  
 }
