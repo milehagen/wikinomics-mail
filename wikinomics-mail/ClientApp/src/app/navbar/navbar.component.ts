@@ -7,7 +7,7 @@ import { Component, Directive, HostListener } from '@angular/core';
 })
 export class NavbarComponent {
   isExpanded = false;
-  english = JSON.parse(window.localStorage.getItem('english'));
+  norwegian: boolean = JSON.parse(window.localStorage.getItem('norwegian'));
 
   collapse() {
     this.isExpanded = false;
@@ -23,12 +23,12 @@ export class NavbarComponent {
 
   // Changes language of navbar when language of page changes
   changeLanguage() {
-    if(this.english) {
-      window.localStorage.setItem('english', 'false');
-      this.english = JSON.parse(window.localStorage.getItem('english'));
+    if(this.norwegian) {
+      window.localStorage.setItem('norwegian', 'false');
+      this.norwegian = JSON.parse(window.localStorage.getItem('norwegian'));
     } else {
-      window.localStorage.setItem('english', 'true');
-      this.english = JSON.parse(window.localStorage.getItem('english'));
+      window.localStorage.setItem('norwegian', 'true');
+      this.norwegian = JSON.parse(window.localStorage.getItem('norwegian'));
     }
     
   }
