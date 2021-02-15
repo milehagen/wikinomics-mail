@@ -17,11 +17,6 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 export class AboutUsComponent {
   constructor() {}
 
-  // Scrolls to top of page/home
-  toHome () {
-    document.getElementById("home").scrollIntoView({behavior: "smooth"});
-  }
-
   // Scrolls to section 1
   scrollToSection1() {
     document.getElementById("section1").scrollIntoView({behavior: "smooth"});
@@ -40,12 +35,7 @@ export class AboutUsComponent {
 })
 export class AboutUsNorwegianComponent {
   constructor() {}
-
-  // Scrolls to top of page/home
-  toHome () {
-    document.getElementById("home").scrollIntoView({behavior: "smooth"});
-  }
-
+  
   // Scrolls to section1
   scrollToSection1() {
     document.getElementById("section1").scrollIntoView({behavior: "smooth"});

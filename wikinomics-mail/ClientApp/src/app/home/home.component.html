@@ -2,7 +2,7 @@
 
   <div id="home" class="container-fluid bg-main home" scroll @fade>
     <div class="row text-center">
-      <div class="col flex-column main">
+      <div class="col main">
         <img class="img-responsive img-fluid mainImg" src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" />
         <br />
         <h2>
@@ -148,20 +148,20 @@
               <p>Sign up now, and be among the 100 users to get FREE access for life!</p>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" formControlName="formFirstname" placeholder="First name">
-              <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID'">First name is not valid</p>
+              <input type="text" class="form-control" formControlName="formFirstname" placeholder="First name" (change)="showFirstnameValidation()">
+              <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID' && firstnameVal">First name is not valid</p>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" formControlName="formLastname" placeholder="Last name">
-              <p *ngIf="this.emailInputForm.controls.formLastname.status=='INVALID'">Last name is not valid</p>
+              <input type="text" class="form-control" formControlName="formLastname" placeholder="Last name" (change)="showLastnameValidation()">
+              <p *ngIf="this.emailInputForm.controls.formLastname.status=='INVALID' && lastnameVal">Last name is not valid</p>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" formControlName="formEmail" placeholder="Email">
-              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">Email is not valid</p>
+              <input type="email" class="form-control" formControlName="formEmail" placeholder="Email" (change)="showEmailValidation()">
+              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID' && emailVal">Email is not valid</p>
             </div>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="checkboxTerms" (change)="acceptTerms($event)">
-              <label class="form-check-label" for="checkboxTerms">I accept terms and conditions</label>
+              <label class="form-check-label required" for="checkboxTerms">I accept <a href="../../assets/terms&conditions/termsandconditions.pdf" target="_blank">terms and conditions</a></label>
             </div>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="checkbox2" (change)="wantUpdates($event)">

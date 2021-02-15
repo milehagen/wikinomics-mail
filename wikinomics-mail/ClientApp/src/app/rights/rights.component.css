@@ -1,0 +1,11 @@
+.container-fluid {
+    height: 10vh;
+    background-color: var(--mainColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-fluid p {
+    color: white;
+}

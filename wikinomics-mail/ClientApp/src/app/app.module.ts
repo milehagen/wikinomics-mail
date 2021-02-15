@@ -11,6 +11,7 @@ import { HomeComponent, HomeNorwegianComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { MailModal } from './admin/modal/mailModal';
 import { LoginComponent } from './login/login.component';
+import { RightsComponent } from './rights/rights.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.component';
@@ -26,6 +27,7 @@ import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.c
     AdminComponent,
     MailModal,
     LoginComponent,
+    RightsComponent,
     UnsubscribeComponent
   ],
   imports: [
@@ -38,7 +40,7 @@ import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.c
     NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent, NavbarComponent],
+  bootstrap: [AppComponent, NavbarComponent, RightsComponent],
   entryComponents: [MailModal]
 })
 export class AppModule { }

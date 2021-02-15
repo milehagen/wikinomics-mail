@@ -9,7 +9,7 @@
           Hva om vi fortalte deg at du kunne bli engasjert i nettverksbygging, uten ubehaget ved nettverksbytting?
         </h2>
         <br />
-        <button class="btn btn-primary shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Ikke si mer.<br />Jeg er med!</button>
+        <button class="btn btn-primary shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">Jeg er med!</button>
         <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" /><b>Les mer</b></button>
       </div>
     </div>
@@ -142,32 +142,32 @@
       <div class="section">
         <div class="col info flex-column">
           <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
-            <h2>Sign up to test KnowONE</h2>
-            <p>We will be launching soon!</p>
-            <p>Sign up now, and be among the 100 users to get FREE access for life!</p>
+            <h2>Registrer deg for å teste KnowONE</h2>
+            <p>KnowONE lanseres snart!</p>
+            <p>Registrer deg og bli blant de 100 brukerne med fri tilgang på livstid!</p>
             <div class="form-group">
-              <input type="text" class="form-control" formControlName="formFirstname" placeholder="First name">
-              <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID'">First name is not valid</p>
+              <input type="text" class="form-control" formControlName="formFirstname" placeholder="Fornavn" (change)="showFirstnameValidation()">
+              <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID' && firstnameVal">Fornavn er ikke gyldig</p>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" formControlName="formLastname" placeholder="Last name">
-              <p *ngIf="this.emailInputForm.controls.formLastname.status=='INVALID'">Last name is not valid</p>
+              <input type="text" class="form-control" formControlName="formLastname" placeholder="Etternavn" (change)="showLastnameValidation()">
+              <p *ngIf="this.emailInputForm.controls.formLastname.status=='INVALID' && lastnameVal">Etternavn er ikke gyldig</p>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" formControlName="formEmail" placeholder="Email">
-              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID'">Email is not valid</p>
+              <input type="email" class="form-control" formControlName="formEmail" placeholder="Email" (change)="showEmailValidation">
+              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID' && emailVal">Email er ikke gyldig</p>
             </div>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="checkboxTerms" (change)="acceptTerms($event)">
-              <label class="form-check-label" for="checkboxTerms">I accept terms and conditions</label>
+              <label class="form-check-label required" for="checkboxTerms">Jeg godtar <a href="../../assets/terms&conditions/termsandconditions.pdf" target="_blank">vilkår og betingelser</a></label>
             </div>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="checkbox2">
               <label class="form-check-label" for="checkbox2">
-                I definitely want to follow KnowONE's startup journey by e-mail, and hear from the founder.
+                Jeg vil definitivt følge KnowONE sitt oppstartseventyr på mail, og høre fra grunnlegger.
               </label>
             </div>
-            <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" [disabled]="!emailInputForm.valid || !termsAccepted">Sign up</button>
+            <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" [disabled]="!emailInputForm.valid || !termsAccepted">Registrer</button>
           </form>
         </div>
         <div class="col image regImg">

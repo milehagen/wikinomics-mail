@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }" *ngIf="english">
-    <ul class="nav navbar-nav mx-auto">
+    <ul class="nav navbar-nav mx-auto" (click)="isExpanded = !isExpanded">
       <li class="nav-item active">
         <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home']" [routerLinkActive]="['active']">HOME</button>
       </li>
@@ -14,13 +14,13 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item">
-        <button class="btn btn-link" (click)="changeLanguage()" [routerLink]="['/home/no']">NORWEGIAN</button>
+        <button class="btn btn-link" (click)="changeLanguage()" (click)="isExpanded = !isExpanded" [routerLink]="['/home/no']">NORWEGIAN</button>
       </li>
     </ul>
   </div>
 
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }" *ngIf="!english">
-    <ul class="nav navbar-nav d-flex justify-content-center mx-auto">
+    <ul class="nav navbar-nav mx-auto" (click)="isExpanded = !isExpanded">
       <li class="nav-item active">
         <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home/no']" [routerLinkActive]="['active']">HJEM</button>
       </li>
@@ -30,7 +30,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item">
-        <button class="btn btn-link" (click)="changeLanguage()" [routerLink]="['/home']">ENGELSK</button>
+        <button class="btn btn-link" (click)="changeLanguage()" (click)="isExpanded = !isExpanded" [routerLink]="['/home']">ENGELSK</button>
       </li>
     </ul>
   </div>

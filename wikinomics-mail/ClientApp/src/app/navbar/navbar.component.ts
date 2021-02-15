@@ -21,6 +21,7 @@ export class NavbarComponent {
     window.scroll(0,0);
   }
 
+  // Changes language of navbar when language of page changes
   changeLanguage() {
     if(this.english) {
       window.localStorage.setItem('english', 'false');
