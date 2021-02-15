@@ -171,28 +171,23 @@ export class HomeNorwegianComponent {
     mailAddress.firstname = this.emailInputForm.controls.formFirstname.value;
     mailAddress.lastname = this.emailInputForm.controls.formLastname.value;
     mailAddress.address = this.emailInputForm.controls.formEmail.value;
-      if (this.sendUpdates) {
-          mailAddress.sendUpdates = true;
-      }
-      else {
-          mailAddress.sendUpdates = false;
-      }
-    console.log(mailAddress);
-      
-      if (this.checkIfRegistered(mailAddress.address)) {
-      window.alert("E-posten er allerede registrert");
-      } else {
-      this.http.post("api/MailAddress", mailAddress)
-          .subscribe(retur => {
-          window.alert("Registreringen var vellykket");
-          this.emailInputForm.reset();
-              if (this.sendUpdates) {
-                  this.updateDBStatistics();
-              }
-          },
-          error => console.log(error)
-          );
-      }
+    if (this.sendUpdates) {
+      mailAddress.sendUpdates = true;
+    }
+    else {
+      mailAddress.sendUpdates = false;
+    }
+
+    this.http.post("api/MailAddress", mailAddress)
+      .subscribe(retur => {
+        window.alert("Registreringen var vellykket");
+        this.emailInputForm.reset();
+        if (this.sendUpdates) {
+          this.updateDBStatistics();
+        }
+      },
+        error => console.log(error)
+      );
   }
 
   // Get an array of all emails from the database
