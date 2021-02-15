@@ -8,11 +8,10 @@ namespace wikinomics_mail.DAL
 {
     public interface IMailAddressRepository
     {
+        bool CheckIfRegistered(MailAddress email);
         Task<bool> Save(MailAddress email);
         String MakeHash(String inp);
         String GetSubString(String inp);
-        Task<List<MailAddress>> GetAll();
-
         Task<bool> Unsubscribe(String UniqueID);
     }
 }

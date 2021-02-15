@@ -40,13 +40,6 @@ namespace wikinomics_mail.Controllers
             return BadRequest();
         }
 
-        [HttpGet]
-        public async Task<ActionResult> GetAll()
-        {
-            List<MailAddress> allMails = await _db.GetAll();
-            return Ok(allMails);
-        }
-
         [HttpDelete("unsubscribe/{UniqueID}")]
         [Route("unsubscribe/{UniqueID}")]
         public async Task<ActionResult> Unsubscribe(string UniqueID) 

@@ -29,10 +29,6 @@ export class HomeComponent {
     this.emailInputForm = fb.group(this.formValidation);
   }
 
-  ngOnInit() {
-      this.getEmailAddress();
-  }
-
   formValidation = {
     formFirstname: [
       '', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(20)])
@@ -72,42 +68,22 @@ export class HomeComponent {
     mailAddress.firstname = this.emailInputForm.controls.formFirstname.value;
     mailAddress.lastname = this.emailInputForm.controls.formLastname.value;
     mailAddress.address = this.emailInputForm.controls.formEmail.value;
-
-    console.log(this.sendUpdates);
-    //If the user checks of that they want to get updates from mailinglist
-    if (this.sendUpdates) {
-      mailAddress.sendUpdates = true;
-    }
-    else {
-      mailAddress.sendUpdates = false;
-    }
-      
-      if (this.checkIfRegistered(mailAddress.address)) {
-      window.alert("E-posten er allerede registrert");
+      if (this.sendUpdates) {
+          mailAddress.sendUpdates = true;
       }
       else {
-        this.http.post("api/MailAddress", mailAddress)
-          .subscribe(retur => {
-            window.alert("Registreringen var vellykket");
-            this.emailInputForm.reset();
-
-            if (this.sendUpdates) {
-              this.updateDBStatistics();
-            }
-            
-          },
-          error => console.log(error)
-          );
+          mailAddress.sendUpdates = false;
       }
-  }
-
-  // Get an array of all emails from the database
-  getEmailAddress() {
-      this.http.get<MailAddress[]>("api/MailAddress")
-      .subscribe(data => {
-          this.allMailAdresses = data;
+      
+    this.http.post("api/MailAddress", mailAddress)
+      .subscribe(retur => {
+        window.alert("Registreringen var vellykket");
+        this.emailInputForm.reset();
+          if (this.sendUpdates) {
+              this.updateDBStatistics();
+          }
       },
-          error => console.log(error)
+        error => console.log(error)
       );
   }
 
@@ -120,17 +96,6 @@ export class HomeComponent {
       this.http.put("api/Statistic", stats)
       .subscribe(response => {
       })
-  }
-
-  //Check if the email already exists in the array, if it return false then the email is unique, if true then it is already registered.
-  checkIfRegistered(email: String) {
-    for (let value of this.allMailAdresses) {
-      console.log(value);
-       if (email === value.address) {
-         return true;
-        } 
-      }
-    return false;
   }
 
   // Checks if terms and conditions is accepted
@@ -166,10 +131,6 @@ export class HomeNorwegianComponent {
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.emailInputForm = fb.group(this.formValidation);
-  }
-
-  ngOnInit() {
-      this.getEmailAddress();
   }
 
   formValidation = {
@@ -210,15 +171,13 @@ export class HomeNorwegianComponent {
     mailAddress.firstname = this.emailInputForm.controls.formFirstname.value;
     mailAddress.lastname = this.emailInputForm.controls.formLastname.value;
     mailAddress.address = this.emailInputForm.controls.formEmail.value;
-    console.log(this.sendUpdates);
-
-    //If the user checks of that they want to get updates from mailinglist
-    if (this.sendUpdates) {
-      mailAddress.sendUpdates = true;
-    }
-    else {
-      mailAddress.sendUpdates = false;
-    }
+      if (this.sendUpdates) {
+          mailAddress.sendUpdates = true;
+      }
+      else {
+          mailAddress.sendUpdates = false;
+      }
+    console.log(mailAddress);
       
       if (this.checkIfRegistered(mailAddress.address)) {
       window.alert("E-posten er allerede registrert");
@@ -227,9 +186,9 @@ export class HomeNorwegianComponent {
           .subscribe(retur => {
           window.alert("Registreringen var vellykket");
           this.emailInputForm.reset();
-            if (this.sendUpdates) {
-              this.updateDBStatistics();
-            }
+              if (this.sendUpdates) {
+                  this.updateDBStatistics();
+              }
           },
           error => console.log(error)
           );
@@ -255,17 +214,6 @@ export class HomeNorwegianComponent {
       this.http.put("api/Statistic", stats)
       .subscribe(response => {
       })
-  }
-
-  //Check if the email already exists in the array, if it return false then the email is unique, if true then it is already registered.
-  checkIfRegistered(email: String) {
-    for (let value of this.allMailAdresses) {
-      console.log(value);
-       if (email === value.address) {
-         return true;
-        } 
-      }
-    return false;
   }
 
   // Checks if terms and conditions is accepted
