@@ -22,6 +22,7 @@ export class HomeComponent {
   showRegister: boolean;
   public email: string;
   public allMailAdresses: Array<MailAddress>;
+  public sendUpdates: boolean;
   emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
@@ -55,18 +56,32 @@ export class HomeComponent {
   }
 
 
+  //Event listener to the checkbox for subscribing to mailing list
+  wantUpdates(event) {
+    this.sendUpdates = event.target.checked;
+  }
+
+
   //Adds email to database
   addEmailToDb() {
     const mailAddress = new MailAddress();
     mailAddress.firstname = this.emailInputForm.controls.formFirstname.value;
     mailAddress.lastname = this.emailInputForm.controls.formLastname.value;
     mailAddress.address = this.emailInputForm.controls.formEmail.value;
+      if (this.sendUpdates) {
+          mailAddress.sendUpdates = true;
+      }
+      else {
+          mailAddress.sendUpdates = false;
+      }
       
     this.http.post("api/MailAddress", mailAddress)
       .subscribe(retur => {
         window.alert("Registreringen var vellykket");
         this.emailInputForm.reset();
-        this.updateDBStatistics();
+          if (this.sendUpdates) {
+              this.updateDBStatistics();
+          }
       },
         error => console.log(error)
       );
@@ -110,6 +125,7 @@ export class HomeNorwegianComponent {
   showInfo: boolean;
   showRegister: boolean;
   public email: string;
+  public sendUpdates: boolean;
   public allMailAdresses: Array<MailAddress>;
   emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
@@ -144,20 +160,43 @@ export class HomeNorwegianComponent {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
   }
 
+  //Event listener to the checkbox for subscribing to mailing list
+  wantUpdates(event) {
+    this.sendUpdates = event.target.checked;
+  }
+
   //Adds email to database
   addEmailToDb() {
     const mailAddress = new MailAddress();
     mailAddress.firstname = this.emailInputForm.controls.formFirstname.value;
     mailAddress.lastname = this.emailInputForm.controls.formLastname.value;
     mailAddress.address = this.emailInputForm.controls.formEmail.value;
+    if (this.sendUpdates) {
+      mailAddress.sendUpdates = true;
+    }
+    else {
+      mailAddress.sendUpdates = false;
+    }
 
     this.http.post("api/MailAddress", mailAddress)
       .subscribe(retur => {
         window.alert("Registreringen var vellykket");
         this.emailInputForm.reset();
-        this.updateDBStatistics();
+        if (this.sendUpdates) {
+          this.updateDBStatistics();
+        }
       },
         error => console.log(error)
+      );
+  }
+
+  // Get an array of all emails from the database
+  getEmailAddress() {
+      this.http.get<MailAddress[]>("api/MailAddress")
+      .subscribe(data => {
+          this.allMailAdresses = data;
+      },
+          error => console.log(error)
       );
   }
 

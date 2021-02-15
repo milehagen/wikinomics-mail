@@ -26,6 +26,7 @@ namespace wikinomics_mail
         {
             services.AddControllersWithViews();
             services.AddDbContext<MailDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MailDBContext")));
+            //services.AddDbContext<MailDBContext>(options => options.UseSqlite("data source=database.db"));
             services.AddScoped<IMailAddressRepository, MailAddressRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<IStatisticRepository, StatisticRepository>();

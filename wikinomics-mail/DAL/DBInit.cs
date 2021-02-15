@@ -16,7 +16,6 @@ namespace wikinomics_mail.DAL
             {
                 var context = serviceScope.ServiceProvider.GetService<MailDBContext>();
 
-
                 //If tables empty, we put something in them
                 if (!context.MailAddresses.Any())
                 {
@@ -26,14 +25,17 @@ namespace wikinomics_mail.DAL
                             firstname = "maggy",
                             lastname = "moo",
                             Address = "magnushjk@gmail.com",
-                            UniqueId = "BullshitImMakingUp"
+                            UniqueId = "BullshitImMakingUp",
+                            SendUpdates = true
+
                         },
                         new MailAddress
                         {
                             firstname = "shaky",
                             lastname = "shoe",
                             Address = "shakus89@hotmail.com",
-                            UniqueId = "SomeOtherBullshit"
+                            UniqueId = "SomeOtherBullshit",
+                            SendUpdates = true
                         }
 
                     );
