@@ -13,24 +13,21 @@ namespace wikinomics_mail.DAL
     class MailAddressRepository : IMailAddressRepository
     {
         private readonly MailDBContext _db;
-        private List<MailAddress> allMails;
-
         public MailAddressRepository(MailDBContext db)
         {
             _db = db;
         }
+        //Returns true if email is already registered
         public bool CheckIfRegistered(MailAddress email)
         {
-            allMails = _db.MailAddresses.ToList();
-
-            if(allMails.Contains(email))
-            {
-                return true;
-            } else
+            MailAddress MailFromDB = _db.MailAddresses.FirstOrDefault(e => e.Address == email.Address);
+            if(MailFromDB == null)
             {
                 return false;
             }
-        }
+            Console.WriteLine("Email is already stored");
+            return true;
+         }
 
         //Saves the mailaddress on the server
         public async Task<bool> Save(MailAddress email)
@@ -39,24 +36,25 @@ namespace wikinomics_mail.DAL
             //Checks to see if the substring from the email is empty or null
             if(string.IsNullOrEmpty(emailSubstring))
             {
-                throw new InvalidOperationException("The substring of the email cannot be empty or null");
+                return false;
             }
             //Check if email already is registered
             if(CheckIfRegistered(email))
             {
-                throw new InvalidOperationException("Email already exists");
+                return false;
             }
 
             //Make a new email MailAddress object
            try
             {
-                var newEmail = new MailAddress();
-                newEmail.firstname = email.firstname;
-                newEmail.lastname = email.lastname;
-                newEmail.Address = email.Address;
-                newEmail.UniqueId = MakeHash(emailSubstring);
-                newEmail.SendUpdates = email.SendUpdates;
-                await _db.MailAddresses.AddAsync(newEmail);
+                await _db.MailAddresses.AddAsync(new MailAddress
+                {
+                    firstname = email.firstname,
+                    lastname = email.lastname,
+                    Address = email.Address,
+                    UniqueId = MakeHash(emailSubstring),
+                    SendUpdates = email.SendUpdates
+                });
                 await _db.SaveChangesAsync();
                 return true;
             }

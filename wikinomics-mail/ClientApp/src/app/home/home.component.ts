@@ -22,7 +22,6 @@ export class HomeComponent {
   showRegister: boolean;
   public email: string;
   public sendUpdates: boolean;
-  public allMailAdresses: Array<MailAddress>;
   firstnameVal: boolean;
   lastnameVal: boolean;
   emailVal: boolean;
@@ -81,16 +80,6 @@ export class HomeComponent {
         }
       },
         error => console.log(error)
-      );
-  }
-
-  // Get an array of all emails from the database
-  getEmailAddress() {
-      this.http.get<MailAddress[]>("api/MailAddress")
-      .subscribe(data => {
-          this.allMailAdresses = data;
-      },
-          error => console.log(error)
       );
   }
 
@@ -147,7 +136,6 @@ export class HomeNorwegianComponent {
   showRegister: boolean;
   public email: string;
   public sendUpdates: boolean;
-  public allMailAdresses: Array<MailAddress>;
   firstnameVal: boolean;
   lastnameVal: boolean;
   emailVal: boolean;
@@ -206,16 +194,6 @@ export class HomeNorwegianComponent {
         }
       },
         error => console.log(error)
-      );
-  }
-
-  // Get an array of all emails from the database
-  getEmailAddress() {
-      this.http.get<MailAddress[]>("api/MailAddress")
-      .subscribe(data => {
-          this.allMailAdresses = data;
-      },
-          error => console.log(error)
       );
   }
 

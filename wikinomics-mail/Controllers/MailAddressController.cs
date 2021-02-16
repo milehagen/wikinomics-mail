@@ -34,9 +34,9 @@ namespace wikinomics_mail.Controllers
                     _log.LogInformation("Email could not be stored!");
                     return BadRequest();
                 }
+                _log.LogInformation("Ferdig med lagring");
                 return Ok();
             }
-            _log.LogInformation("Validation not successfull");
             return BadRequest();
         }
 
