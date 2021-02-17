@@ -16,7 +16,7 @@
 }
 
 h2 {
-    font-size: 35px;
+    font-size: 50px;
     text-align: center;
     font-weight: bold;
 }
@@ -31,6 +31,9 @@ h2 {
 
 .section {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .col {
@@ -125,8 +128,8 @@ button:hover {
 
     h2 {
         font-size: 20px;
+        text-align: center;
     }
-
 
     .section {
         display: inline-block;

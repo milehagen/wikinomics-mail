@@ -11,7 +11,7 @@
 }
 
 h2 {
-    font-size: 35px;
+    font-size: 50px;
     text-align: center;
     font-weight: bold;
 }
@@ -49,6 +49,8 @@ p, h2 {
     text-align: center;
 }
 
+
+
 .mainImg {
     width: 80%;
     height: auto;
@@ -76,6 +78,10 @@ button:hover {
         font-size: 14px;
     }
 
+    h2 {
+        font-size: 26px;
+    }
+
     .col {
         width: 80%;
     }
@@ -88,7 +94,7 @@ button:hover {
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
 
@@ -134,7 +140,7 @@ button:hover {
     }
 
     h2 {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .row {

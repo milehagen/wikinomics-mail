@@ -1,7 +1,7 @@
 <div class="page" id="page">  
 
   <div id="home" class="container-fluid bg-main home" scroll @fade>
-    <div class="row text-center">
+    <div class="row text-center main-row">
       <div class="col main">
         <img class="img-responsive img-fluid mainImg" src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" />
         <br />
@@ -9,7 +9,7 @@
           Imagine a place where you can ask all your career-related questions, without the fear of judgement.
         </h2>
         <br />
-        <button class="btn shadow-sm rounded-pill btnSignUp" (click)="toSignUp()">I'm in!</button>
+        <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" (click)="toSignUp()">Sign up</button>
         <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
       </div>
     </div>
@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="col image order-sm-1">
-          <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/home/homeoffice.svg">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/homeoffice.svg">
         </div>    
       </div>
     </div>
@@ -42,7 +42,7 @@
   <div class="container-fluid bg-main">
     <div class="row">
       <div class="section">
-        <div class="col info">
+        <div class="col info order-sm-1">
           <div class="text">
             <h2>Put All Your Assumptions Aside</h2>
             <br />
@@ -56,8 +56,8 @@
             </p>
           </div>
         </div>
-        <div class="col image">
-          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/searching.png">
+        <div class="col image order-sm-12">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/searching.png">
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@
           </div>
         </div>
         <div class="col image order-sm-1">
-          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/brainstorming.svg">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/brainstorming.svg">
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="section">
-        <div class="col info">
+        <div class="col info order-sm-1">
           <div class="text">
             <h2>A Safe Place For "Stupid" Questions</h2>
             <br />
@@ -104,8 +104,8 @@
             </p>
           </div>
         </div>
-        <div class="col image">
-          <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/home/sittingonfloor.svg">
+        <div class="col image order-sm-12">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/sittingonfloor.svg">
         </div>
       </div>
     </div>
@@ -130,7 +130,7 @@
           </div>
         </div>
         <div class="col image order-sm-1">
-          <img class="img-responsive img-fluid pull-right homeImg" src="../../assets/images/home/homegarden.svg">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/homegarden.svg">
         </div>
       </div>
     </div>
@@ -176,7 +176,7 @@
           </form>
         </div>
         <div class="col image regImg">
-          <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/home/sittingonfloor2.svg">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/sittingonfloor2.svg">
         </div>
       </div>
     </div>
