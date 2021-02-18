@@ -2,14 +2,14 @@
 
   <div id="home" class="container-fluid bg-main home" scroll @fade>
     <div class="row text-center main-row">
-      <div class="col main">
+      <div class="main">
         <img class="img-responsive img-fluid mainImg" src="../../assets/images/home/alonetime.svg" alt="Stuck At Home" />
         <br />
         <h2>
           Imagine a place where you can ask all your career-related questions, without the fear of judgement.
         </h2>
         <br />
-        <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" (click)="toSignUp()">Sign up</button>
+        <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" (click)="scrollToSignUp()">Sign up</button>
         <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
       </div>
     </div>
@@ -17,6 +17,9 @@
   <div id="section1" class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
+        <div class="col image order-sm-1">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/homeoffice.svg">
+        </div>    
         <div class="col info order-sm-12">
           <div class="text">
             <h2>
@@ -26,46 +29,48 @@
             <br />
             <p>
               KnowONE is the go-to-place for your burning career-oriented questions; answered by ordinary people, 
-              who study within the field of your interest, hold a role you may be curious about, or work within an 
-              industry you want to learn more about.
+              who study within the field of your interest, hold a role you may be curious about, or work within 
+              an industry you want to learn more about.
             </p>
+            <button class="btn btn primary" (click)="scrollToSection2()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
           </div>
         </div>
-        <div class="col image order-sm-1">
-          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/homeoffice.svg">
-        </div>    
       </div>
     </div>
 
   </div>
 
-  <div class="container-fluid bg-main">
+  <div id="section2" class="container-fluid bg-main">
     <div class="row">
       <div class="section">
+        <div class="col image order-sm-12">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/searching.png">
+        </div>
         <div class="col info order-sm-1">
           <div class="text">
             <h2>Put All Your Assumptions Aside</h2>
             <br />
             <p>
-              Curious about what a product designer does? How is it really like to work as a data scientis? What 
-              does a "CEO" really doa? And, what is it really like to study "digital art"?
+              Curious about what a product designer does? How is it really like to work as a data scientist? 
+              What does a "CEO" really do? And, what is it really like to study "digital art"?
             </p>
             <p>
-              KnowONE is the place where you can put all your career-related assumptions aside, and get your questions 
-              answered straight from the horse's mouth!
+              KnowONE is the place where you can put all your career-related assumptions aside, and get your 
+              questions answered straight from the horse's mouth!
             </p>
+            <button class="btn btn primary" (click)="scrollToSection3()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
           </div>
-        </div>
-        <div class="col image order-sm-12">
-          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/searching.png">
         </div>
       </div>
     </div>
   </div>
   
-  <div class="container-fluid bg-sec">
+  <div id="section3" class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
+        <div class="col image order-sm-1">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/brainstorming.svg">
+        </div>
         <div class="col info order-sm-12">
           <div class="text">
             <h2>This is the Place Where You Can...</h2>
@@ -79,67 +84,94 @@
                 and cheerleaders for your career development.
               </li>
             </ul>
+            <button class="btn btn primary" (click)="scrollToSection4()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
           </div>
-        </div>
-        <div class="col image order-sm-1">
-          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/brainstorming.svg">
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div id="section4" class="container-fluid">
     <div class="row">
       <div class="section">
+        <div class="col image order-sm-12">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/sittingonfloor.svg">
+        </div>
         <div class="col info order-sm-1">
           <div class="text">
             <h2>A Safe Place For "Stupid" Questions</h2>
             <br />
             <p>
-              We believe that there are no "stupid questions". However, we also know how scary it can be to put 
-              yourself out there. That's why we've made sure that you can be anonymous.
+              We believe that there are no "stupid questions". However, we also know how scary it can be 
+              to put yourself out there. That's why we've made sure that you can be anonymous.
             </p>
             <p>
               ...Because, fear of judgement should not stand in the way of gaining knowledge.
             </p>
+            <button class="btn btn primary" (click)="scrollToSection5()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
           </div>
-        </div>
-        <div class="col image order-sm-12">
-          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/sittingonfloor.svg">
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid bg-sec">
+  <div id="section5" class="container-fluid bg-sec">
     <div class="row">
       <div class="section">
+        <div class="col image order-sm-1">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/statsandgraphs.svg">
+        </div>
         <div class="col info order-sm-12">
+          <div class="text">
+            <h2>You Are More Powerful than You Think</h2>
+            <br />
+            <p>
+              Think back to your younger self, when you were exploring what to study, day-dreaming 
+              about your future job, or working towards a promotion at work.
+            </p>
+            <p>
+              What do you wish someone told you? What advice would you give to your younger self?
+            </p>
+            <button class="btn btn primary" (click)="scrollToSection6()"><img src="../../assets/icons/arrow-down.svg" /><b>Register</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="section6" class="container-fluid ">
+    <div class="row">
+      <div class="section">
+        <div class="col image order-sm-12">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/homegarden.svg">
+        </div>
+        <div class="col info order-sm-1">
           <div class="text">
             <h2>You Can Make A Difference</h2>
             <br />
             <p>
-              It doesn't matter if you're a student, a CEO of a big company, or an aspiring entrepreneur. What you 
-              have gone through in life is unique, and we believe that there is someone out there who is looking for 
-              the information, and experience that you have.
+              It doesn't matter if you're a student, a CEO of a big company, or an aspiring entrepreneur. 
+              What you have gone through in life is unique, and we believe that there is someone out there 
+              who is looking for the information, and experience that you have.
             </p>
             <p>
-              So, in addition to recieving advice and learning from others, we hope you take the time to give back 
-              to society, by using KnowONE to share what you have learn through your career journey.
+              So, in addition to receiving advice and learning from others, we hope you take the time to give 
+              back to society, by using KnowONE to share what you have learnt throughout your career journey.
             </p>
+            <button class="btn btn primary" (click)="scrollToSignUp()"><img src="../../assets/icons/arrow-down.svg" /><b>Register</b></button>
           </div>
-        </div>
-        <div class="col image order-sm-1">
-          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/homegarden.svg">
         </div>
       </div>
     </div>
   </div>
 
-  <div id="signUp" class="container-fluid">
+  <div id="signUp" class="container-fluid bg-sec">
     <div class="row form-row">
       <div class="section">
-        <div class="col info flex-column">
+        <div class="col image regImg order-sm-1">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/sittingonfloor2.svg">
+        </div>
+        <div class="col info flex-column order-sm-12">
           <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
             <div class="form-group">
               <h2><b>Sign up to test KnowONE</b></h2>
@@ -162,8 +194,7 @@
               <input type="checkbox" class="form-check-input" id="checkboxTerms" (change)="acceptTerms($event)">
               <label class="form-check-label required" for="checkboxTerms">
                 I accept the 
-                <a href="../../assets/terms&conditions/termsandconditions.pdf" target="_blank">terms and conditions</a> and 
-                <a href="" target="_blank">privacy policy</a>
+                <a href="../../assets/terms&conditions/termsandconditions.pdf" target="_blank">terms and conditions, and privacy policy</a>
               </label>
             </div>
             <div class="form-check">
@@ -174,9 +205,6 @@
             </div>
             <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" [disabled]="!emailInputForm.valid || !termsAccepted">Sign up</button>
           </form>
-        </div>
-        <div class="col image regImg">
-          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/sittingonfloor2.svg">
         </div>
       </div>
     </div>

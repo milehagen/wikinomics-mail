@@ -48,6 +48,36 @@ export class HomeComponent {
     document.getElementById("section1").scrollIntoView({behavior: "smooth"});
   }
 
+  // Scrolls to second section
+  scrollToSection2() {
+    document.getElementById("section2").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to third section
+  scrollToSection3() {
+    document.getElementById("section3").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to fourht section
+  scrollToSection4() {
+    document.getElementById("section4").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to fifth section
+  scrollToSection5() {
+    document.getElementById("section5").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to sixth section
+  scrollToSection6() {
+    document.getElementById("section6").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to signup section
+  scrollToSignUp() {
+    document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
+  }
+
   // Scrolls to sign up field
   toSignUp() {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
@@ -158,12 +188,38 @@ export class HomeNorwegianComponent {
 }
 
   // Scrolls to first section
+  // Scrolls to first section
   scrollToSection1() {
     document.getElementById("section1").scrollIntoView({behavior: "smooth"});
   }
 
-  // Scrolls to sign up field
-  toSignUp() {
+  // Scrolls to second section
+  scrollToSection2() {
+    document.getElementById("section2").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to third section
+  scrollToSection3() {
+    document.getElementById("section3").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to fourht section
+  scrollToSection4() {
+    document.getElementById("section4").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to fifth section
+  scrollToSection5() {
+    document.getElementById("section5").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to sixth section
+  scrollToSection6() {
+    document.getElementById("section6").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to signup section
+  scrollToSignUp() {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
   }
 

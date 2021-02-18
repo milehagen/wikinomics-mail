@@ -33,3 +33,18 @@ button:focus {
 button:hover {
     text-decoration: none;
 }
+
+.flag {
+    width: 25px;
+    height: 25px;
+}
+
+.lang {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand {
+    width: 100px;
+}

@@ -1,5 +1,5 @@
 .container-fluid {
-    height: 10vh;
+    height: 15vh;
     background-color: var(--mainColor);
     display: flex;
     justify-content: center;

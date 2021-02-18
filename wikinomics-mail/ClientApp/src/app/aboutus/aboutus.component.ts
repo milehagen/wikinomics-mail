@@ -17,9 +17,29 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 export class AboutUsComponent {
   constructor() {}
 
-  // Scrolls to section 1
+  // Scrolls to first section
   scrollToSection1() {
     document.getElementById("section1").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to second section
+  scrollToSection2() {
+    document.getElementById("section2").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to third section
+  scrollToSection3() {
+    document.getElementById("section3").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to fourht section
+  scrollToSection4() {
+    document.getElementById("section4").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to fifth section
+  scrollToSection5() {
+    document.getElementById("section5").scrollIntoView({behavior: "smooth"});
   }
 }
 
@@ -36,8 +56,28 @@ export class AboutUsComponent {
 export class AboutUsNorwegianComponent {
   constructor() {}
   
-  // Scrolls to section1
+  // Scrolls to first section
   scrollToSection1() {
     document.getElementById("section1").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to second section
+  scrollToSection2() {
+    document.getElementById("section2").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to third section
+  scrollToSection3() {
+    document.getElementById("section3").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to fourht section
+  scrollToSection4() {
+    document.getElementById("section4").scrollIntoView({behavior: "smooth"});
+  }
+
+  // Scrolls to fifth section
+  scrollToSection5() {
+    document.getElementById("section5").scrollIntoView({behavior: "smooth"});
   }
 }

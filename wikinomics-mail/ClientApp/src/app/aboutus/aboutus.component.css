@@ -11,9 +11,18 @@
 }
 
 h2 {
-    font-size: 50px;
-    text-align: center;
+    font-size: 60px;
+    text-align: left;
     font-weight: bold;
+}
+
+.main {
+    width: 60%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .row {
@@ -46,13 +55,17 @@ p, h2 {
 }
 
 .text p {
-    text-align: center;
+    text-align: left;
+}
+
+.profiles {
+    padding-bottom: 20px;
 }
 
 
 
 .mainImg {
-    width: 80%;
+    width: 70%;
     height: auto;
 }
 
@@ -71,15 +84,32 @@ button:hover {
     text-decoration: none;
 }
 
+.card {
+    min-height: 50vh;
+    border: none;
+    background-color: var(--secondaryBg)
+}
+
+.row-card {
+    width: 100%;
+}
+
+.avatarImg {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
 
 
 @media (max-width: 1500px) {
     .container-fluid {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     h2 {
-        font-size: 26px;
+        font-size: 40px;
     }
 
     .col {
@@ -90,11 +120,11 @@ button:hover {
 
 @media (max-width: 1000px) {
     .container-fluid{
-        font-size: 14px;
+        font-size: 16px;
     }
 
     h2 {
-        font-size: 22px;
+        font-size: 35px;
     }
 
 
@@ -110,37 +140,18 @@ button:hover {
     }
 }
 
-@media (max-width: 900px) {
-    .container-fluid {
-        font-size: 16px;
-    }
-
-    .text {
-        width: 100%;
-    }
-
-    .row {
-        width: 100%;
-    }
-
-    .col {
-        width: 100%;
-    }
-    
-    .homeImg {
-        width: 40%;
-    }
-
-}
-
 @media (max-width: 480px) {
     .container-fluid{
-        font-size: 12px;
+        font-size: 14px;
         padding: 0;
     }
 
     h2 {
-        font-size: 18px;
+        font-size: 30px;
+    }
+
+    .main {
+        width: 90%;
     }
 
     .row {
@@ -156,10 +167,18 @@ button:hover {
         display: inline-block;
     }
 
+    .homeImg {
+        width: 40%;
+    }
+
     .info, .image {
         margin: auto;
         overflow: visible;
         height: max-content;
         margin-bottom: 20px;
+    }
+
+    .card {
+        min-height: max-content;
     }
 }

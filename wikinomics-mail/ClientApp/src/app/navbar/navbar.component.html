@@ -1,10 +1,10 @@
 <nav id="idNav" class="navbar navbar-expand-lg navbar-light fixed-top">
-  <a class="navbar-brand" (click)="scrollToTop($event)">KnowONE</a> 
-  <button class="navbar-toggler" type="button" (click)="toggle()">
+  <a class="navbar-brand order-0" (click)="scrollToTop($event)">KnowONE</a> 
+  <button class="navbar-toggler order-3" type="button" (click)="toggle()">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }" *ngIf="!norwegian">
-    <ul class="nav navbar-nav mx-auto" (click)="isExpanded = !isExpanded">
+  <div class="collapse navbar-collapse links1" [ngClass]="{ 'show': isExpanded }" *ngIf="!norwegian">
+    <ul class="nav navbar-nav mx-auto links" (click)="isExpanded = !isExpanded">
       <li class="nav-item active">
         <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home']" [routerLinkActive]="['active']">HOME</button>
       </li>
@@ -12,11 +12,9 @@
         <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus']" [routerLinkActive]="['active']">ABOUT US</button>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item">
-        <button class="btn btn-link" (click)="changeLanguage()" (click)="isExpanded = !isExpanded" [routerLink]="['/home/no']">NORWEGIAN</button>
-      </li>
-    </ul>
+  </div>
+  <div class="lang" *ngIf="!norwegian">
+    <a (click)="changeLanguage()" [routerLink]="['/home/no']"><img class="flag" src="../../assets/icons/flags/norway.svg"></a>
   </div>
 
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }" *ngIf="norwegian">
@@ -28,10 +26,8 @@
         <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus/no']" [routerLinkActive]="['active']">OM OSS</button>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item">
-        <button class="btn btn-link" (click)="changeLanguage()" (click)="isExpanded = !isExpanded" [routerLink]="['/home']">ENGELSK</button>
-      </li>
-    </ul>
+  </div>
+  <div class="lang" *ngIf="norwegian">
+    <a (click)="changeLanguage()" [routerLink]="['/home']"><img class="flag" src="../../assets/icons/flags/united-kingdom.svg"></a>
   </div>
 </nav>

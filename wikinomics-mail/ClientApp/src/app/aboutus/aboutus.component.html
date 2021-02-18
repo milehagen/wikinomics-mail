@@ -1,33 +1,40 @@
 <div class="page" id="page">  
 
-    <div id="home" class="container-fluid" @fade>
-      <div class="row text-center">
-        <div class="col d-flex flex-column">
-          <img class="img-responsive img-fluid mainImg" src="../../assets/images/aboutus/imagintation.svg" alt="imagination.svg" width="30%;">
-          <h2>The Reason For Our Existence</h2>
-          <br />
-          <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
-        </div>
+  <div id="home" class="container-fluid bg-main home" scroll @fade>
+    <div class="row text-center main-row">
+      <div class="main">
+        <img class="img-responsive img-fluid mainImg" src="../../assets/images/aboutus/imagintation.svg" alt="Imagination" />
+        <br />
+        <h2 class="text-center">
+          The Reason For Our Existance
+        </h2>
+        <br />
+        <button class="btn btn primary" (click)="scrollToSection1()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
       </div>
     </div>
+  </div>
     <div id="section1" class="container-fluid bg-sec">
       <div class="row">
         <div class="section">
-          <div class="col info order-sm-12">
-            <div class="text">
-              <h2>Vision</h2>
-              <p>Zero talent is wasted</p>
-            </div>
-          </div>
           <div class="col image order-sm-1">
             <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/aboutus/plant5.svg" alt="plant.svg">
+          </div>
+          <div class="col info order-sm-12">
+            <div class="text">
+              <h2 class="text-center">Vision</h2>
+              <p class="text-center">Zero talent is wasted</p>
+              <button class="btn btn primary" (click)="scrollToSection2()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+    <div id="section2" class="container-fluid">
       <div class="row">
         <div class="section">
+          <div class="col image order-sm-12">
+            <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/aboutus/plant6.svg" alt="plant.svg" />
+          </div>
           <div class="col info order-sm-1">
             <div class="text">
               <h2>Mission</h2>
@@ -44,10 +51,193 @@
               <p>
                 Our mission is to ensure that no talent is wasted due to lack of a relevant network.
               </p>
+              <button class="btn btn primary" (click)="scrollToSection3()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="section3" class="container-fluid bg-sec">
+      <div class="row">
+        <div class="section">
+          <div class="col image order-sm-1">
+            <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/aboutus/avatar.svg" alt="plant.svg" />
+          </div>
+          <div class="col info order-sm-12">
+            <div class="text">
+              <h2>Words From The Founder, Mi Le Hagen</h2>
+              <p><b>Why "KnowONE"?</b></p>
+              <p>
+                After 10 years of work experience, I've come across many people with super interesting jobs. 
+                And, I've often thought "man, I wish I knew about that profession when I was about to choose 
+                my field of study".
+              </p>
+  
+              <p>
+                On behalf of my younger self, I wish that I could reach out to anyone  who had an interesting 
+                title, or a job that seemed cool, and ask them: "What did you study? What do you earn? What's 
+                the best part about your job? What's the worst part about your job?".
+              </p>
+  
+              <p>
+                So, I went on a mission to find out how people made their decisions regarding their field of 
+                study, or choice of profession. And, after conversations with countless of people, it hit me that 
+                the same sentence was repeated over and over: 
+              </p>
+
+              <p>
+                " I wanted to study engineering. But, I <b>didn't know anyone</b> who is an engineer." <br />
+                "I became a doctor, because <b>I knew many people</b> who were doctors..."
+              </p>
+
+              <p>
+                I realised that; for most of us, our career paths have been highly influenced by people around 
+                us- the people within our network. This means that, our source of reference - or, source of 
+                information, if you will- is limited by the size of our network.
+              </p>
+
+              <p>
+                You're probably thinking: "What about Google?" And, sure, we can Google our way through many 
+                of our questions. But, it's not the same as getting answers from real people- people who have 
+                experience about
+              </p>
+
+              <p>
+                This is the pain-point I discovered.  And, this is how the idea of "KnowONE" came about.
+              </p>
+
+              <p>
+                Get to <b>know ONE</b> person. And, benefit from the <b>Know</b>ledge, network, and experience of 
+                <b>ONE</b>. Because, sometimes that's all it takes.
+              </p>
+              <button class="btn btn primary" (click)="scrollToSection4()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="section4" class="container-fluid">
+      <div class="row">
+        <div class="section">
           <div class="col image order-sm-12">
-            <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/aboutus/plant6.svg" alt="plant.svg" />
+            <img class="img-responsive img-fluid pull-left homeImg" src="../../assets/images/aboutus/plant4.svg" alt="plant.svg" />
+          </div>
+          <div class="col info order-sm-1">
+            <div class="text">
+              <h2>What Makes KnowONE Different?</h2>
+              <p>
+                We understand that all people wired differently. So, while some people don't mind reaching 
+                out to strangers to ask for information, others find this to be extremely uncomfortable.
+              </p>
+  
+              <p>
+                In today's society, we seem to be catering only to those who are extroverted; those who love 
+                to mingle, and make new connections.
+              </p>
+  
+              <p>
+                At KnowONE we are passionate about making sure that no talent, or potential is wasted, simply 
+                because they are too shy, or introverted. So, to remove the fear of reaching out to strangers, 
+                we've made sure that you can be anonymous. Because, fear of judgment should not stand in the way 
+                of getting the information you need to develop yourself, and your career.
+              </p>
+              <button class="btn btn primary" (click)="scrollToSection5()"><img src="../../assets/icons/arrow-down.svg" /><b>Read more</b></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="section5" class="container-fluid flex-column profiles bg-sec">
+      <h2 class="text-center" style="margin-top: 15px;">The Team</h2>
+      <div class="row mx-auto">
+        <div class="col col-card">
+          <div class="card">
+            <a href="https://www.linkedin.com/in/jakob-olsrud-johansen-143408200/" target="_blank"><img class="card-img-top avatarImg" src="../../assets/images/aboutus/avatars/avatarJakob.svg" alt="Jakob"></a>
+            <div class="card-body">
+              <label><b>Jakob Olsrud Johansen</b></label>
+              <p>
+                Student, <br />
+                Information Technology at OsloMet<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-card">
+          <div class="card">
+            <a href="https://www.linkedin.com/in/magnus-kristiansen-166296201/" target="_blank"><img class="card-img-top avatarImg" src="../../assets/images/aboutus/avatars/avatarMagnusHK.svg" alt="Magnus"></a>
+            <div class="card-body">
+              <label><b>Magnus Hjelmen Kristiansen</b></label>
+              <p>
+                Student, <br />
+                Information Technology at OsloMet<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-card">
+          <div class="card">
+            <a href="https://www.linkedin.com/in/martin-johansen-6b56401bb/" target="_blank"><img class="card-img-top avatarImg" src="../../assets/images/aboutus/avatars/avatarMartin.svg" alt="Martin"></a>
+            <div class="card-body">
+              <label><b>Martin Johansen</b></label>
+              <p>
+                Student, <br />
+                Information Technology at OsloMet<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-card">
+          <div class="card">
+            <a href="https://www.linkedin.com/in/mi-le-hagen-5aa0b617/" target="_blank"><img class="card-img-top avatarImg" src="../../assets/images/aboutus/avatars/avatarMi.svg" alt="Mi"></a>
+            <div class="card-body">
+              <label><b>Mi Le Hagen</b></label>
+              <p>
+                Founder of KnowONE
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-center" style="margin-top: 15px;">The Supporters</h2>
+      <div class="row mx-auto">
+        <div class="col col-card">
+          <div class="card">
+            <a href="https://www.linkedin.com/in/magnus-le/" target="_blank"><img class="card-img-top avatarImg" src="../../assets/images/aboutus/avatars/avatarMagnusL.svg" alt="Magnus"></a>
+            <div class="card-body">
+              <label><b>Magnus Le</b></label>
+              <p>
+                Software engineer at Ignite Procurement, <br />
+                Mentor
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-card">
+          <div class="card">
+            <a href="https://www.linkedin.com/in/tim-nguyen-5200537/" target="_blank"><img class="card-img-top avatarImg" src="../../assets/images/aboutus/avatars/avatarTim.svg" alt="Tim"></a>
+            <div class="card-body">
+              <label><b>Tim Nguyen</b></label>
+              <p>
+                CCO at Cloud Insurance, <br />
+                Mentor
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-card">
+          <div class="card">
+            <a href="https://www.linkedin.com/in/nguyenhamy/" target="_blank"><img class="card-img-top avatarImg" src="../../assets/images/aboutus/avatars/avatarHamy.svg" alt="Hamy"></a>
+            <div class="card-body">
+              <label><b>Hamy Nguyen</b></label>
+              <p>
+                Interaction Designer at Gjensidige, <br />
+                Mentor
+              </p>
+            </div>
           </div>
         </div>
       </div>
