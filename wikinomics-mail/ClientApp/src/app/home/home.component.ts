@@ -101,9 +101,10 @@ export class HomeComponent {
       mailAddress.sendUpdates = false;
     }
 
-    this.http.post("api/MailAddress", mailAddress)
+    this.http.post("api/MailAddress/Save", mailAddress)
       .subscribe(retur => {
         window.alert("Registreringen var vellykket");
+        this.sendConfirmationEnglish(mailAddress);
         this.emailInputForm.reset();
         if (this.sendUpdates) {
           this.updateDBStatistics();
@@ -111,6 +112,13 @@ export class HomeComponent {
       },
         error => console.log(error)
       );
+  }
+
+  sendConfirmationEnglish(mailAddress: MailAddress) {
+    this.http.post("api/MailAddress/ConfirmationMailEnglish", mailAddress)
+      .subscribe(respons => {
+        console.log(respons);
+      });
   }
 
   updateDBStatistics() {
@@ -241,9 +249,10 @@ export class HomeNorwegianComponent {
       mailAddress.sendUpdates = false;
     }
 
-    this.http.post("api/MailAddress", mailAddress)
+    this.http.post("api/MailAddress/Save", mailAddress)
       .subscribe(retur => {
         window.alert("Registreringen var vellykket");
+        this.sendConfirmationNorwegian(mailAddress);
         this.emailInputForm.reset();
         if (this.sendUpdates) {
           this.updateDBStatistics();
@@ -251,6 +260,13 @@ export class HomeNorwegianComponent {
       },
         error => console.log(error)
       );
+  }
+
+  sendConfirmationNorwegian(mailAddress: MailAddress) {
+    this.http.post("api/MailAddress/ConfirmationMailNorwegian", mailAddress)
+      .subscribe(respons => {
+        console.log(respons);
+      });
   }
 
   updateDBStatistics() {

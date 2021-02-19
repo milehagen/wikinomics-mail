@@ -85,7 +85,7 @@ namespace wikinomics_mail.DAL
 
         public async Task<bool> SendMail(Mail mail)
         {
-            var fromAddress = new System.Net.Mail.MailAddress("milehagen@knowone.com", "KnowONE");
+            var fromAddress = new System.Net.Mail.MailAddress("norway.itpe3200@gmail.com", "KnowONE");
             var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
             var toAddress = new System.Net.Mail.MailAddress("fail@fail.com");
 
