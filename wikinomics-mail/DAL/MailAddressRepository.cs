@@ -67,11 +67,11 @@ namespace wikinomics_mail.DAL
 
         public async Task<bool> ConfirmationMail(Mail mail)
         {
-            var fromAddress = new System.Net.Mail.MailAddress("NORWAY.ITPE3200@gmail.com", "NOR-WAY");
-            var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
+            var fromAddress = new System.Net.Mail.MailAddress("milehagen@knowone.com", "KnowONE");
+            var fromPassword = "";
             var toAddress = new System.Net.Mail.MailAddress("fail@fail.com");
 
-            SmtpClient MailClient = new SmtpClient("smtp.gmail.com", 587);
+            SmtpClient MailClient = new SmtpClient("smtp.domeneshop.no", 587);
             MailClient.EnableSsl = true;
             MailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             MailClient.UseDefaultCredentials = false;
@@ -79,7 +79,7 @@ namespace wikinomics_mail.DAL
             MailClient.Timeout = 20000;
 
 
-            //If Address is NOT empty, it's a test
+            //If Address is NOT empty
             if (mail.Address != null)
             {
                 try
@@ -89,7 +89,7 @@ namespace wikinomics_mail.DAL
                         toAddress = new System.Net.Mail.MailAddress(mail.Address);
                         emailMessage.To.Add(toAddress);
                         emailMessage.From = fromAddress;
-                        emailMessage.Subject = mail.Titel;
+                        emailMessage.Subject = "Welcome to the KnowOne";
                         emailMessage.Body = mail.Body;
                         emailMessage.Priority = MailPriority.Normal;
                         emailMessage.IsBodyHtml = true;
@@ -110,45 +110,6 @@ namespace wikinomics_mail.DAL
                 catch
                 {
                     return false;
-                }
-            }
-            //Else it's for the mailing list
-            else
-            {
-                //Looping through the list, and sending mail if the want it
-                foreach (var address in _db.MailAddresses)
-                {
-                    if (address.SendUpdates)
-                    {
-                        string unsubscribeURL = "\n <a href=\"https://localhost:44328/unsubscribe?mail=" + address.UniqueId + "\"" + " > Unsubscribe</a>";
-                        try
-                        {
-                            using (MailMessage emailMessage = new MailMessage())
-                            {
-                                toAddress = new System.Net.Mail.MailAddress(address.Address);
-                                emailMessage.To.Add(toAddress);
-                                emailMessage.From = fromAddress;
-                                emailMessage.Subject = mail.Titel;
-                                emailMessage.Body = mail.Body + unsubscribeURL;
-                                emailMessage.Priority = MailPriority.Normal;
-                                emailMessage.IsBodyHtml = true;
-
-                                try
-                                {
-                                    await MailClient.SendMailAsync(emailMessage);
-                                }
-                                catch (Exception e)
-                                {
-                                    System.Diagnostics.Debug.WriteLine(e.StackTrace);
-                                    return false;
-                                }
-                            }
-                        }
-                        catch
-                        {
-                            return false;
-                        }
-                    }
                 }
             }
             MailClient.Dispose();
