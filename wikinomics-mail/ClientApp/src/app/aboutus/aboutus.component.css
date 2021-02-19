@@ -1,6 +1,7 @@
 .container-fluid {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 20px;
     padding: 80px;
     min-height: 100vh;
@@ -12,12 +13,11 @@
 
 h2 {
     font-size: 60px;
-    text-align: left;
     font-weight: bold;
 }
 
 .main {
-    width: 60%;
+    width: 80%;
     max-width: 1500px;
     display: flex;
     flex-direction: column;
@@ -31,18 +31,23 @@ h2 {
     justify-content: space-around;
     align-items: center;
     max-width: 1500px;
+    margin: 50px;
 }
 
 .section {
     display: flex;
+    width: 100%;
 }
 
 .col {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
     max-width: 600px;
+}
+
+.col-text {
+    width: 1000px;
 }
 
 p, h2 {
@@ -54,24 +59,25 @@ p, h2 {
     object-fit: cover;
 }
 
-.text p {
+.text p, .text h2, .text h3 {
     text-align: left;
+    margin-top: 20px;
 }
 
 .profiles {
     padding-bottom: 20px;
 }
 
-
-
 .mainImg {
-    width: 70%;
+    width: 50%;
     height: auto;
 }
 
 .homeImg {
-    width: 80%;
-    height: 50%;
+    width: 30%;
+    float: right;
+    top: 0;
+    margin: 10px;
 }
 
 button:focus {
@@ -87,7 +93,8 @@ button:hover {
 .card {
     min-height: 50vh;
     border: none;
-    background-color: var(--secondaryBg)
+    background-color: var(--secondaryBg);
+    text-align: center;
 }
 
 .row-card {
@@ -112,8 +119,20 @@ button:hover {
         font-size: 40px;
     }
 
+    h3 {
+        font-size: 22px;
+    }
+
     .col {
         width: 80%;
+    }
+
+    .main {
+        width: 60%;
+    }
+
+    .card {
+        min-height: 70vh;
     }
 }
 
@@ -127,6 +146,13 @@ button:hover {
         font-size: 35px;
     }
 
+    h3 {
+        font-size: 20px;
+    }
+
+    .main {
+        width: 90%;
+    }
 
     .section {
         display: inline-block;
@@ -150,8 +176,16 @@ button:hover {
         font-size: 30px;
     }
 
+    h3 {
+        font-size: 18px;
+    }
+
     .main {
         width: 90%;
+    }
+
+    .text {
+        width: 100%;
     }
 
     .row {
@@ -167,6 +201,10 @@ button:hover {
         display: inline-block;
     }
 
+    .mainImg {
+        width: 80%;
+    }
+
     .homeImg {
         width: 40%;
     }
@@ -179,6 +217,6 @@ button:hover {
     }
 
     .card {
-        min-height: max-content;
+        min-height: 50vh;
     }
 }
