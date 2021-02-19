@@ -1,11 +1,28 @@
 .container-fluid {
-    height: 15vh;
+    min-height: 10vh;
     background-color: var(--mainColor);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .container-fluid p {
     color: white;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col > * {
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .row {
+        flex-direction: column;
+    }
 }

@@ -90,6 +90,7 @@ p, h2 {
 
 .btnRegister {
     background-color: var(--mainColor);
+    padding: 15px;
 }
 
 .col > *, form > * {

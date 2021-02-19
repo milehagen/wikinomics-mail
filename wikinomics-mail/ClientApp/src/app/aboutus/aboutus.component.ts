@@ -31,16 +31,6 @@ export class AboutUsComponent {
   scrollToSection3() {
     document.getElementById("section3").scrollIntoView({behavior: "smooth"});
   }
-
-  // Scrolls to fourht section
-  scrollToSection4() {
-    document.getElementById("section4").scrollIntoView({behavior: "smooth"});
-  }
-
-  // Scrolls to fifth section
-  scrollToSection5() {
-    document.getElementById("section5").scrollIntoView({behavior: "smooth"});
-  }
 }
 
 
@@ -69,15 +59,5 @@ export class AboutUsNorwegianComponent {
   // Scrolls to third section
   scrollToSection3() {
     document.getElementById("section3").scrollIntoView({behavior: "smooth"});
-  }
-
-  // Scrolls to fourht section
-  scrollToSection4() {
-    document.getElementById("section4").scrollIntoView({behavior: "smooth"});
-  }
-
-  // Scrolls to fifth section
-  scrollToSection5() {
-    document.getElementById("section5").scrollIntoView({behavior: "smooth"});
   }
 }
