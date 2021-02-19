@@ -44,7 +44,6 @@ namespace wikinomics_mail.Controllers
         [Route("unsubscribe/{UniqueID}")]
         public async Task<ActionResult> Unsubscribe(string UniqueID) 
         {
-            System.Diagnostics.Debug.WriteLine(UniqueID);
             var resultOK = await _db.Unsubscribe(UniqueID);
             if (!resultOK)
             {

@@ -138,7 +138,7 @@ namespace wikinomics_mail.DAL
                 {
                     if (address.SendUpdates)
                     {
-                        string unsubscribeURL = "\n <a href=\"https://localhost:44328/unsubscribe?mail=" + address.UniqueId + "\"" + " > Unsubscribe</a>";
+                        string unsubscribeURL = "\n <br /> <a href=\"https://localhost:44328/unsubscribe?mail=" + address.UniqueId + "\"" + " > Unsubscribe</a>";
                         try
                         {
                             using (MailMessage emailMessage = new MailMessage())
