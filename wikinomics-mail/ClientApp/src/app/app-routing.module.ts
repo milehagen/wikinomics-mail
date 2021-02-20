@@ -41,10 +41,6 @@ const routes: Routes = [
   {
     path: 'unsubscribe',
     component: UnsubscribeComponent,
-  },
-  {
-    path: '**',
-    redirectTo: ''
   }
 ];
 
