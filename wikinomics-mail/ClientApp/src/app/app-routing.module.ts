@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { HomeComponent, HomeNorwegianComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { testComponent } from './testComponent';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
 
@@ -41,6 +42,14 @@ const routes: Routes = [
   {
     path: 'unsubscribe',
     component: UnsubscribeComponent,
+  },
+  {
+    path: 'C39F20A7E332BFDD46062A886230CE1E4FAAE8DFB2149F6176948539AB6F02BB.html',
+    component: testComponent,
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 

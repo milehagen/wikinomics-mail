@@ -45,6 +45,7 @@
     <None Remove="ClientApp\src\app\home\MailAddress.ts" />
     <None Remove="ClientApp\src\app\login\login.component.ts" />
     <None Remove="ClientApp\src\app\Models\Statistic.ts" />
+    <None Remove="ClientApp\src\app\testComponent.ts" />
     <None Remove="ClientApp\src\app\unsubscribe\unsubscribe.component.ts" />
   </ItemGroup>
 
