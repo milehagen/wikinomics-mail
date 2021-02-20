@@ -4,6 +4,7 @@ import { MailAddress } from '../Models/MailAddress';
 import { Statistic } from '../Models/Statistic';
 import { fade } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 // Component for English page
 @Component({
@@ -15,7 +16,9 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
   ]
 })
 export class AboutUsComponent {
-  constructor() {}
+  constructor(private titleService: Title) {
+    this.setTitle("KnowONE - About us");
+  }
 
   // Scrolls to first section
   scrollToSection1() {
@@ -31,6 +34,12 @@ export class AboutUsComponent {
   scrollToSection3() {
     document.getElementById("section3").scrollIntoView({behavior: "smooth"});
   }
+
+  //Sets title of HTML document
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
+
 }
 
 
@@ -44,7 +53,9 @@ export class AboutUsComponent {
   ]
 })
 export class AboutUsNorwegianComponent {
-  constructor() {}
+  constructor(private titleService: Title) {
+    this.setTitle("KnowONE - Om oss");
+  }
   
   // Scrolls to first section
   scrollToSection1() {
@@ -59,5 +70,10 @@ export class AboutUsNorwegianComponent {
   // Scrolls to third section
   scrollToSection3() {
     document.getElementById("section3").scrollIntoView({behavior: "smooth"});
+  }
+
+  //Sets title of HTML document
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 }
