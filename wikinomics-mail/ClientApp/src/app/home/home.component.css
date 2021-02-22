@@ -10,6 +10,10 @@
     background-color: var(--secondaryBg);
 }
 
+.main-row {
+    padding-top: 60px;
+}
+
 .main {
     width: 80%;
     max-width: 1500px;
@@ -91,6 +95,7 @@ p, h2 {
 .btnRegister {
     background-color: var(--mainColor);
     padding: 15px;
+    margin-bottom: 10px;
 }
 
 .col > *, form > * {
@@ -131,7 +136,7 @@ button:hover {
     }
 
     .main {
-        width: 60%;
+        width: 90%;
     }
 
 }
