@@ -10,10 +10,6 @@
     background-color: var(--secondaryBg);
 }
 
-.main-row {
-    padding-top: 60px;
-}
-
 .main {
     width: 80%;
     max-width: 1500px;
@@ -77,6 +73,7 @@ p, h2 {
 .mainImg {
     width: 50%;
     height: auto;
+    margin-top: 50px;
 }
 
 .homeImg {
