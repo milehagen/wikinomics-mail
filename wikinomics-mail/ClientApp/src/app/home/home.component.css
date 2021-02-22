@@ -37,6 +37,7 @@ h2 {
     align-items: center;
     max-width: 1500px;
     min-height: 100vh;
+    padding-top: 10px;
 }
 
 .section {
@@ -73,7 +74,7 @@ p, h2 {
 .mainImg {
     width: 50%;
     height: auto;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .homeImg {
