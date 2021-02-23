@@ -85,11 +85,11 @@ namespace wikinomics_mail.DAL
 
         public async Task<bool> SendMail(Mail mail)
         {
-            var fromAddress = new System.Net.Mail.MailAddress("milehagen@knowone.com", "KnowONE");
-            var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
+            var fromAddress = new System.Net.Mail.MailAddress("newsletter@knowone.no", "KnowONE");
+            var fromPassword = "opvkxjncelsnwrlk";
             var toAddress = new System.Net.Mail.MailAddress("fail@fail.com");
 
-            SmtpClient MailClient = new SmtpClient("smtp.domeneshop.no", 587);
+            SmtpClient MailClient = new SmtpClient("smtp.gmail.com", 587);
             MailClient.EnableSsl = true;
             MailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             MailClient.UseDefaultCredentials = false;

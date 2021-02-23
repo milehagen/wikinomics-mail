@@ -13,5 +13,9 @@ namespace wikinomics_mail.DAL
         String MakeHash(String inp);
         String GetSubString(String inp);
         Task<bool> Unsubscribe(String UniqueID);
+
+        Task<bool> ConfirmationMailEnglish(MailAddress address);
+
+        Task<bool> ConfirmationMailNorwegian(MailAddress address);
     }
 }

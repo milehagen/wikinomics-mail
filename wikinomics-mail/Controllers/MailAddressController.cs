@@ -23,9 +23,11 @@ namespace wikinomics_mail.Controllers
             _log = log;
         }
         // Sends the mailaddress to the server 
-        [HttpPost]
+        [HttpPost("/Save")]
+        [Route("Save")]
         public async Task<ActionResult> Save(MailAddress email)
         {
+            System.Diagnostics.Debug.WriteLine(email.Address + " " + email.Id + " " + email.firstname + " " + email.lastname + " " + email.SendUpdates + " " + email.UniqueId);
             if (ModelState.IsValid)
             {
                 bool returOK = await _db.Save(email);
@@ -35,9 +37,37 @@ namespace wikinomics_mail.Controllers
                     return BadRequest();
                 }
                 _log.LogInformation("Ferdig med lagring");
-                return Ok();
+                return Ok(true);
             }
             return BadRequest();
+        }
+
+
+
+        [HttpPost("/ConfirmationMailNorwegian")]
+        [Route("ConfirmationMailNorwegian")]
+        public async Task<ActionResult> ConfirmationMailNorwegian(MailAddress address)
+        {
+            System.Diagnostics.Debug.WriteLine(address.Address + " " + address.Id + " " + address.firstname + " " + address.lastname + " " + address.SendUpdates + " " + address.UniqueId);
+            var resultOK = await _db.ConfirmationMailNorwegian(address);
+            if (!resultOK)
+            {
+                return BadRequest("");
+            }
+            return Ok(true);
+        }
+
+        [HttpPost("/ConfirmationMailEnglish")]
+        [Route("ConfirmationMailEnglish")]
+        public async Task<ActionResult> ConfirmationMailEnglish(MailAddress address)
+        {
+            System.Diagnostics.Debug.WriteLine(address.Address + " " + address.Id + " " + address.firstname + " " + address.lastname + " " + address.SendUpdates + " " + address.UniqueId);
+            var resultOK = await _db.ConfirmationMailEnglish(address);
+            if (!resultOK)
+            {
+                return BadRequest("");
+            }
+            return Ok(true);
         }
 
         [HttpDelete("unsubscribe/{UniqueID}")]

@@ -4,6 +4,7 @@ import { MailAddress } from '../Models/MailAddress';
 import { Statistic } from '../Models/Statistic';
 import { fade } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 // Component for English home page
 @Component({
@@ -27,8 +28,10 @@ export class HomeComponent {
   emailVal: boolean;
   emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private titleService: Title) {
     this.emailInputForm = fb.group(this.formValidation);
+    this.setTitle("KnowOne - English");
+
   }
 
   formValidation = {
@@ -88,6 +91,11 @@ export class HomeComponent {
     this.sendUpdates = event.target.checked;
   }
 
+  //Set html Title
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
+
   //Adds email to database
   addEmailToDb() {
     const mailAddress = new MailAddress();
@@ -101,9 +109,10 @@ export class HomeComponent {
       mailAddress.sendUpdates = false;
     }
 
-    this.http.post("api/MailAddress", mailAddress)
+    this.http.post("api/MailAddress/Save", mailAddress)
       .subscribe(retur => {
         window.alert("Registreringen var vellykket");
+        //this.sendConfirmationEnglish(mailAddress);
         this.emailInputForm.reset();
         if (this.sendUpdates) {
           this.updateDBStatistics();
@@ -111,6 +120,13 @@ export class HomeComponent {
       },
         error => console.log(error)
       );
+  }
+
+  sendConfirmationEnglish(mailAddress: MailAddress) {
+    this.http.post("api/MailAddress/ConfirmationMailEnglish", mailAddress)
+      .subscribe(respons => {
+        console.log(respons);
+      });
   }
 
   updateDBStatistics() {
@@ -171,8 +187,9 @@ export class HomeNorwegianComponent {
   emailVal: boolean;
   emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private titleService: Title) {
     this.emailInputForm = fb.group(this.formValidation);
+    this.setTitle("KnowOne - Norsk");
   }
 
   formValidation = {
@@ -223,6 +240,11 @@ export class HomeNorwegianComponent {
     document.getElementById("signUp").scrollIntoView({behavior: "smooth"});
   }
 
+  //Sets title of HTML document
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
+
   //Event listener to the checkbox for subscribing to mailing list
   wantUpdates(event) {
     this.sendUpdates = event.target.checked;
@@ -241,9 +263,10 @@ export class HomeNorwegianComponent {
       mailAddress.sendUpdates = false;
     }
 
-    this.http.post("api/MailAddress", mailAddress)
+    this.http.post("api/MailAddress/Save", mailAddress)
       .subscribe(retur => {
         window.alert("Registreringen var vellykket");
+        //this.sendConfirmationNorwegian(mailAddress);
         this.emailInputForm.reset();
         if (this.sendUpdates) {
           this.updateDBStatistics();
@@ -251,6 +274,13 @@ export class HomeNorwegianComponent {
       },
         error => console.log(error)
       );
+  }
+
+  sendConfirmationNorwegian(mailAddress: MailAddress) {
+    this.http.post("api/MailAddress/ConfirmationMailNorwegian", mailAddress)
+      .subscribe(respons => {
+        console.log(respons);
+      });
   }
 
   updateDBStatistics() {
