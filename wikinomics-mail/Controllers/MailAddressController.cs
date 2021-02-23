@@ -48,7 +48,6 @@ namespace wikinomics_mail.Controllers
         [Route("ConfirmationMailNorwegian")]
         public async Task<ActionResult> ConfirmationMailNorwegian(MailAddress address)
         {
-            System.Diagnostics.Debug.WriteLine(address.Address + " " + address.Id + " " + address.firstname + " " + address.lastname + " " + address.SendUpdates + " " + address.UniqueId);
             var resultOK = await _db.ConfirmationMailNorwegian(address);
             if (!resultOK)
             {
@@ -61,7 +60,6 @@ namespace wikinomics_mail.Controllers
         [Route("ConfirmationMailEnglish")]
         public async Task<ActionResult> ConfirmationMailEnglish(MailAddress address)
         {
-            System.Diagnostics.Debug.WriteLine(address.Address + " " + address.Id + " " + address.firstname + " " + address.lastname + " " + address.SendUpdates + " " + address.UniqueId);
             var resultOK = await _db.ConfirmationMailEnglish(address);
             if (!resultOK)
             {
