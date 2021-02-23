@@ -112,7 +112,7 @@ export class HomeComponent {
     this.http.post("api/MailAddress/Save", mailAddress)
       .subscribe(retur => {
         window.alert("Registreringen var vellykket");
-        //this.sendConfirmationEnglish(mailAddress);
+        this.sendConfirmationEnglish(mailAddress);
         this.emailInputForm.reset();
         if (this.sendUpdates) {
           this.updateDBStatistics();
@@ -266,7 +266,7 @@ export class HomeNorwegianComponent {
     this.http.post("api/MailAddress/Save", mailAddress)
       .subscribe(retur => {
         window.alert("Registreringen var vellykket");
-        //this.sendConfirmationNorwegian(mailAddress);
+        this.sendConfirmationNorwegian(mailAddress);
         this.emailInputForm.reset();
         if (this.sendUpdates) {
           this.updateDBStatistics();
