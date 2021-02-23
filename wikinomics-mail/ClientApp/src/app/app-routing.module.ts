@@ -5,7 +5,6 @@ import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { HomeComponent, HomeNorwegianComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { testComponent } from './testComponent';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
 
