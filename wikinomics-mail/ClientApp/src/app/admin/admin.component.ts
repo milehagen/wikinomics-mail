@@ -109,18 +109,17 @@ export class AdminComponent {
     this._http.post("/api/Admin/SendMail", mail, { responseType: 'text' })
       .subscribe(response => {
         if (response == "Mail sent") {
-          this.MailSentMessage("Mail sent", true);
+          alert("Success! Mail was sent");
 
           //If it was not a test, we archive it and refresh the list
           if (!this.sendTest) {
             this.logMail(mail);
             this.getMails();
           }
-
         }
       },
         error => {
-          this.MailSentMessage("Mail failed to be sent!", false),
+          alert("Error! Mail was not sent");
           console.log
         }
       );
@@ -144,15 +143,6 @@ export class AdminComponent {
 
     } else {
       this.emailForm.controls['emailTestAddress'].disable();
-    }
-  }
-
-  //Feedback message on whether the mail was successfully sent or not
-  MailSentMessage(message: string, successful: boolean) {
-    if (successful) {
-      this.feedback = message;
-    } else {
-      this.feedback = message;
     }
   }
 

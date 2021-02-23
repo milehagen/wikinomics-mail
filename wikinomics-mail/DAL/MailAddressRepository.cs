@@ -67,8 +67,8 @@ namespace wikinomics_mail.DAL
 
         public async Task<bool> ConfirmationMailEnglish(Models.MailAddress mailAddress)
         {
-            var fromAddress = new System.Net.Mail.MailAddress("norway.itpe3200@gmail.com", "KnowONE");
-            var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
+            var fromAddress = new System.Net.Mail.MailAddress("newsletter@knowone.no", "KnowONE");
+            var fromPassword = "opvkxjncelsnwrlk";
             var toAddress = new System.Net.Mail.MailAddress("fail@fail.com");
 
             SmtpClient MailClient = new SmtpClient("smtp.gmail.com", 587);
@@ -136,8 +136,8 @@ namespace wikinomics_mail.DAL
 
         public async Task<bool> ConfirmationMailNorwegian(Models.MailAddress mailAddress)
         {
-            var fromAddress = new System.Net.Mail.MailAddress("norway.itpe3200@gmail.com", "KnowONE");
-            var fromPassword = "*c*S%vX6PSXr6mw9tjy!tstfF";
+            var fromAddress = new System.Net.Mail.MailAddress("newsletter@knowone.no", "KnowONE");
+            var fromPassword = "opvkxjncelsnwrlk";
             var toAddress = new System.Net.Mail.MailAddress("fail@fail.com");
 
             SmtpClient MailClient = new SmtpClient("smtp.gmail.com", 587);
