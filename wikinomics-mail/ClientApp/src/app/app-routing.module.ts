@@ -44,10 +44,6 @@ const routes: Routes = [
     component: UnsubscribeComponent,
   },
   {
-    path: 'C39F20A7E332BFDD46062A886230CE1E4FAAE8DFB2149F6176948539AB6F02BB.html',
-    component: testComponent,
-  },
-  {
     path: '**',
     redirectTo: ''
   }

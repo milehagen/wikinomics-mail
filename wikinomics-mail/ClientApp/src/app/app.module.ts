@@ -15,7 +15,6 @@ import { RightsComponent } from './rights/rights.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.component';
-import { testComponent } from './testComponent';
 
 @NgModule({
   declarations: [
@@ -29,8 +28,7 @@ import { testComponent } from './testComponent';
     MailModal,
     LoginComponent,
     RightsComponent,
-    UnsubscribeComponent,
-    testComponent
+    UnsubscribeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
