@@ -42,4 +42,6 @@ export class NavbarComponent {
     }
   }
  
+  returnToHome() {
+    this.norwegian = false;  }
 }
