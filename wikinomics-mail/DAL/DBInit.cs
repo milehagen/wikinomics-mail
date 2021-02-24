@@ -63,7 +63,7 @@ namespace wikinomics_mail.DAL
                 {
                     AdminDB admin = new AdminDB { Username = "Admin" };
 
-                    string password = "Admin-12345";
+                    string password = "b53D9@Tkv85@JSCs";
                     byte[] salt = AdminRepository.GenerateSalt();
                     byte[] hash = AdminRepository.GenerateHash(password, salt);
                     admin.Password = hash;
