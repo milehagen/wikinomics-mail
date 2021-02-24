@@ -37,7 +37,7 @@ import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.c
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent, NavbarComponent, RightsComponent],
