@@ -172,7 +172,7 @@
               <p>Sign up now, and be among the first users to test KnowONE!</p>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" formControlName="formFirstname" placeholder="First name" (change)="showFirstnameValidation()">
+              <input type="text" id="fnInput" class="form-control" formControlName="formFirstname" placeholder="First name" (change)="showFirstnameValidation()">
               <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID' && firstnameVal">First name is not valid</p>
             </div>
             <div class="form-group">
