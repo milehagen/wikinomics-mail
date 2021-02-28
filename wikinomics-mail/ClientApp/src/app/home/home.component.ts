@@ -5,6 +5,7 @@ import { Statistic } from '../Models/Statistic';
 import { fade } from '../animations';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 // Component for English home page
 @Component({
@@ -28,7 +29,7 @@ export class HomeComponent {
   emailVal: boolean;
   emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private titleService: Title) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private titleService: Title, private router: Router) {
     this.emailInputForm = fb.group(this.formValidation);
     this.setTitle("KnowOne - English");
 
@@ -45,6 +46,7 @@ export class HomeComponent {
     '', Validators.compose([Validators.required, Validators.pattern(this.emailRegex)])
     ]
 }
+  
 
   // Scrolls to first section
   scrollToSection1() {
@@ -187,7 +189,7 @@ export class HomeNorwegianComponent {
   emailVal: boolean;
   emailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private titleService: Title) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private titleService: Title, private router: Router) {
     this.emailInputForm = fb.group(this.formValidation);
     this.setTitle("KnowOne - Norsk");
   }
