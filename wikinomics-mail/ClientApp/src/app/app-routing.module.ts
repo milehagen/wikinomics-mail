@@ -16,19 +16,19 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'home/no',
     component: HomeNorwegianComponent
   },
   {
-    path: 'aboutus',
-    component: AboutUsComponent
+    path: 'home/en',
+    component: HomeComponent
   },
   {
-    path: 'aboutus/no',
+    path: 'aboutus',
     component: AboutUsNorwegianComponent
+  },
+  {
+    path: 'aboutus/en',
+    component: AboutUsComponent
   },
   {
     path: 'login',

@@ -6,28 +6,28 @@
   <div class="collapse navbar-collapse links1" [ngClass]="{ 'show': isExpanded }" *ngIf="!norwegian">
     <ul class="nav navbar-nav mx-auto links" (click)="isExpanded = !isExpanded">
       <li class="nav-item active">
-        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home']" [routerLinkActive]="['active']">HOME</button>
+        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home']" [routerLinkActive]="['active']">HJEM</button>
       </li>
       <li class="nav-item">
-        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus']" [routerLinkActive]="['active']">ABOUT US</button>
+        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus']" [routerLinkActive]="['active']">OM OSS</button>
       </li>
     </ul>
   </div>
   <div class="lang" *ngIf="!norwegian">
-    <a (click)="changeLanguage()" [routerLink]="['/home/no']"><img class="flag" src="../../assets/icons/flags/norway.svg"></a>
+    <a (click)="changeLanguage()" [routerLink]="['/home/en']">EN</a>
   </div>
 
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }" *ngIf="norwegian">
     <ul class="nav navbar-nav mx-auto" (click)="isExpanded = !isExpanded">
       <li class="nav-item active">
-        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home/no']" [routerLinkActive]="['active']">HJEM</button>
+        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/home/en']" [routerLinkActive]="['active']">HOME</button>
       </li>
       <li class="nav-item">
-        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus/no']" [routerLinkActive]="['active']">OM OSS</button>
+        <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus/en']" [routerLinkActive]="['active']">ABOUT US</button>
       </li>
     </ul>
   </div>
   <div class="lang" *ngIf="norwegian">
-    <a (click)="changeLanguage()" [routerLink]="['/home']"><img class="flag" src="../../assets/icons/flags/united-kingdom.svg"></a>
+    <a (click)="changeLanguage()" [routerLink]="['/home']">NO</a>
   </div>
 </nav>
