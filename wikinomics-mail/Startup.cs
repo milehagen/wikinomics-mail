@@ -89,6 +89,7 @@ namespace wikinomics_mail
                     spa.UseAngularCliServer(npmScript: "start");
                     DBInit.Initialize(app);
                 }
+                //DBInit.Initialize(app);
             });
         }
     }

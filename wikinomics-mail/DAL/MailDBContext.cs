@@ -38,6 +38,5 @@ namespace wikinomics_mail.DAL
         {
             optionsBuilder.UseLazyLoadingProxies();
         }
-
     }
 }
