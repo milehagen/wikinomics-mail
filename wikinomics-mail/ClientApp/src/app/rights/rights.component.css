@@ -21,6 +21,19 @@
     text-align: center;
 }
 
+.col ul {
+    list-style: none;
+}
+
+.col li {
+    margin: 10px;
+}
+
+.socialMedia {
+    width: 25px;
+    height: 25px;
+}
+
 @media (max-width: 1000px) {
     .row {
         flex-direction: column;

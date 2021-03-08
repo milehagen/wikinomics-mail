@@ -38,6 +38,7 @@ button:hover {
 .flag {
     width: 25px;
     height: 25px;
+    margin-right: 5px;
 }
 
 .lang {
@@ -48,4 +49,13 @@ button:hover {
 
 .navbar-brand {
     width: 100px;
+}
+
+.flagLang {
+    display: flex;
+    align-items: center;
+}
+
+.flagLang:hover {
+    text-decoration: none;
 }

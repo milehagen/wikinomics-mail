@@ -14,7 +14,10 @@
     </ul>
   </div>
   <div class="lang" *ngIf="!norwegian">
-    <a (click)="changeLanguage()" [routerLink]="['/home/en']">EN</a>
+    <a class="flagLang" (click)="changeLanguage()" [routerLink]="['/home/en']">
+      <img class="flag" src="../../assets/icons/flags/united-kingdom.svg">
+      EN
+    </a>
   </div>
 
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': isExpanded }" *ngIf="norwegian">
@@ -28,6 +31,9 @@
     </ul>
   </div>
   <div class="lang" *ngIf="norwegian">
-    <a (click)="changeLanguage()" [routerLink]="['/home']">NO</a>
+    <a class="flagLang" (click)="changeLanguage()" [routerLink]="['/home']">
+      <img class="flag" src="../../assets/icons/flags/norway.svg">
+      NO
+    </a>
   </div>
 </nav>
