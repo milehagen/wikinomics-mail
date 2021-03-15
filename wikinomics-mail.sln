@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wikinomics-mail", "wikinomics-mail\wikinomics-mail.csproj", "{A3FDFA4C-73F6-4992-B95F-C92DCB355C8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knowone", "knowone\knowone.csproj", "{A3FDFA4C-73F6-4992-B95F-C92DCB355C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

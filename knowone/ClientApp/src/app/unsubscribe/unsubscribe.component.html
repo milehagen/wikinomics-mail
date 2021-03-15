@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default position-fixed">
+  <button class="btn btn-link" [routerLink]="['/home']">knowone</button>
+
+  <button class="btn btn-link" [routerLink]="['/login']">Admin</button>
+</nav>
+
+<div class="jumbotron min-vh-100">
+  <div class="container" @fade>
+    <div class="form-group">
+      <h2>Unsubscribe from mailinglist</h2>
+
+      <br />
+
+      <i>Sorry to see you leave</i>
+
+      <br />
+
+      <b>{{feedback}}</b>
+
+      <br/>
+      <ng-container *ngIf="!unsubscribed">
+        <button type="button" class="btn btn-primary" (click)="unsubscribe()">Unsubscribe</button>
+      </ng-container>
+    </div>
+  </div>
+</div>
