@@ -32,7 +32,14 @@ export class HomeComponent {
   constructor(private http: HttpClient, private fb: FormBuilder, private titleService: Title, private router: Router) {
     this.emailInputForm = fb.group(this.formValidation);
     this.setTitle("KnowOne - English");
+  }
 
+  ngOnInit() {
+    this.http.get("https://api.linkpreview.net/?key=34f6aff3e2176d95d40996ff3ec938e3&q=https://knowone.no/home").subscribe(response => {
+      console.log(response);
+    },
+      error => console.log(error)
+    );
   }
 
   formValidation = {
@@ -192,6 +199,10 @@ export class HomeNorwegianComponent {
   constructor(private http: HttpClient, private fb: FormBuilder, private titleService: Title, private router: Router) {
     this.emailInputForm = fb.group(this.formValidation);
     this.setTitle("KnowOne - Norsk");
+  }
+
+  ngOnInit() {
+    console.log("hei");
   }
 
   formValidation = {
