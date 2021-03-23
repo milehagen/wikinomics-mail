@@ -126,6 +126,7 @@ export class HomeComponent {
         if (this.sendUpdates) {
           this.updateDBStatistics();
         }
+        this.router.navigate(['/signedUp'])
       },
         error => console.log(error)
       );
@@ -284,6 +285,7 @@ export class HomeNorwegianComponent {
         if (this.sendUpdates) {
           this.updateDBStatistics();
         }
+        this.router.navigate(['/signedUp'])
       },
         error => console.log(error)
       );

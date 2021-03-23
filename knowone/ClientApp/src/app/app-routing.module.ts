@@ -4,6 +4,7 @@ import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.c
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { HomeComponent, HomeNorwegianComponent } from './home/home.component';
+import { SignedUpComponent } from './home/signedUp';
 import { LoginComponent } from './login/login.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'unsubscribe',
     component: UnsubscribeComponent,
+  },
+  {
+    path: 'signedUp',
+    component: SignedUpComponent,
   },
   {
     path: '**',

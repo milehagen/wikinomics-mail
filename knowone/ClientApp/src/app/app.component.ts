@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-
 import { filter } from 'rxjs/operators';
 declare var gtag;
 @Component({
