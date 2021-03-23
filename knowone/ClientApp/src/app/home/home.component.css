@@ -126,6 +126,23 @@ button:hover {
     text-decoration: none;
 }
 
+/* Signed-up */
+.signed-up-container {
+    min-height: 90vh;
+}
+
+.signed-up-container .container {
+    text-align: center;
+    line-height: 2rem;
+    margin: 100px auto;
+}
+
+.signed-up-container .container h1 {
+    margin-bottom: 2rem;
+}
+
+
+
 
 
 @media (max-width: 1500px) {

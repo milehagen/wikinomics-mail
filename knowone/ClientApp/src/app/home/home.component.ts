@@ -120,13 +120,13 @@ export class HomeComponent {
 
     this.http.post("api/MailAddress/Save", mailAddress)
       .subscribe(retur => {
-        window.alert("Registreringen var vellykket");
+        window.alert("Registration completed");
         this.sendConfirmationEnglish(mailAddress);
         this.emailInputForm.reset();
         if (this.sendUpdates) {
           this.updateDBStatistics();
         }
-        this.router.navigate(['/signedUp'])
+        this.router.navigate(['/signedUp/en'])
       },
         error => console.log(error)
       );

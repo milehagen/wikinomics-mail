@@ -77,5 +77,6 @@ button:hover {
         display: flex;
         flex-direction: column;
         align-content: flex-end;
+        margin: 1rem 0;
     }
 }

@@ -15,7 +15,7 @@
   </div>
   <div class="lang" *ngIf="!norwegian">
     <a class="flagLang" (click)="changeLanguage()" [routerLink]="['/home/en']">
-      <img class="flag" src="../../assets/icons/flags/united-kingdom.svg">
+      <img class="flag" src="../../assets/icons/flags/united-kingdom.svg" alt="engelsk flagg">
       EN
     </a>
   </div>
@@ -32,7 +32,7 @@
   </div>
   <div class="lang" *ngIf="norwegian">
     <a class="flagLang" (click)="changeLanguage()" [routerLink]="['/home']">
-      <img class="flag" src="../../assets/icons/flags/norway.svg">
+      <img class="flag" src="../../assets/icons/flags/norway.svg" alt="norsk flagg">
       NO
     </a>
   </div>
