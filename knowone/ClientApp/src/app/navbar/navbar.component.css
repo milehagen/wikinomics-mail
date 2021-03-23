@@ -59,3 +59,23 @@ button:hover {
 .flagLang:hover {
     text-decoration: none;
 }
+
+@media (max-width: 1000px) {
+    .navbar-toggler {
+        position: absolute;
+        right: 5px;
+        top: 7.5px;
+    }
+
+    .lang {
+        position: absolute;
+        top: 15px;
+        right: 50px;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+    }
+}
