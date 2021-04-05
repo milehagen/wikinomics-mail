@@ -203,7 +203,6 @@ export class HomeNorwegianComponent {
   }
 
   ngOnInit() {
-    console.log("hei");
   }
 
   formValidation = {
