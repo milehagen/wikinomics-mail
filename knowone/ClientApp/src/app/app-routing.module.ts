@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { HomeComponent, HomeNorwegianComponent } from './home/home.component';
 import { SignedUpComponent, SignedUpNorwegianComponent } from './home/signedUp';
+import { SignUpComponent, SignUpNorwegianComponent } from './home/signUp.component';
 import { LoginComponent } from './login/login.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 
@@ -51,6 +52,15 @@ const routes: Routes = [
     path: 'signedUp/en',
     component: SignedUpComponent,
   },
+  {
+    path: 'signUp',
+    component: SignUpNorwegianComponent,
+  },
+  {
+    path: 'signUp/en',
+    component: SignUpComponent,
+  },
+
   {
     path: '**',
     redirectTo: ''
