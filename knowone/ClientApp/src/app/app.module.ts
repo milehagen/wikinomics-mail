@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.component';
 import { SignedUpComponent, SignedUpNorwegianComponent } from './home/signedUp';
+import { SignUpComponent, SignUpNorwegianComponent } from './home/signUp.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { SignedUpComponent, SignedUpNorwegianComponent } from './home/signedUp';
     RightsComponent,
     UnsubscribeComponent,
     SignedUpComponent,
-    SignedUpNorwegianComponent
+    SignedUpNorwegianComponent,
+    SignUpComponent,
+    SignUpNorwegianComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

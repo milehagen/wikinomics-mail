@@ -87,7 +87,7 @@ namespace knowone
                 if (env.IsDevelopment())
                 {
                     spa.UseAngularCliServer(npmScript: "start");
-                    DBInit.Initialize(app);
+                    //DBInit.Initialize(app);
                 }
                 //DBInit.Initialize(app);
             });

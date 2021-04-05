@@ -1,0 +1,44 @@
+<div id="signUp" class="container-fluid bg-sec">
+    <div class="row form-row">
+      <div class="section">
+        <div class="col image regImg order-sm-1">
+          <img class="img-responsive img-fluid homeImg" src="../../assets/images/home/sittingonfloor2.svg" alt="">
+        </div>
+        <div class="col info flex-column order-sm-12">
+          <form [formGroup]="emailInputForm" (ngSubmit)="addEmailToDb()">
+            <div class="form-group">
+              <h2><b>Sign up to test KnowONE</b></h2>
+              <p>We will be launching soon!</p>
+              <p>Sign up now, and be among the first users to test KnowONE!</p>
+            </div>
+            <div class="form-group">
+              <input type="text" id="fnInput" class="form-control" formControlName="formFirstname" placeholder="First name" (change)="showFirstnameValidation()">
+              <p *ngIf="this.emailInputForm.controls.formFirstname.status=='INVALID' && firstnameVal">First name is not valid</p>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="formLastname" placeholder="Last name" (change)="showLastnameValidation()">
+              <p *ngIf="this.emailInputForm.controls.formLastname.status=='INVALID' && lastnameVal">Last name is not valid</p>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" formControlName="formEmail" placeholder="Email" (change)="showEmailValidation()">
+              <p *ngIf="this.emailInputForm.controls.formEmail.status=='INVALID' && emailVal">Email is not valid</p>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="checkboxTerms" (change)="acceptTerms($event)">
+              <label class="form-check-label required" for="checkboxTerms">
+                I accept the
+                <a href="../../assets/terms&conditions/Terms, conditions and privacy policy.pdf" target="_blank">terms and conditions, and privacy policy</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="checkbox2" (change)="wantUpdates($event)">
+              <label class="form-check-label" for="checkbox2">
+                I definitely want to follow KnowONE's startup journey by e-mail, and hear from the founder.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary shadow-sm rounded-pill btnRegister" [disabled]="!emailInputForm.valid || !termsAccepted">Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
