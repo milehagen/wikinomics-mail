@@ -36,7 +36,6 @@ namespace knowone.DAL
             var salt = new byte[24];
             csp.GetBytes(salt);
             return salt;
-
         }
 
         public async Task<bool> LogIn(Admin admin)

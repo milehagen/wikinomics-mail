@@ -47,7 +47,8 @@ namespace knowone.DAL
                 }
 
                 //Changes field based on the ones that come populated from frontend
-                if(statistic.LastSignUp != null)
+                // Compares it to DateTime.MinValue since it is the initialized value for DateTime variables
+                if(statistic.LastSignUp == DateTime.MinValue)
                 {
                     dbStats.LastSignUp = statistic.LastSignUp;
                 }
