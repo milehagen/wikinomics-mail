@@ -19,34 +19,33 @@ import { SignedUpComponent, SignedUpNorwegianComponent } from './home/signedUp';
 import { SignUpComponent, SignUpNorwegianComponent } from './home/signUp.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomeComponent,
-    HomeNorwegianComponent,
-    AboutUsComponent,
-    AboutUsNorwegianComponent,
-    AdminComponent,
-    MailModal,
-    LoginComponent,
-    RightsComponent,
-    UnsubscribeComponent,
-    SignedUpComponent,
-    SignedUpNorwegianComponent,
-    SignUpComponent,
-    SignUpNorwegianComponent
-  ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NgbModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent, NavbarComponent, RightsComponent],
-  entryComponents: [MailModal]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        HomeComponent,
+        HomeNorwegianComponent,
+        AboutUsComponent,
+        AboutUsNorwegianComponent,
+        AdminComponent,
+        MailModal,
+        LoginComponent,
+        RightsComponent,
+        UnsubscribeComponent,
+        SignedUpComponent,
+        SignedUpNorwegianComponent,
+        SignUpComponent,
+        SignUpNorwegianComponent
+    ],
+    imports: [
+        BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NgbModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent, NavbarComponent, RightsComponent]
 })
 export class AppModule { }
