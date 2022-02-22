@@ -11,6 +11,9 @@
       <li class="nav-item">
         <button class="btn btn-link" (click)="scrollToTop($event)" [routerLink]="['/aboutus']" [routerLinkActive]="['active']">OM OSS</button>
       </li>
+      <li class="nav-item">
+        <button class="btn btn-link" [routerLink]="['/reviews']">User reviews</button>
+      </li>
     </ul>
   </div>
   <div class="lang" *ngIf="!norwegian">
@@ -36,4 +39,5 @@
       NO
     </a>
   </div>
+  
 </nav>

@@ -17,6 +17,7 @@ import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { AboutUsComponent, AboutUsNorwegianComponent } from './aboutus/aboutus.component';
 import { SignedUpComponent, SignedUpNorwegianComponent } from './home/signedUp';
 import { SignUpComponent, SignUpNorwegianComponent } from './home/signUp.component';
+import { UserReviewsComponent } from './user-reviews/user-reviews.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { SignUpComponent, SignUpNorwegianComponent } from './home/signUp.compone
         SignedUpComponent,
         SignedUpNorwegianComponent,
         SignUpComponent,
-        SignUpNorwegianComponent
+        SignUpNorwegianComponent,
+        UserReviewsComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

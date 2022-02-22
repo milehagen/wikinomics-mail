@@ -8,6 +8,7 @@ import { SignedUpComponent, SignedUpNorwegianComponent } from './home/signedUp';
 import { SignUpComponent, SignUpNorwegianComponent } from './home/signUp.component';
 import { LoginComponent } from './login/login.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
+import { UserReviewsComponent } from './user-reviews/user-reviews.component';
 
 
 const routes: Routes = [
@@ -60,7 +61,10 @@ const routes: Routes = [
     path: 'signUp/en',
     component: SignUpComponent,
   },
-
+  {
+    path: 'reviews',
+    component: UserReviewsComponent
+  },
   {
     path: '**',
     redirectTo: ''
