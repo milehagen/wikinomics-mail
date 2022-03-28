@@ -4,7 +4,7 @@
   "description": "Welcoming page for service. Includes possibility to join mailing list, with admin panel for managing said list.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd ./knowone & dotnet run"
   },
   "repository": {
     "type": "git",
